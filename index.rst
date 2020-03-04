@@ -34,24 +34,8 @@ Session 01
 
 
 .. toctree:
-    :maxdepth: 2
-    :caption: Introduction
-    content/session_01/Part_01_01
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 1 Install the software
-    content/session_01/Part_01_02
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 2 This week’s quiz
-    content/session_01/Part_01_03
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 3 Summary
-    session_01/Part_01_04
+    :glob:
+    content/session_01/*
 
 
 Session 02
@@ -59,24 +43,8 @@ Session 02
 
 
 .. toctree:
-    :maxdepth: 2
-    :caption: 1 Enter the pandas
-    session_02/Part_02_01
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 2 Writing up the analysis
-    session_02/Part_02_02
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 3 This week’s quiz
-    session_02/Part_02_03
-
-.. toctree:
-    :maxdepth: 2
-    :caption: 4 Summary
-    session_02/Part_02_04
+    :glob:
+    content/session_02/*
 
 
 Session 03
