@@ -27,16 +27,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       # Should probably let the use provide and environment.yaml file
+      # For cache to work we need to work in an env; else pkgs in non-cacheable /usr/share/miniconda
       - uses: actions/cache@v1
         with:
-          path: /home/runner/.conda/_package_cache
+          path: /home/runner/.conda/pkgs
           key: ${{ runner.os }}-conda-${{ hashFiles('**/environment.y*ml') }}
           restore-keys: |
             ${{ runner.os }}-conda-
            
       - name: Install dependencies
         run: |
-          echo ::set-env CONDA_PKGS_DIRS="/home/runner/.conda/_package_cache"
           echo $(conda info)
           conda install -y pandoc librsvg tectonic
           python -m pip install sphinx
