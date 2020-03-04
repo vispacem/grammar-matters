@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en"
+ unique-identifier="unknown"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:title>No title provided.</dc:title>
+    <dc:description>unknown</dc:description>
+    <dc:creator>No author provided.</dc:creator>
+    <dc:contributor>unknown</dc:contributor>
+    <dc:publisher>No publisher provided.</dc:publisher>
+    <dc:rights>No copyright notice provided</dc:rights>
+    <dc:identifier id="unknown">unknown</dc:identifier>
+    <dc:date>2020-03-04T15:59:56Z</dc:date>
+    <meta property="dcterms:modified">2020-03-04T15:59:56Z</meta>
+    <meta property="ibooks:version">0.0.1</meta>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <meta property="ibooks:binding">true</meta>
+    <meta property="ibooks:scroll-axis">vertical</meta>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="epub-0" href="genindex.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-1" href="index.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-2" href="_images/lcda_1_220x220_badge.png" media-type="image/png" />
+    <item id="epub-3" href="_images/ou_futurelearn_learn_to_code_fig_1006.jpg" media-type="image/jpeg" />
+    <item id="epub-4" href="_images/ou_futurelearn_learn_to_code_fig_1007.jpg" media-type="image/jpeg" />
+    <item id="epub-5" href="_images/ou_futurelearn_learn_to_code_fig_1008.jpg" media-type="image/jpeg" />
+    <item id="epub-6" href="_images/ou_futurelearn_learn_to_code_fig_1009.jpg" media-type="image/jpeg" />
+    <item id="epub-7" href="_images/ou_futurelearn_learn_to_code_fig_1010.jpg" media-type="image/jpeg" />
+    <item id="epub-8" href="_images/ou_futurelearn_learn_to_code_fig_1011.jpg" media-type="image/jpeg" />
+    <item id="epub-9" href="_images/ou_futurelearn_learn_to_code_fig_1012.jpg" media-type="image/jpeg" />
+    <item id="epub-10" href="_images/ou_futurelearn_learn_to_code_fig_1013.jpg" media-type="image/jpeg" />
+    <item id="epub-11" href="_images/ou_futurelearn_learn_to_code_fig_1014.jpg" media-type="image/jpeg" />
+    <item id="epub-12" href="_images/ou_futurelearn_learn_to_code_fig_1015.jpg" media-type="image/jpeg" />
+    <item id="epub-13" href="_images/ou_futurelearn_learn_to_code_fig_1016.jpg" media-type="image/jpeg" />
+    <item id="epub-14" href="_images/ou_futurelearn_learn_to_code_fig_1017.jpg" media-type="image/jpeg" />
+    <item id="epub-15" href="_images/ou_futurelearn_learn_to_code_fig_1018.jpg" media-type="image/jpeg" />
+    <item id="epub-16" href="_images/ou_futurelearn_learn_to_code_fig_1019.jpg" media-type="image/jpeg" />
+    <item id="epub-17" href="_images/ou_futurelearn_learn_to_code_fig_1020.jpg" media-type="image/jpeg" />
+    <item id="epub-18" href="_images/ou_futurelearn_learn_to_code_fig_1021.jpg" media-type="image/jpeg" />
+    <item id="epub-19" href="_images/ou_futurelearn_learn_to_code_fig_1022.jpg" media-type="image/jpeg" />
+    <item id="epub-20" href="_images/ou_futurelearn_learn_to_code_fig_1023.jpg" media-type="image/jpeg" />
+    <item id="epub-21" href="_images/ou_futurelearn_learn_to_code_fig_1024.jpg" media-type="image/jpeg" />
+    <item id="epub-22" href="_images/ou_futurelearn_learn_to_code_fig_1026.jpg" media-type="image/jpeg" />
+    <item id="epub-23" href="_images/ou_futurelearn_learn_to_code_fig_10261.jpg" media-type="image/jpeg" />
+    <item id="epub-24" href="_images/ou_futurelearn_learn_to_code_fig_1027.jpg" media-type="image/jpeg" />
+    <item id="epub-25" href="_images/ou_futurelearn_learn_to_code_fig_1028.jpg" media-type="image/jpeg" />
+    <item id="epub-26" href="_images/ou_futurelearn_learn_to_code_fig_1030.jpg" media-type="image/jpeg" />
+    <item id="epub-27" href="_images/ou_futurelearn_learn_to_code_fig_1031.jpg" media-type="image/jpeg" />
+    <item id="epub-28" href="_images/ou_futurelearn_learn_to_code_fig_1032.jpg" media-type="image/jpeg" />
+    <item id="epub-29" href="_images/ou_futurelearn_learn_to_code_fig_1033.jpg" media-type="image/jpeg" />
+    <item id="epub-30" href="_images/ou_futurelearn_learn_to_code_fig_1034.jpg" media-type="image/jpeg" />
+    <item id="epub-31" href="_images/ou_futurelearn_learn_to_code_fig_1035.jpg" media-type="image/jpeg" />
+    <item id="epub-32" href="_images/ou_futurelearn_learn_to_code_fig_1036.jpg" media-type="image/jpeg" />
+    <item id="epub-33" href="_images/ou_futurelearn_learn_to_code_fig_10361.jpg" media-type="image/jpeg" />
+    <item id="epub-34" href="_images/ou_futurelearn_learn_to_code_fig_10362.jpg" media-type="image/jpeg" />
+    <item id="epub-35" href="_images/ou_futurelearn_learn_to_code_fig_1037.jpg" media-type="image/jpeg" />
+    <item id="epub-36" href="_images/ou_futurelearn_learn_to_code_fig_1039.jpg" media-type="image/jpeg" />
+    <item id="epub-37" href="_images/ou_futurelearn_learn_to_code_fig_10391.jpg" media-type="image/jpeg" />
+    <item id="epub-38" href="_images/ou_futurelearn_learn_to_code_fig_1040.jpg" media-type="image/jpeg" />
+    <item id="epub-39" href="_images/ou_futurelearn_learn_to_code_fig_1041.jpg" media-type="image/jpeg" />
+    <item id="epub-40" href="_images/ou_futurelearn_learn_to_code_fig_1042.jpg" media-type="image/jpeg" />
+    <item id="epub-41" href="_images/ou_futurelearn_learn_to_code_fig_1043.jpg" media-type="image/jpeg" />
+    <item id="epub-42" href="_images/ou_futurelearn_learn_to_code_fig_1044.jpg" media-type="image/jpeg" />
+    <item id="epub-43" href="_images/ou_futurelearn_learn_to_code_fig_1045.jpg" media-type="image/jpeg" />
+    <item id="epub-44" href="_images/ou_futurelearn_learn_to_code_fig_1047.jpg" media-type="image/jpeg" />
+    <item id="epub-45" href="_images/ou_futurelearn_learn_to_code_fig_1048.jpg" media-type="image/jpeg" />
+    <item id="epub-46" href="_images/ou_futurelearn_learn_to_code_fig_1050.jpg" media-type="image/jpeg" />
+    <item id="epub-47" href="_images/ou_futurelearn_learn_to_code_fig_1051.jpg" media-type="image/jpeg" />
+    <item id="epub-48" href="_images/ou_futurelearn_learn_to_code_fig_1052.jpg" media-type="image/jpeg" />
+    <item id="epub-49" href="_images/ou_futurelearn_learn_to_code_fig_1053.jpg" media-type="image/jpeg" />
+    <item id="epub-50" href="_images/ou_futurelearn_learn_to_code_fig_1054.jpg" media-type="image/jpeg" />
+    <item id="epub-51" href="_images/ou_futurelearn_learn_to_code_fig_1055.jpg" media-type="image/jpeg" />
+    <item id="epub-52" href="_images/ou_futurelearn_learn_to_code_fig_1056.jpg" media-type="image/jpeg" />
+    <item id="epub-53" href="_images/ou_futurelearn_learn_to_code_fig_1058.jpg" media-type="image/jpeg" />
+    <item id="epub-54" href="_images/ou_futurelearn_learn_to_code_fig_1059.jpg" media-type="image/jpeg" />
+    <item id="epub-55" href="_images/ou_futurelearn_learn_to_code_fig_1060.jpg" media-type="image/jpeg" />
+    <item id="epub-56" href="_images/ou_futurelearn_learn_to_code_fig_1061.jpg" media-type="image/jpeg" />
+    <item id="epub-57" href="_images/ou_futurelearn_learn_to_code_fig_1062.jpg" media-type="image/jpeg" />
+    <item id="epub-58" href="_images/ou_futurelearn_learn_to_code_fig_1063.jpg" media-type="image/jpeg" />
+    <item id="epub-59" href="_images/ou_futurelearn_learn_to_code_fig_1064.jpg" media-type="image/jpeg" />
+    <item id="epub-60" href="_images/ou_futurelearn_learn_to_code_fig_1065.jpg" media-type="image/jpeg" />
+    <item id="epub-61" href="_images/ou_futurelearn_learn_to_code_fig_1066.jpg" media-type="image/jpeg" />
+    <item id="epub-62" href="_images/ou_futurelearn_learn_to_code_fig_1067.jpg" media-type="image/jpeg" />
+    <item id="epub-63" href="_images/ou_futurelearn_learn_to_code_fig_1070.jpg" media-type="image/jpeg" />
+    <item id="epub-64" href="_images/ou_futurelearn_learn_to_code_fig_1076_3d.jpg" media-type="image/jpeg" />
+    <item id="epub-65" href="_images/ou_futurelearn_learn_to_code_vid_1001.jpg" media-type="image/jpeg" />
+    <item id="epub-66" href="_images/ou_futurelearn_learn_to_code_vid_1003.jpg" media-type="image/jpeg" />
+    <item id="epub-67" href="_images/ou_futurelearn_learn_to_code_vid_10031.jpg" media-type="image/jpeg" />
+    <item id="epub-68" href="_images/ou_futurelearn_learn_to_code_vid_1004.jpg" media-type="image/jpeg" />
+    <item id="epub-69" href="_images/ou_futurelearn_learn_to_code_vid_1005.jpg" media-type="image/jpeg" />
+    <item id="epub-70" href="_images/ou_futurelearn_learn_to_code_vid_1046.jpg" media-type="image/jpeg" />
+    <item id="epub-71" href="_static/basic.css" media-type="text/css" />
+    <item id="epub-72" href="_static/epub.css" media-type="text/css" />
+    <item id="epub-73" href="_static/file.png" media-type="image/png" />
+    <item id="epub-74" href="_static/minus.png" media-type="image/png" />
+    <item id="epub-75" href="_static/plus.png" media-type="image/png" />
+    <item id="epub-76" href="_static/pygments.css" media-type="text/css" />
+    <item id="epub-77" href="content/session_00/Part_00_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-78" href="content/session_00/Part_00_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-79" href="content/session_00/Part_00_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-80" href="content/session_01/Part_01_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-81" href="content/session_01/Part_01_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-82" href="content/session_01/Part_01_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-83" href="content/session_01/Part_01_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-84" href="content/session_02/Part_02_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-85" href="content/session_02/Part_02_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-86" href="content/session_02/Part_02_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-87" href="content/session_02/Part_02_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-88" href="content/session_03/Part_03_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-89" href="content/session_03/Part_03_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-90" href="content/session_03/Part_03_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-91" href="content/session_03/Part_03_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-92" href="content/session_04/Part_04_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-93" href="content/session_04/Part_04_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-94" href="content/session_04/Part_04_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-95" href="content/session_04/Part_04_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-96" href="content/session_04/Part_04_05.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-97" href="content/session_05/Part_05_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-98" href="content/session_05/Part_05_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-99" href="content/session_05/Part_05_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-100" href="content/session_05/Part_05_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-101" href="content/session_06/Part_06_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-102" href="content/session_06/Part_06_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-103" href="content/session_06/Part_06_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-104" href="content/session_06/Part_06_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-105" href="content/session_07/Part_07_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-106" href="content/session_07/Part_07_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-107" href="content/session_07/Part_07_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-108" href="content/session_07/Part_07_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-109" href="content/session_08/Part_08_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-110" href="content/session_08/Part_08_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-111" href="content/session_08/Part_08_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-112" href="content/session_08/Part_08_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-113" href="content/session_08/Part_08_05.xhtml" media-type="application/xhtml+xml" />
+  </manifest>
+  <spine toc="ncx" page-progression-direction="ltr">
+    <itemref idref="epub-1" />
+    <itemref idref="epub-80" />
+    <itemref idref="epub-81" />
+    <itemref idref="epub-82" />
+    <itemref idref="epub-83" />
+    <itemref idref="epub-84" />
+    <itemref idref="epub-85" />
+    <itemref idref="epub-86" />
+    <itemref idref="epub-87" />
+    <itemref idref="epub-0" />
+    <itemref idref="epub-77" linear="no" />
+    <itemref idref="epub-78" linear="no" />
+    <itemref idref="epub-79" linear="no" />
+    <itemref idref="epub-88" linear="no" />
+    <itemref idref="epub-89" linear="no" />
+    <itemref idref="epub-90" linear="no" />
+    <itemref idref="epub-91" linear="no" />
+    <itemref idref="epub-92" linear="no" />
+    <itemref idref="epub-93" linear="no" />
+    <itemref idref="epub-94" linear="no" />
+    <itemref idref="epub-95" linear="no" />
+    <itemref idref="epub-96" linear="no" />
+    <itemref idref="epub-97" linear="no" />
+    <itemref idref="epub-98" linear="no" />
+    <itemref idref="epub-99" linear="no" />
+    <itemref idref="epub-100" linear="no" />
+    <itemref idref="epub-101" linear="no" />
+    <itemref idref="epub-102" linear="no" />
+    <itemref idref="epub-103" linear="no" />
+    <itemref idref="epub-104" linear="no" />
+    <itemref idref="epub-105" linear="no" />
+    <itemref idref="epub-106" linear="no" />
+    <itemref idref="epub-107" linear="no" />
+    <itemref idref="epub-108" linear="no" />
+    <itemref idref="epub-109" linear="no" />
+    <itemref idref="epub-110" linear="no" />
+    <itemref idref="epub-111" linear="no" />
+    <itemref idref="epub-112" linear="no" />
+    <itemref idref="epub-113" linear="no" />
+  </spine>
+  <guide>
+    <reference type="toc" title="Table of Contents" href="index.xhtml" />
+  </guide>
+</package>

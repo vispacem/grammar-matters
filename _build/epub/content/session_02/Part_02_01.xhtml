@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>1 Enter the pandas</title>
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="1-Enter-the-pandas">
+<h1>1 Enter the pandas</h1>
+<p>As you probably realised, this way of coding is not practical for large scale data analysis.</p>
+<p><img alt="An image of four giant panda cubs climbing a bamboo fence" src="../../_images/ou_futurelearn_learn_to_code_fig_1034.jpg" /></p>
+<p><strong>Figure 1</strong></p>
+<p>Three lines of code were required for each country, to store the number of deaths, store the population, and calculate the death rate. With roughly 200 countries in the world, my trivial analysis would require 400 variables and typing almost 600 lines of code! Life’s too short to be spent that way.</p>
+<p>Instead of using a separate variable for each datum, it is better to organise data as a table of rows and columns.</p>
+<table xmlns:str="http://exslt.org/strings"><caption><p>Table 1</p>
+</caption><tbody><tr><th><p>Country</p>
+</th><th><p>Deaths</p>
+</th><th><p>Population</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td></tr></tbody></table><p>In that way, instead of 400 variables, I only need one that stores the whole table. Instead of writing a mile long expression that adds 200 variables to obtain the total deaths, I’ll write a short expression that calculates the total of the ‘Deaths’ column, no matter how many countries (rows) there are.</p>
+<p>To organise data into tables and do calculations on such tables, you and I will use the pandas module, which is included in Anaconda and CoCalc. A <strong>module</strong> is a package of various pieces of code that can be used individually. The pandas module provides very extensive and advanced data analysis capabilities to compliment Python. This course only scratches the surface of pandas.</p>
+<p>I have to tell the computer that I’m going to use a module.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>from pandas import *
+</pre></div>
+</div>
+</div>
+<p>That line of code is an <strong>import</strong> statement: from the pandas module, import everything. In plain English: load into memory all pieces of code that are in the pandas module, so that I can use any of them. In the above statement, the asterisk isn’t the multiplication operator but instead means ‘everything’.</p>
+<p>Each weekly project in this course will start with this import statement, because all projects need the pandas module.</p>
+<p>The words <strong>``from``</strong> and <strong>``import``</strong> are <strong>reserved words</strong> : they can’t be used as variable, function or module names. Otherwise you will get a syntax error.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>from = 100
+File &quot;&lt;ipython-input-23-6958f0ebc10d&gt;&quot;, line 1
+from = 100
+^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+<p>Jupyter notebooks show reserved words in boldface font to make them easier to spot. If you see a boldface name in an assignment (as you will for the code above), you must choose a different name.</p>
+<div class="section" id="Exercise-5-pandas">
+<h2>Exercise 5 pandas</h2>
+<div class="section" id="Question">
+<h3>Question</h3>
+<p>Use Exercise 5 the Exercise notebook 1 to help you answer these questions about errors you might come across.</p>
+<p>__ 1. What kind of error will you get if you misspell ‘pandas’ as ‘Pandas’? __</p>
+<p>A syntax error</p>
+<p>Remember that after the reserved word ‘from’ comes a module name.</p>
+<p>Take a look at The art of naming .</p>
+<p>A name error, reported as an import error</p>
+<p>The computer is expecting a name but there is no module with the name ‘Pandas’ in the Anaconda distribution. Remember that names are case-sensitive.</p>
+</div>
+<div class="section" id="id1">
+<h3>Question</h3>
+<p>__ 2. What kind of error will you get if you misspell ‘import’ as ‘impart’? __</p>
+<p>A name error</p>
+<p>A name error only occurs when a name is undefined, but import is not a name, it’s a reserved word.</p>
+<p>A syntax error</p>
+<p>The computer is expecting a reserved word and anything else will raise a syntax error.</p>
+</div>
+<div class="section" id="id2">
+<h3>Question</h3>
+<p>__ 3. What kind of error will you get if you forget the asterisk? __</p>
+<p>A name error</p>
+<p>An asterisk is not a name so the reported error can’t be this one.</p>
+<p>A syntax error</p>
+<p>The statement cannot end with the reserved word ‘import’; the computer is expecting an indication of what to import.</p>
+<div class="section" id="1.1-This-week’s-data">
+<h4>1.1 This week’s data</h4>
+<p>For the next part of the course you’ll need to download a file of data.</p>
+<p><img alt="An image with a young boy wearing a medical mask, in the foreground; a patient in a South African tuberculosis clinic" src="../../_images/ou_futurelearn_learn_to_code_fig_10261.jpg" /></p>
+<p><strong>Figure 2</strong></p>
+<p>I have created a table with all the data necessary for the project and saved it in an Excel file. Excel is a popular application to create, edit and analyse tabular data. You won’t need Excel to complete this course, but many datasets are provided as Excel files.</p>
+<p>Open the data file WHO POP TB some.xls . The file is encoded using UTF-8, a character encoding that allows for accented letters. Do <strong>not</strong> open or edit the file, as you may change how it is encoded, which will lead to errors later on. If you do want to look at its contents, make a copy of the file and look at the copy.</p>
+<p>Put the data file in the same folder (or CoCalc project) where you saved your exercise notebook. Done? Great, let’s proceed to loading the data – you’ll learn how to do this in the next section.</p>
+</div>
+<div class="section" id="1.2-Loading-the-data">
+<h4>1.2 Loading the data</h4>
+<p>Many applications can read files in Excel format, and pandas can too. Asking the computer to read the data looks like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>data = read_excel(&#39;WHO POP TB some.xls&#39;)
+data
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>Population (1000s)</p>
+</th><th><p>TB deaths</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>1393337</p>
+</td><td class="highlight_" rowspan colspan><p>41000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>Equatorial Guinea</p>
+</td><td class="highlight_" rowspan colspan><p>757</p>
+</td><td class="highlight_" rowspan colspan><p>67</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>Guinea-Bissau</p>
+</td><td class="highlight_" rowspan colspan><p>1704</p>
+</td><td class="highlight_" rowspan colspan><p>1200</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>5</p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>1252140</p>
+</td><td class="highlight_" rowspan colspan><p>240000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>6</p>
+</td><td class="highlight_" rowspan colspan><p>Mozambique</p>
+</td><td class="highlight_" rowspan colspan><p>25834</p>
+</td><td class="highlight_" rowspan colspan><p>18000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>7</p>
+</td><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>8</p>
+</td><td class="highlight_" rowspan colspan><p>Russian Federation</p>
+</td><td class="highlight_" rowspan colspan><p>142834</p>
+</td><td class="highlight_" rowspan colspan><p>17000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>9</p>
+</td><td class="highlight_" rowspan colspan><p>Sao Tome and Principe</p>
+</td><td class="highlight_" rowspan colspan><p>193</p>
+</td><td class="highlight_" rowspan colspan><p>18</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>10</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>52776</p>
+</td><td class="highlight_" rowspan colspan><p>25000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>11</p>
+</td><td class="highlight_" rowspan colspan><p>Timor-Leste</p>
+</td><td class="highlight_" rowspan colspan><p>1133</p>
+</td><td class="highlight_" rowspan colspan><p>990</p>
+</td></tr></tbody></table><p>The variable name data is not descriptive, but as there is only one dataset in our analysis, there is no possible confusion with other data, and short names help to keep the lines of code short.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> takes a file name as an argument and returns the table contained in the file. In pandas, tables are called <strong>dataframes</strong> . To load the <code class="docutils literal notranslate"><span class="pre">data</span></code>, I simply call the function and store the returned dataframe in a variable.</p>
+<p>A file name must be given as a <strong>string</strong> , a piece of text surrounded by quotes. The quote marks tell Python that this isn’t a variable, function or module name. Also, the quote marks state that this is a single name, even if it contains spaces, punctuation and other characters besides letters.</p>
+<p>Misspelling the file name, or not having the file in the same folder as the notebook containing the code, results in a <strong>file not found</strong> error. In the example below there is an error in the file name.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>data = read_excel(&#39;WHO POP TB same.xls&#39;)
+data
+
+
+---------------------------------------------
+
+FileNotFoundError Traceback (most recent call last)
+
+&lt;ipython-input-25-c017b2500afa&gt; in &lt;module&gt;()
+----&gt; 1 data = read_excel(‘WHO POP TB same.xls’)
+2 data
+
+
+
+/Users/mw4687/anaconda/lib/python3.4/site-packages/pandas/io/excel.py in read_excel(io, sheetname, **kwds)
+
+130 engine = kwds.pop(‘engine’, None)
+131
+
+--&gt; 132 return ExcelFile(io, engine=engine).parse(sheetname=sheetname, **kwds)
+
+133
+134
+
+
+
+/Users/mw4687/anaconda/lib/python3.4/site-packages/pandas/io/excel.py in __init__(self, io, **kwds)
+
+
+167 self.book = xlrd.open_workbook(file_contents=data)
+
+168 else:
+
+--&gt; 169 self.book = xlrd.open_workbook(io)
+
+
+170 elif engine == ‘xlrd’ and isinstance(io, xlrd.Book):
+
+171 self.book = io
+
+
+
+/Users/mw4687/anaconda/lib/python3.4/site-packages/xlrd/__init__.py in open_workbook(filename, logfile,
+ verbosity, use_mmap, file_contents, encoding_override, formatting_info, on_demand, ragged_rows)
+
+392 peek = file_contents[:peeksz]
+393 else:
+--&gt; 394 f = open(filename, &quot;rb&quot;)
+395 peek = f.read(peeksz)
+396 f.close()
+
+
+
+FileNotFoundError: [Errno 2] No such file or directory: ‘WHO POP TB same.xls’
+
+</pre></div>
+</div>
+</div>
+<p>Jupyter notebooks show strings in red. If you see red characters until the end of the line, you have forgotten to type the second quote that marks the end of the string.</p>
+<p>In the next section, find out how to select a column.</p>
+</div>
+<div class="section" id="1.3-Selecting-a-column">
+<h4>1.3 Selecting a column</h4>
+<p>Now you have the data, let the analysis begin!</p>
+<p><img alt="An image of free standing Roman columns standing against a blue sky" src="../../_images/ou_futurelearn_learn_to_code_fig_1035.jpg" /></p>
+<p><strong>Figure 3</strong></p>
+<p>Let’s tackle the first part of the first question: ‘What are the total, smallest, largest and average number of deaths due to TB?’ Obtaining the total number will be done in two steps: first select the column with the TB deaths, then sum the values in that column.</p>
+<p>Selecting a single column of a dataframe is done with an expression in the format: <strong>``dataFrame[‘column name’].``</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">data['TB</span> <span class="pre">deaths']</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>0 6900
+1 4400
+2 41000
+3 67
+4 1200
+5 240000
+6 18000
+7 140
+8 17000
+9 18
+10 25000
+11 990
+Name: TB deaths, dtype: int64
+</pre></div>
+</div>
+</div>
+<p>Strings are verbatim text, which means that the column name must be written exactly as given in the dataframe, which you saw after loading the data. The slightest deviation leads to a <strong>key error</strong> , which can be seen as a kind of name error. You can try out in the Week 2 exercise notebook what happens when misspelling the column name. The error message is horribly long. In such cases, just skip to the last line of the error message to see the type of error.</p>
+<p>Put this learning into practice in Exercise 6.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-6-selecting-a-column">
+<h2>Exercise 6 selecting a column</h2>
+<div class="section" id="id3">
+<h3>Question</h3>
+<p>In your Exercise notebook 1, select the population column and store it in a variable, so that you can use it in later exercises.</p>
+<p>Remember that to open the notebook you’ll need to launch Anaconda and then navigate to the notebook using Jupyter. Once it’s open, run all the code.</p>
+<p>Next, you’ll learn about making calculations on a column.</p>
+<div class="section" id="1.4-Calculations-on-a-column">
+<h4>1.4 Calculations on a column</h4>
+<p>Having selected the column with the number of deaths per country, I’ll add them with the appropriately named sum() method to obtain the overall total deaths.</p>
+<p>A <strong>method</strong> is a function that can only be called in a certain context. In this course, the context will mostly be a dataframe or a column. A <strong>method call</strong> looks like a function call, but adds the context in which to call the method: <code class="docutils literal notranslate"><span class="pre">context.methodName(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code> . In other words, a dataframe method can only be called on dataframes, a column method only on columns. Because methods are functions, a method call returns a value and is therefore an expression.</p>
+<p>If all that sounded too abstract, here’s how to call the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> method on the TB deaths column. Note that <code class="docutils literal notranslate"><span class="pre">sum()</span></code> doesn’t need any arguments because all the values are in the column.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>tbColumn = data[&#39;TB deaths&#39;]
+tbColumn.sum()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">354715</span></code></p>
+<p>The estimated total number of deaths due to TB in 2013 in the BRICS and Portuguese-speaking countries was over 350 thousand. An impressive number, for the wrong reasons.</p>
+<p>Calculating the minimum and maximum number of deaths is done in a similar way.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tbColumn.min()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">18</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tbColumn.max()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">240000</span></code></p>
+<p>Like <code class="docutils literal notranslate"><span class="pre">sum()</span></code> , the column methods <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> don’t need arguments, whereas the Python functions <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> did need them, because there was no context (column) providing the values.</p>
+<p>The average number is computed as before, dividing the total by the number of countries.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tbColumn.sum()</span> <span class="pre">/</span> <span class="pre">12</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">29559.583333333332</span></code></p>
+<p>This kind of average is called the <strong>mean</strong> and there’s a method for that.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tbColumn.mean()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">29559.583333333332</span></code></p>
+<p>Another kind of average measure is the <strong>median</strong> , which is the number in the middle, i.e. half of the values are above the median and half below it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tbColumn.median()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">5650.0</span></code></p>
+<p>The mean is five times higher than the median. While half the countries had less than 5650 deaths in 2013, some countries had far more, which pushes the mean up.</p>
+<p>The median is probably closer to the intuition you have of what ‘average’ should mean (pun intended). News reports don’t always make clear what average measure is being used, and using the mean may distort reality. For example, the mean household income in a country will be influenced by very poor and very rich households, whereas the median income doesn’t take into account how poor or rich the extremes are: it will always be half the households below and half above the median.</p>
+<p>Put this learning into practice in Exercise 7.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-7-calculations-on-a-column">
+<h2>Exercise 7 calculations on a column</h2>
+<div class="section" id="id4">
+<h3>Question</h3>
+<p>Practise the use of column methods by applying them to the population column you obtained in Exercise 6 in the Exercise notebook 1. Remember to run all code before doing the exercise.</p>
+<div class="section" id="1.5-Sorting-on-a-column">
+<h4>1.5 Sorting on a column</h4>
+<p>One of the research questions was: which countries have the smallest and largest number of deaths?</p>
+<p>Being a small table, it is not too difficult to scan the TB deaths column and find those countries. However, such a process is prone to errors and impractical for large tables. It’s much better to sort the table by that column, and then look up the countries in the first and last rows.</p>
+<p>As you’ve guessed by now, sorting a table is another single line of code.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">data.sort_values('TB</span> <span class="pre">deaths')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>Population (1000s)</p>
+</th><th><p>TB deaths</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>9</p>
+</td><td class="highlight_" rowspan colspan><p>Sao Tome and Principe</p>
+</td><td class="highlight_" rowspan colspan><p>193</p>
+</td><td class="highlight_" rowspan colspan><p>18</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>Equatorial Guinea</p>
+</td><td class="highlight_" rowspan colspan><p>757</p>
+</td><td class="highlight_" rowspan colspan><p>67</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>7</p>
+</td><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>11</p>
+</td><td class="highlight_" rowspan colspan><p>Timor-Leste</p>
+</td><td class="highlight_" rowspan colspan><p>1133</p>
+</td><td class="highlight_" rowspan colspan><p>990</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>Guinea-Bissau</p>
+</td><td class="highlight_" rowspan colspan><p>1704</p>
+</td><td class="highlight_" rowspan colspan><p>1200</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>8</p>
+</td><td class="highlight_" rowspan colspan><p>Russian Federation</p>
+</td><td class="highlight_" rowspan colspan><p>142834</p>
+</td><td class="highlight_" rowspan colspan><p>17000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>6</p>
+</td><td class="highlight_" rowspan colspan><p>Mozambique</p>
+</td><td class="highlight_" rowspan colspan><p>25834</p>
+</td><td class="highlight_" rowspan colspan><p>18000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>10</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>52776</p>
+</td><td class="highlight_" rowspan colspan><p>25000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>1393337</p>
+</td><td class="highlight_" rowspan colspan><p>41000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>5</p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>1252140</p>
+</td><td class="highlight_" rowspan colspan><p>240000</p>
+</td></tr></tbody></table><p>The dataframe method <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> takes as argument a column name and returns a new dataframe where the rows are in ascending order of the values in that column. Note that sorting doesn’t modify the original dataframe.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">#</span> <span class="pre">rows</span> <span class="pre">still</span> <span class="pre">in</span> <span class="pre">original</span> <span class="pre">order</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>Population (1000s)</p>
+</th><th><p>TB deaths</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>1393337</p>
+</td><td class="highlight_" rowspan colspan><p>41000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>Equatorial Guinea</p>
+</td><td class="highlight_" rowspan colspan><p>757</p>
+</td><td class="highlight_" rowspan colspan><p>67</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>Guinea-Bissau</p>
+</td><td class="highlight_" rowspan colspan><p>1704</p>
+</td><td class="highlight_" rowspan colspan><p>1200</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>5</p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>1252140</p>
+</td><td class="highlight_" rowspan colspan><p>240000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>6</p>
+</td><td class="highlight_" rowspan colspan><p>Mozambique</p>
+</td><td class="highlight_" rowspan colspan><p>25834</p>
+</td><td class="highlight_" rowspan colspan><p>18000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>7</p>
+</td><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>8</p>
+</td><td class="highlight_" rowspan colspan><p>Russian Federation</p>
+</td><td class="highlight_" rowspan colspan><p>142834</p>
+</td><td class="highlight_" rowspan colspan><p>17000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>9</p>
+</td><td class="highlight_" rowspan colspan><p>Sao Tome and Principe</p>
+</td><td class="highlight_" rowspan colspan><p>193</p>
+</td><td class="highlight_" rowspan colspan><p>18</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>10</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>52776</p>
+</td><td class="highlight_" rowspan colspan><p>25000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>11</p>
+</td><td class="highlight_" rowspan colspan><p>Timor-Leste</p>
+</td><td class="highlight_" rowspan colspan><p>1133</p>
+</td><td class="highlight_" rowspan colspan><p>990</p>
+</td></tr></tbody></table><p>It’s also possible to sort on a column that has text instead of numbers; the rows will be sorted in alphabetical order.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">data.sort_values('Country')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>Population (1000s)</p>
+</th><th><p>TB deaths</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>1393337</p>
+</td><td class="highlight_" rowspan colspan><p>41000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>Equatorial Guinea</p>
+</td><td class="highlight_" rowspan colspan><p>757</p>
+</td><td class="highlight_" rowspan colspan><p>67</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>Guinea-Bissau</p>
+</td><td class="highlight_" rowspan colspan><p>1704</p>
+</td><td class="highlight_" rowspan colspan><p>1200</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>5</p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>1252140</p>
+</td><td class="highlight_" rowspan colspan><p>240000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>6</p>
+</td><td class="highlight_" rowspan colspan><p>Mozambique</p>
+</td><td class="highlight_" rowspan colspan><p>25834</p>
+</td><td class="highlight_" rowspan colspan><p>18000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>7</p>
+</td><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>8</p>
+</td><td class="highlight_" rowspan colspan><p>Russian Federation</p>
+</td><td class="highlight_" rowspan colspan><p>142834</p>
+</td><td class="highlight_" rowspan colspan><p>17000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>9</p>
+</td><td class="highlight_" rowspan colspan><p>Sao Tome and Principe</p>
+</td><td class="highlight_" rowspan colspan><p>193</p>
+</td><td class="highlight_" rowspan colspan><p>18</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>10</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>52776</p>
+</td><td class="highlight_" rowspan colspan><p>25000</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>11</p>
+</td><td class="highlight_" rowspan colspan><p>Timor-Leste</p>
+</td><td class="highlight_" rowspan colspan><p>1133</p>
+</td><td class="highlight_" rowspan colspan><p>990</p>
+</td></tr></tbody></table></div>
+</div>
+</div>
+<div class="section" id="Exercise-8-sorting-on-a-column">
+<h2>Exercise 8 sorting on a column</h2>
+<div class="section" id="id5">
+<h3>Question</h3>
+<p>Use the Exercise notebook 1 to sort the table by population so that you can quickly see which are the least and the most populous countries. Remember to run all code before doing the exercise.</p>
+<p>In the next section you’ll learn about calculations over columns.</p>
+<div class="section" id="1.6-Calculations-over-columns">
+<h4>1.6 Calculations over columns</h4>
+<p>The last remaining task is to calculate the death rate of each country.</p>
+<p>You may recall that with the simple approach I’d have to write:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+
+<span></span>rateAngola = deathsInAngola * 100 / populationOfAngola
+
+
+rateBrazil = deathsInBrazil * 100 / populationOfBrazil
+
+</pre></div>
+</div>
+</div>
+<p>and so on, and so on. If you’ve used spreadsheets, it’s the same process: create the formula for the first row and then copy it down for all the rows. This is laborious and error-prone, e.g. if rows are added later on. Given that data is organised by columns, wouldn’t it be nice to simply write the following?</p>
+<p><code class="docutils literal notranslate"><span class="pre">rateColumn</span> <span class="pre">=</span> <span class="pre">deathsColumn</span> <span class="pre">*</span> <span class="pre">100</span> <span class="pre">/</span> <span class="pre">populationColumn</span></code></p>
+<p>Say no more: your wish is pandas’s command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>deathsColumn = data[&#39;TB deaths&#39;]
+populationColumn = data[&#39;Population (1000s)&#39;]
+rateColumn = deathsColumn * 100 / populationColumn
+rateColumn
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p>0 32.134873</p>
+<p>1 2.196025</p>
+<p>2 2.942576</p>
+<p>3 8.850727</p>
+<p>4 70.422535</p>
+<p>5 19.167186</p>
+<p>6 69.675621</p>
+<p>7 1.319759</p>
+<p>8 11.901928</p>
+<p>9 9.326425</p>
+<p>10 47.370017</p>
+<p>11 87.378641</p>
+<p>dtype: float64</p>
+<p>Tadaaa! With pandas, the arithmetic operators become much smarter. When adding, subtracting, multiplying or dividing columns, the computer understands that the operation is to be done row by row and creates a new column.</p>
+<p>All well and nice, but how to put that new column into the dataframe, in order to have everything in a single table? In an assignment <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">=</span> <span class="pre">expression</span></code> , if the variable hasn’t been mentioned before, the computer creates the variable and stores in it the expression’s value. Likewise, if I assign to a column that doesn’t exist in the dataframe, the computer will create it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>data[&#39;TB deaths (per 100,000)&#39;] = rateColumn
+data
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>Population (1000s)</p>
+</th><th><p>TB deaths</p>
+</th><th><p>TB deaths (per 100,000)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>21472</p>
+</td><td class="highlight_" rowspan colspan><p>6900</p>
+</td><td class="highlight_" rowspan colspan><p>32.134873</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>200362</p>
+</td><td class="highlight_" rowspan colspan><p>4400</p>
+</td><td class="highlight_" rowspan colspan><p>2.196025</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>1393337</p>
+</td><td class="highlight_" rowspan colspan><p>41000</p>
+</td><td class="highlight_" rowspan colspan><p>2.942576</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>Equatorial Guinea</p>
+</td><td class="highlight_" rowspan colspan><p>757</p>
+</td><td class="highlight_" rowspan colspan><p>67</p>
+</td><td class="highlight_" rowspan colspan><p>8.850727</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>Guinea-Bissau</p>
+</td><td class="highlight_" rowspan colspan><p>1704</p>
+</td><td class="highlight_" rowspan colspan><p>1200</p>
+</td><td class="highlight_" rowspan colspan><p>70.422535</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>5</p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>1252140</p>
+</td><td class="highlight_" rowspan colspan><p>240000</p>
+</td><td class="highlight_" rowspan colspan><p>19.167186</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>6</p>
+</td><td class="highlight_" rowspan colspan><p>Mozambique</p>
+</td><td class="highlight_" rowspan colspan><p>25834</p>
+</td><td class="highlight_" rowspan colspan><p>18000</p>
+</td><td class="highlight_" rowspan colspan><p>69.675621</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>7</p>
+</td><td class="highlight_" rowspan colspan><p>Portugal</p>
+</td><td class="highlight_" rowspan colspan><p>10608</p>
+</td><td class="highlight_" rowspan colspan><p>140</p>
+</td><td class="highlight_" rowspan colspan><p>1.319759</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>8</p>
+</td><td class="highlight_" rowspan colspan><p>Russian Federation</p>
+</td><td class="highlight_" rowspan colspan><p>142834</p>
+</td><td class="highlight_" rowspan colspan><p>17000</p>
+</td><td class="highlight_" rowspan colspan><p>11.901928</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>9</p>
+</td><td class="highlight_" rowspan colspan><p>Sao Tome and Principe</p>
+</td><td class="highlight_" rowspan colspan><p>193</p>
+</td><td class="highlight_" rowspan colspan><p>18</p>
+</td><td class="highlight_" rowspan colspan><p>9.326425</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>10</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>52776</p>
+</td><td class="highlight_" rowspan colspan><p>25000</p>
+</td><td class="highlight_" rowspan colspan><p>47.370017</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>11</p>
+</td><td class="highlight_" rowspan colspan><p>Timor-Leste</p>
+</td><td class="highlight_" rowspan colspan><p>1133</p>
+</td><td class="highlight_" rowspan colspan><p>990</p>
+</td><td class="highlight_" rowspan colspan><p>87.378641</p>
+</td></tr></tbody></table><p>That’s it! I’ve written all the code needed to answer the questions I had. Next I’ll write up the analysis into a succinct and stand-alone notebook that can be shared with friends, family and colleagues or the whole world. You’ll find that in the next section.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

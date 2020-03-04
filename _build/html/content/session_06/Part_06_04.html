@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4 Summary &#8212;   documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="4-Summary">
+<h1>4 Summary<a class="headerlink" href="#4-Summary" title="Permalink to this headline">¶</a></h1>
+<p><img alt="An images of an elderly black couple riding their bicycles in a park" src="../../_images/ou_futurelearn_learn_to_code_fig_1058.jpg" /></p>
+<p><strong>Figure 7</strong></p>
+<p>This week you transformed and combined databy:</p>
+<ul class="simple">
+<li><p>computing a correlation coefficient between two series of values and checking whether the correlation is statistically significant</p></li>
+<li><p>generating scatterplots to ook for other relationships</p></li>
+<li><p>using a logarithmic scale when an indicator had a wide range of values.</p></li>
+</ul>
+<p>Next week you’ll learn how to group, export and import data to generate pivot table style reports.</p>
+<div class="section" id="4.1-Weeks-5-and-6-glossary">
+<h2>4.1 Weeks 5 and 6 glossary<a class="headerlink" href="#4.1-Weeks-5-and-6-glossary" title="Permalink to this headline">¶</a></h2>
+<p>Here are alphabetical lists, for quick look up, of what this week introduced.</p>
+<hr class="docutils" />
+<div class="section" id="Concepts">
+<h3>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>conditional statement</strong> is of the form</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>if condition1:
+     statements1
+elif condition2:
+     statements2
+...
+else:
+     statements
+</pre></div>
+</div>
+</div>
+<p>The computer evaluates the conditions from top to bottom and executes <em>only</em> the statements for the <em>first</em> condition that is true. If all conditions are false, it executes the <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. If there is no <code class="docutils literal notranslate"><span class="pre">else</span></code> part nothing happens. The <code class="docutils literal notranslate"><span class="pre">elif</span></code> parts are optional too. Each block of statements must be indented, usually by four spaces.</p>
+<p>A <strong>constant</strong> is a variable that is assigned only once, i.e. its initial value never changes. Constant names are conventionally written in uppercase, with underscores to separate multiple words.</p>
+<p>A <strong>function definition</strong> is typically of the form</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+
+<span></span>def functionName (argumentName1, argumentName2,...):
+
+statements using arguments to compute the result
+return result
+</pre></div>
+</div>
+</div>
+<p>All statements in the body of the function must have the same indentation, usually four spaces. The statements use the arguments like normal variables. The execution of the function ends when a return statement is encountered.</p>
+<p>A <strong>join</strong> is the merging of two tables on a common column. The resulting table has all columns of both tables (the common column isn’t duplicated), and the rows are determined by the type of join. Rows in the two tables that have the same value in the common column become a joined row in the resulting table.</p>
+<p>In a <strong>logarithmic scale</strong> , each major tick represents a value that is the multiplication by some constant (usually 10) of the value of the previous major tick.</p>
+<p>A <strong>method chain</strong> is an expression like <code class="docutils literal notranslate"><span class="pre">context.method1(args1).method2(args2).method3(args3)</span></code> where each method has and returns the same type of context, except possibly the last method, which can return any type of value.</p>
+<p>The <strong>p-value</strong> is an indication of the significance of the result. Usually a p-value below 0.05 is taken to mean the result is statistically significant.</p>
+<p>A <strong>return statement</strong> is of the form <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">expression</span></code> and passes the value of the expression back to the code that called the function to which the return statement belongs.</p>
+<p>The <strong>Spearman rank correlation coefficient</strong> of two series of values (e.g. two columns) is a number from -1 (perfect inverse correlation) to 1 (perfect direct correlation), with 0 meaning there is no rank correlation. Correlation doesn’t imply causation. A rank correlation of 1 merely states that both values increase and decrease together, while a correlation of -1 states that if one value increases, the other decreases.</p>
+<p>A <strong>test</strong> is some code that checks whether some other code works as expected, e.g. a boolean expression that compares the return value of a function call with the expected value.</p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="Reserved-Words">
+<h3>Reserved Words<a class="headerlink" href="#Reserved-Words" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">def,</span> <span class="pre">elif,</span> <span class="pre">else,</span></code> if and <code class="docutils literal notranslate"><span class="pre">return</span></code> cannot be used as names.</p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="Functions-and-methods">
+<h3>Functions and methods<a class="headerlink" href="#Functions-and-methods" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">col.apply(functionName)</span></code> returns a new column, obtained by applying the given one-argument function to each cell in column <code class="docutils literal notranslate"><span class="pre">col</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame(columns=listOfStrings,</span> <span class="pre">data=listOfLists)</span></code> returns a new dataframe, given the data as a list of rows, each row being a list of values in column order.</p>
+<p><code class="docutils literal notranslate"><span class="pre">download(indicator=string,</span> <span class="pre">country='all',</span> <span class="pre">start=number,</span> <span class="pre">end=number)</span></code> is a function in the pandas.io.wb module that downloads the World Bank data for the given indicator and all countries and country groups from the given start year to the given end year.</p>
+<p><code class="docutils literal notranslate"><span class="pre">merge(left=frame1,</span> <span class="pre">right=frame2,</span> <span class="pre">on=columnName,</span> <span class="pre">how=string)</span></code> returns a new dataframe, obtained by joining the two frames on the columns with the given common name. The <code class="docutils literal notranslate"><span class="pre">how</span></code> argument can be one of <code class="docutils literal notranslate"><span class="pre">‘left’,</span> <span class="pre">‘right’,</span> <span class="pre">‘inner’</span></code> and <code class="docutils literal notranslate"><span class="pre">'outer’.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> is a Python function that takes one or more expressions and prints their values on the screen in a single line.</p>
+<p><code class="docutils literal notranslate"><span class="pre">frame.reset_index()</span></code> returns a new dataframe in which rows are labelled from 0 onwards.</p>
+<p><code class="docutils literal notranslate"><span class="pre">spearmanr()</span></code> is a function in the scipy.stats module that takes two columns and returns a pair of numbers: the Spearman rank correlation coefficient of the two series of values, and its p-value.</p>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html"></a></h1>
+
+
+
+<p class="blurb">Documentation...</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">1 Enter the pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">2 Writing up the analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">4 Summary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/content/session_06/Part_06_04.md"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

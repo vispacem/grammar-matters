@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2 Writing up the analysis &#8212;   documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3 This week’s quiz" href="Part_02_03.html" />
+    <link rel="prev" title="1 Enter the pandas" href="Part_02_01.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="2-Writing-up-the-analysis">
+<h1>2 Writing up the analysis<a class="headerlink" href="#2-Writing-up-the-analysis" title="Permalink to this headline">¶</a></h1>
+<p><img alt="A map of the world identifying Portuguese speaking countries." src="../../_images/ou_futurelearn_learn_to_code_fig_1070.jpg" /></p>
+<p><strong>Figure 4</strong> A map identifying Portuguese speaking countries</p>
+<p>Once you’ve done your analysis, you may want to record it or share it with others. The best way is to write up what you’ve discovered.</p>
+<p>There is no right or wrong way to write up data analysis but the important thing is to present the answers to the questions you had. To keep things simple, I suggest the following structure:</p>
+<ol class="arabic simple">
+<li><p>A descriptive title</p></li>
+<li><p>An introduction setting the context and stating what you want to find out with the data.</p></li>
+<li><p>A section detailing the source(s) of the data, with the code to load it into the notebook.</p></li>
+<li><p>One or more sections showing the processes (calculating statistics, sorting the data, etc.) necessary to address the questions.</p></li>
+<li><p>A conclusion summarising your findings, with qualitative analysis of the quantitative results and critical reflection on any shortcomings in the data or analysis process.</p></li>
+</ol>
+<p>You don’t need to explain your code, but it’s helpful to write the text in such a way that even readers who know nothing about Python or pandas can follow your analysis.</p>
+<p>You can see how I’ve written up the analysis by opening this week’s project notebook, which you can open in project_1: Deaths by tuberculosis .</p>
+<p>In the next section, amend this project to produce your own version.</p>
+<div class="section" id="2.1-Practice-project">
+<h2>2.1 Practice project<a class="headerlink" href="#2.1-Practice-project" title="Permalink to this headline">¶</a></h2>
+<p><img alt="An image of many pins marking various countries on a globe." src="../../_images/ou_futurelearn_learn_to_code_fig_1036.jpg" /></p>
+<p><strong>Figure 5</strong></p>
+<p>Here’s a quick project for you, which is about looking at TB deaths in <em>all</em> countries.</p>
+<div class="section" id="Activity-1-The-project">
+<h3>Activity 1 The project<a class="headerlink" href="#Activity-1-The-project" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Open the data file WHO POP TB all.xls . Do <strong>not</strong> open or edit this file, to avoid changing its encoding. If you want to see the contents of the file, make a copy and look at the copy.</p></li>
+<li><p>Open the project notebook.</p></li>
+<li><p>If you’re using CoCalc do the following two steps: Click on the File menu and select ‘Download as’ and then ‘IPython notebook (.ipynb)’.On your computer, rename the downloaded file so that it includes your name, e.g. ‘TB deaths all world – Michel Wermelinger.ipynb’. Then upload the renamed notebook to CoCalc and open it.</p></li>
+<li><p>If you’re using Anaconda do the following two steps: Click on the File menu and select ‘Make a copy’.Click on the title of the new notebook (‘project 1-Copy1’) to rename it. Make sure to include your name in the file name, e.g. ‘TB deaths all world – Michel Wermelinger’.</p></li>
+<li><p>In the new notebook, add your name to mine and update the date.</p></li>
+<li><p>Edit the first code cell: change the file name to ‘WHO POP TB all.xls’, in order to load the data for all countries in the world.</p></li>
+<li><p>Run all cells in the notebook. This might take a little while.</p></li>
+<li><p>Add one line of code at the end to sort the table by the death rate, so that it’s easy to see the least and most affected countries.</p></li>
+<li><p>Go through the notebook and change any text (in particular the conclusions) to reflect the new results.</p></li>
+<li><p>Save and then close and halt the notebook.</p></li>
+</ol>
+<p>If you happen to know how to use a spreadsheet application, then you can do a personal project: open the Excel file, remove all countries you are not interested in, and then do the analysis only for the remaining subset.</p>
+<p>You might like to share your experience of working on this project with friends, family or colleagues.</p>
+</div>
+</div>
+</div>
+<div class="section" id="2.2-Sharing-your-project-notebook">
+<h2>2.2 Sharing your project notebook<a class="headerlink" href="#2.2-Sharing-your-project-notebook" title="Permalink to this headline">¶</a></h2>
+<p><img alt="An image of a young man explaining a chart to a small group sitting around a table." src="../../_images/ou_futurelearn_learn_to_code_fig_1037.jpg" /></p>
+<p><strong>Figure 6</strong></p>
+<p>Sharing work is a great way to solve problems and learn from others.</p>
+<p>You are encouraged to share the analysis notebook that you created in the previous section. There are a few different ways you can do this. I will only mention two, sharing and publishing, depending on whether you want people to be able to change your notebook or only read it.</p>
+<p>If you don’t mind people editing and extending your notebook, like you have done with mine, then you’ll need to give them the notebook file (e.g. ‘TB deaths all world – Michel Wermelinger.ipynb’) and all necessary data files (just the ‘WHO POP TB all.xls’ in this case). There are many ways you can share files with other people. One of the simplest is to create a zip archive, upload it to a cloud service like Dropbox or Google Drive, and publicise the download link. You could also share the link
+on your social media or via email.</p>
+<p>If the intended recipients don’t have the necessary software (Python, pandas and Jupyter) or you don’t want anybody to change your notebook, you can still publish the analysis in read-only mode, i.e. people can read the text and code, see the resulting tables and numbers, but can’t modify anything.</p>
+<p>To do this, open your project notebook, run all the cells, double-check that there are no error messages and that all values and tables are shown as you want them to be, and save the notebook (without closing it).</p>
+<p>If you use Anaconda, export the notebook by clicking ‘Download as’ in the ‘File’ menu and selecting the option you prefer. I prefer HTML because it looks much nicer. You can then share the single PDF or HTML file as before, by email, via Dropbox or Google Drive, on your blog and via a link.</p>
+<p>If you use CoCalc, just click on the ‘Publish’ button on the right side above your notebook, and you will get after a little while the link that you can share with others. Anyone can then read your notebook, even if they don’t have a CoCalc account. For example, look at my <a class="reference external" href="https://cloud.sagemath.com/projects/ff47a32e-e177-4d13-ad9a-625c859cc20b/files/Week_1_project.html">Project 1</a> (it’s best to right-click and open this link in a new tab).</p>
+<p>Now choose the sharing or publishing method, and get sharing!</p>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="Part_02_01.html" title="Previous document">1 Enter the pandas</a>
+        </li>
+        <li>
+          <a href="Part_02_03.html" title="Next document">3 This week’s quiz</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html"></a></h1>
+
+
+
+<p class="blurb">Documentation...</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Part_02_01.html">1 Enter the pandas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2 Writing up the analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#2.1-Practice-project">2.1 Practice project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.2-Sharing-your-project-notebook">2.2 Sharing your project notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Part_02_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_02_04.html">4 Summary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Part_02_01.html" title="previous chapter">1 Enter the pandas</a></li>
+      <li>Next: <a href="Part_02_03.html" title="next chapter">3 This week’s quiz</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/content/session_02/Part_02_02.md"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

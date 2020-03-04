@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>1 Joining left, right and centre</title>
+    <link rel="stylesheet" href="../../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="1-Joining-left,-right-and-centre">
+<h1>1 Joining left, right and centre</h1>
+<p>Let’s take stock for a moment. There’s the original, unchanged table (with full country names) about the life expectancy:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">life</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Russia</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>66</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr></tbody></table><p>… and a table with the GDP in millions of pounds and also full country names.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">gdp</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>1435148</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>233937</p>
+</td></tr></tbody></table><p>Both tables have a common column with a common name (‘Country name’). I can <strong>join</strong> the two tables on that common column, using the <code class="docutils literal notranslate"><span class="pre">merge()</span></code> function. Merging basically puts all columns of the two tables together, without duplicating the common column, and joins any rows that have the same value in the common column.</p>
+<p>There are four possible ways of joining, depending on which rows I want to include in the resulting table. If I want to include only those countries appearing in the GDP table, I call the <code class="docutils literal notranslate"><span class="pre">merge()</span></code> function like so:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">merge(gdp,</span> <span class="pre">life,</span> <span class="pre">on='Country</span> <span class="pre">name',</span> <span class="pre">how='left')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>1435148</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>233937</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr></tbody></table><p>The first two arguments are the tables to be merged, with the first table being called the ‘left’ table and the second being the ‘right’ table. The <code class="docutils literal notranslate"><span class="pre">on</span></code> argument is the name of the common column, i.e. both tables must have a column with that name. The <code class="docutils literal notranslate"><span class="pre">how</span></code> argument states I want a <strong>left join</strong> , i.e. the resulting rows are dictated by the left (GDP) table. You can easily see that India and Russia, which appear only in the right (expectancy) table, don’t show up in the result. You can also
+see that Brazil and South Africa, which appear only in the left table, have an undefined life expectancy. (Remember that ‘NaN’ stands for ‘not a number.)</p>
+<p>A <strong>right join</strong> will instead take the rows from the right table, and add the columns of the left table. Therefore, countries not appearing in the left table will have undefined values for the left table’s columns:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">merge(gdp,</span> <span class="pre">life,</span> <span class="pre">on='Country</span> <span class="pre">name',</span> <span class="pre">how='right')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Russia</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td><td class="highlight_" rowspan colspan><p>66</p>
+</td></tr></tbody></table><p>The third possibility is an <strong>outer join</strong> which takes all countries, i.e. whether they are in the left or right table. The result has all the rows of the left and right joins:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">merge(gdp,</span> <span class="pre">life,</span> <span class="pre">on='Country</span> <span class="pre">name',</span> <span class="pre">how='outer')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>1435148</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>233937</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>5</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Russia</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>6</strong></p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td><td class="highlight_" rowspan colspan><p>66</p>
+</td></tr></tbody></table><p>The last possibility is an <strong>inner join</strong> which takes only those countries common to both tables, i.e. for which I know the GDP <em>and</em> the life expectancy. That’s the join I want, to avoid any undefined values:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">gdpVsLife</span> <span class="pre">=</span> <span class="pre">merge(gdp,</span> <span class="pre">life,</span> <span class="pre">on='Country</span> <span class="pre">name',</span> <span class="pre">how='inner')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr></tbody></table><p>Now it’s just a matter of applying the data transformation and combination techniques seen so far to the real data from the World Bank.</p>
+<div class="section" id="Exercise-5-Joining-left,-right-and-centre">
+<h2>Exercise 5 Joining left, right and centre</h2>
+<div class="section" id="Question">
+<h3>Question</h3>
+<p>Put your learning into practice by completing Exercise 5 in the Exercise notebook 3.</p>
+<p>Remember to run the existing code in the notebook before you start the exercise. When you’ve completed the exercise, save the notebook.</p>
+<div class="section" id="1.1-Constant-variables">
+<h4>1.1 Constant variables</h4>
+<p>You may have noticed that the same column names appear over and over in the code.</p>
+<p>If, someday, I decide one of the new columns should be called ‘GDP (million GBP)’ instead of ‘GDP (£m)’ to make clear which currency is meant (because various countries use the pound symbol), I need to change the string in every line of code it occurs.</p>
+<p><img alt="An abstract image of different coloured vertical strips with a column of numbers through each. The strips are distorted by an arrow moving horizontally through them" src="../../_images/ou_futurelearn_learn_to_code_fig_1053.jpg" /></p>
+<p><strong>Figure 1</strong></p>
+<p>Laziness is the mother of invention. If I assign the string to a variable and then use the variable everywhere instead of the string, whenever I wish to change the string, I only have to edit one line of code, where it’s assigned to the variable. A second advantage of using names instead of values is that I can use the name completion facility of Jupyter notebooks by pressing ‘TAB’. Writing code becomes much faster…</p>
+<p><code class="docutils literal notranslate"><span class="pre">In[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdpInGbp = &#39;GDP (million GBP)&#39;
+gdpInUsd = &#39;GDP (US$)&#39;
+country = &#39;Country name&#39;
+gdp[gdpInGbp] = gdp[gdpInUsd].apply(usdToGbp)
+headings = [country, gdpInGbp]
+gdp = gdp[headings]
+</pre></div>
+</div>
+</div>
+<p>Such variables are meant to be assigned once. They are called <strong>constants</strong> , because their value never changes. However, if someone else takes my code and wishes to adapt and extend it, they may not realise those variables are supposed to remain constant. Even I may forget it and try to assign a new value further down in the code! To help prevent such slip-ups the Python convention is to write names of constants in uppercase letters, with words separated by underscores. Thus, any further
+assignment to a variable in uppercase will ring an alarm bell (in your head, the computer remains silent).</p>
+<p><code class="docutils literal notranslate"><span class="pre">In[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>GDP_GBP = &#39;GDP (million GBP)&#39;
+GDP_USD = &#39;GDP (US$)&#39;
+COUNTRY = &#39;Country name&#39;
+gdp[GDP_GBP] = gdp[GDP_USD].apply(usdToGbp)
+headings = [COUNTRY, GDP_GBP]
+gdp = gdp[headings]
+</pre></div>
+</div>
+</div>
+<p>Using constants is not just a matter of laziness. There are various advantages. First, constants stand out in the code.</p>
+<p>Second, when making changes to the repeated values throughout the code, it’s easy to miss an occurrence. Using constants means the code is always consistent throughout.</p>
+<p>Third, the name of the constant can help clarify what the value means. For example, instead of using the number 1995 throughout the code, define a constant that makes clear whether it’s a year, the cubic centimetres of a car engine or something else.</p>
+<p>To sum up, using constants makes the code clearer, easier to change, and less prone to silly (but hard to find) mistakes due to inconsistent values.</p>
+<p>Any value can be defined as a constant, whether it’s a string, a number or even a dataframe. For example, you could store the data you have loaded from the file into a constant, as a reminder to not change the original data. In the rest of the week, I’ll use constants mainly for the column names.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-6-Constants">
+<h2>Exercise 6 Constants</h2>
+<div class="section" id="id1">
+<h3>Question</h3>
+<p>To practise using constants, rewrite your exercises in the Exercise notebook 3 using them.</p>
+<div class="section" id="1.2-Getting-real">
+<h4>1.2 Getting real</h4>
+<p>Having tried out the data transformations and combination on small tables, I feel confident about using the full data from the World Bank, which I pointed you to in Life expectancy project.</p>
+<p>Open a new browser window and go to the World Bank’s <a class="reference external" href="http://data.worldbank.org/">data page</a><span class="link-target"> [http://data.worldbank.org/]</span>. Type ‘GDP’ (without the quote marks) in the ‘Find an indicator’ box in the centre of the page and select ‘GDP current US$’. Click ‘Go’. This will take you to the data page you looked at earlier. Look at the top of your browser window. You will notice the URL is <a class="reference external" href="http://data.worldbank.org/indicator/NY.GDP.MKTP.CD">http://data.worldbank.org/indicator/NY.GDP.MKTP.CD</a>. Every World Bank dataset is for an indicator (in this case GDP in current dollars) with a
+unique name (in this case NY.GDP.MKTP.CD).</p>
+<p>Knowing the indicator name, it’s a doddle to get the data directly into a dataframe, by using the <code class="docutils literal notranslate"><span class="pre">download()</span></code> function of the <code class="docutils literal notranslate"><span class="pre">wb</span></code> (World Bank) module, instead of first downloading a CSV or Excel file and then loading it into a dataframe. (Note that CoCalc’s free plan doesn’t allow connecting to other sites, so if you are using CoCalc you’ll need to download the data as a CSV or Excel file from the World Bank and upload it to CoCalc.)</p>
+<p>Here’s the code to get the 2013 GDP values for all countries. It may take a little while for the code to fetch the data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>from pandas.io.wb import download
+YEAR = 2013
+GDP_INDICATOR = &#39;NY.GDP.MKTP.CD&#39;
+data = download(indicator=GDP_INDICATOR, country=&#39;all&#39;,
+              start=YEAR, end=YEAR)
+data.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th></th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><th><p><strong>country</strong></p>
+</th><th><p>year</p>
+</th><th></th></tr><tr><td class="highlight_" rowspan colspan><p><strong>Arab World</strong></p>
+</td><td class="highlight_" rowspan colspan><p><strong>2013</strong></p>
+</td><td class="highlight_" rowspan colspan><p>2.843483e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>Caribbean small states</strong></p>
+</td><td class="highlight_" rowspan colspan><p><strong>2013</strong></p>
+</td><td class="highlight_" rowspan colspan><p>6.680344e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>Central Europe and the Baltics</strong></p>
+</td><td class="highlight_" rowspan colspan><p><strong>2013</strong></p>
+</td><td class="highlight_" rowspan colspan><p>1.418166e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>East Asia &amp; Pacific (all income levels)</strong></p>
+</td><td class="highlight_" rowspan colspan><p><strong>2013</strong></p>
+</td><td class="highlight_" rowspan colspan><p>2.080794e+13</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>East Asia &amp; Pacific (developing only)</strong></p>
+</td><td class="highlight_" rowspan colspan><p><strong>2013</strong></p>
+</td><td class="highlight_" rowspan colspan><p>1.168563e+13</p>
+</td></tr></tbody></table><p>This table definitely has an odd shape. The three columns don’t have their headings side by side, and the row numbering (0, 1, 2, etc) is missing. That’s because the first two ‘columns’ are in fact the dataframe index. You saw a similar table in Changing a dataframe’s index , when the index of the weather dataframe was set to be the ‘GMT’ column, with values of type <code class="docutils literal notranslate"><span class="pre">datetime64</span></code>. There’s a dataframe method to do the inverse, i.e. to transform the row names into column values and thereby
+reinstate the default dataframe index.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdp = data.reset_index()
+gdp.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Arab World</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.843483e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Caribbean small states</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>6.680344e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Central Europe and the Baltics</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.418166e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>East Asia &amp; Pacific (all income levels)</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.080794e+13</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>East Asia &amp; Pacific (developing only)</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.168563e+13</p>
+</td></tr></tbody></table><p>I repeat the whole process for the life expectancy:</p>
+<ul class="simple">
+<li><p>search for ‘life expectancy’ on the World Bank site</p></li>
+<li><p>choose the ‘total’ dataset, which includes both female and male inhabitants</p></li>
+<li><p>note down its indicator (SP.DYN.LE00.IN)</p></li>
+<li><p>use it to get the data</p></li>
+<li><p>reset the dataframe index.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>LIFE_INDICATOR = &#39;SP.DYN.LE00.IN&#39;
+data = download(indicator=LIFE_INDICATOR, country=&#39;all&#39;,
+              start=YEAR, end=YEAR)
+life = data.reset_index()
+life.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Arab World</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>70.086392</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Caribbean small states</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>71.966306</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Central Europe and the Baltics</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>76.127583</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>East Asia &amp; Pacific (all income levels)</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>74.893439</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>East Asia &amp; Pacific (developing only)</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>73.981255</p>
+</td></tr></tbody></table><p>By defining the year as a constant, it’s very quick to change the code to load both datasets for any other year. If you wish to get GDP data for an earlier year than for life expectancy, then you need to define a second constant.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-7-Getting-real">
+<h2>Exercise 7 Getting real</h2>
+<div class="section" id="id2">
+<h3>Question</h3>
+<p>The approach described above requires an internet connection to download the data directly from the World Bank. That may require some time, or sometimes not even work if the connection fails. Moreover, the World Bank sometimes changes its data format, which could break the code in the rest of this week.</p>
+<p>Therefore, the Exercise notebook 3 loads instead the GDP and life expectancy data from files WB GDP 2013.csv and WB LE 2013.csv and Exercise 7 uses the file WB POP 2013.csv , which you should add to your disk folder or CoCalc project. All files are in the normal tabular format and need no resetting of the indices.</p>
+<div class="section" id="1.3-Cleaning-up">
+<h4>1.3 Cleaning up</h4>
+<p>You may have noticed that the initial rows are not about countries, but groups of countries. Such aggregated values need to be removed, because we’re only interested in individual countries.</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">frame[m:n],</span></code> with <code class="docutils literal notranslate"><span class="pre">n</span></code> an integer bigger than <code class="docutils literal notranslate"><span class="pre">m</span></code> , represents the ‘sub-table’ from row <code class="docutils literal notranslate"><span class="pre">m</span></code> to row <code class="docutils literal notranslate"><span class="pre">n-1</span></code>. In other words, it is a slice of frame with exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> minus <code class="docutils literal notranslate"><span class="pre">m</span></code> rows. The expression is equivalent to the more convoluted expression <code class="docutils literal notranslate"><span class="pre">frame.head(n).tail(n-m)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">gdp[0:3]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Arab World</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.843483e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Caribbean small states</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>6.680344e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Central Europe and the Baltics</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.418166e+12</p>
+</td></tr></tbody></table><p>To slice all rows from <code class="docutils literal notranslate"><span class="pre">m</span></code> onwards, you don’t have to count how many rows there are beforehand, just omit <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">gdp[240:]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>240</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Uzbekistan</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>5.679566e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>241</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Vanuatu</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>8.017876e+08</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>242</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Venezuela, RB</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>3.713366e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>243</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Vietnam</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.712220e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>244</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Virgin Islands (U.S.)</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>245</strong></p>
+</td><td class="highlight_" rowspan colspan><p>West Bank and Gaza</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.247600e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>246</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Yemen, Rep.</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>3.595450e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>247</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Zambia</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.682081e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>248</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Zimbabwe</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.349023e+10</p>
+</td></tr></tbody></table><p>By trying out <code class="docutils literal notranslate"><span class="pre">head(m)</span></code> for different values of <code class="docutils literal notranslate"><span class="pre">m</span></code> , I find that the list of individual countries starts in row number 34, with Afghanistan. Hence, I slice from row 34 onwards, and that’s my new dataframe.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdp = gdp[34:]
+gdp.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>37</strong></p>
+</td><td class="highlight_" rowspan colspan><p>American Samoa</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>NaN</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>38</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Andorra</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>3.249101e+09</p>
+</td></tr></tbody></table><p>Unsurprisingly, there is missing data, so I remove those rows, as shown in Missing values in Week 4.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdp = gdp.dropna()
+gdp.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>38</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Andorra</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>3.249101e+09</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>39</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>2013</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td></tr></tbody></table><p>Finally, I drop the irrelevant year column.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>COUNTRY = &#39;country&#39;
+headings = [COUNTRY, GDP_INDICATOR]
+gdp = gdp[headings]
+gdp.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>38</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Andorra</p>
+</td><td class="highlight_" rowspan colspan><p>3.249101e+09</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>39</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td></tr></tbody></table><p>And now I repeat the whole cleaning process for the life expectancy table.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>headings = [COUNTRY, LIFE_INDICATOR]
+life = life[34:].dropna()[headings]
+life.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>60.931415</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>77.537244</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>71.009659</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>39</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>51.866171</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>40</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>75.829293</p>
+</td></tr></tbody></table><p>Note how a single line of code can chain a row slice, a method call and a column slice, because each takes a dataframe and returns a dataframe.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-8-Cleaning-up">
+<h2>Exercise 8 Cleaning up</h2>
+<div class="section" id="id3">
+<h3>Question</h3>
+<p>Clean up the population data from Exercise 7, in Exercise 8 in the exercise notebook 3.</p>
+<div class="section" id="1.4-Joining-and-transforming">
+<h4>1.4 Joining and transforming</h4>
+<p>With the little tables, I first transformed the columns and then joined the tables.</p>
+<p><img alt="An image of a bride and groom holding hands with the minister between them in the background" src="../../_images/ou_futurelearn_learn_to_code_fig_1054.jpg" /></p>
+<p><strong>Figure 2</strong></p>
+<p>As you may be starting to realise, there’s often more than one way to do it. Just for illustration, I’ll do the other way round for the big tables. Here are the tables, as a reminder.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">life.head()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>60.931415</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>77.537244</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>71.009659</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>39</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>51.866171</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>40</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>75.829293</p>
+</td></tr></tbody></table><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">gdp.head()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>34</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>35</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>36</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>38</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Andorra</p>
+</td><td class="highlight_" rowspan colspan><p>3.249101e+09</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>39</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td></tr></tbody></table><p>First, an inner join on the common column to combine rows where the common column value appears in both tables.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+
+<span></span>gdpVsLife = merge(gdp, life, on=&#39;country&#39;, how=&#39;inner&#39;)
+
+gdpVsLife.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td><td class="highlight_" rowspan colspan><p>60.931415</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td><td class="highlight_" rowspan colspan><p>77.537244</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td><td class="highlight_" rowspan colspan><p>71.009659</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td><td class="highlight_" rowspan colspan><p>51.866171</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>1.200588e+09</p>
+</td><td class="highlight_" rowspan colspan><p>75.829293</p>
+</td></tr></tbody></table><p>Second, the dollars are converted to millions of pounds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>GDP = &#39;GDP (£m)&#39;
+column = gdpVsLife[GDP_INDICATOR]
+
+gdpVsLife[GDP] = column.apply(usdToGbp).apply(roundToMillions)
+
+gdpVsLife.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th><th><p>GDP (£m)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td><td class="highlight_" rowspan colspan><p>60.931415</p>
+</td><td class="highlight_" rowspan colspan><p>12980</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td><td class="highlight_" rowspan colspan><p>77.537244</p>
+</td><td class="highlight_" rowspan colspan><p>8255</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td><td class="highlight_" rowspan colspan><p>71.009659</p>
+</td><td class="highlight_" rowspan colspan><p>134322</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td><td class="highlight_" rowspan colspan><p>51.866171</p>
+</td><td class="highlight_" rowspan colspan><p>79349</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>1.200588e+09</p>
+</td><td class="highlight_" rowspan colspan><p>75.829293</p>
+</td><td class="highlight_" rowspan colspan><p>767</p>
+</td></tr></tbody></table><p>Third, the life expectancy is rounded to the nearest integer, with a by now familiar function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>LIFE = &#39;Life expectancy (years)&#39;
+
+gdpVsLife[LIFE] = gdpVsLife[LIFE_INDICATOR].apply(round)
+
+gdpVsLife.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>NY.GDP.MKTP.CD</p>
+</th><th><p>SP.DYN.LE00.IN</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>2.031088e+10</p>
+</td><td class="highlight_" rowspan colspan><p>60.931415</p>
+</td><td class="highlight_" rowspan colspan><p>12980</p>
+</td><td class="highlight_" rowspan colspan><p>61</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>1.291667e+10</p>
+</td><td class="highlight_" rowspan colspan><p>77.537244</p>
+</td><td class="highlight_" rowspan colspan><p>8255</p>
+</td><td class="highlight_" rowspan colspan><p>78</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>2.101834e+11</p>
+</td><td class="highlight_" rowspan colspan><p>71.009659</p>
+</td><td class="highlight_" rowspan colspan><p>134322</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>1.241632e+11</p>
+</td><td class="highlight_" rowspan colspan><p>51.866171</p>
+</td><td class="highlight_" rowspan colspan><p>79349</p>
+</td><td class="highlight_" rowspan colspan><p>52</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>1.200588e+09</p>
+</td><td class="highlight_" rowspan colspan><p>75.829293</p>
+</td><td class="highlight_" rowspan colspan><p>767</p>
+</td><td class="highlight_" rowspan colspan><p>76</p>
+</td></tr></tbody></table><p>Lastly, the original columns are discarded.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>headings = [COUNTRY, GDP, LIFE]
+gdpVsLife = gdpVsLife[headings]
+gdpVsLife.head()
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>country</p>
+</th><th><p>GDP (£m)</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Afghanistan</p>
+</td><td class="highlight_" rowspan colspan><p>12980</p>
+</td><td class="highlight_" rowspan colspan><p>61</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Albania</p>
+</td><td class="highlight_" rowspan colspan><p>8255</p>
+</td><td class="highlight_" rowspan colspan><p>78</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Algeria</p>
+</td><td class="highlight_" rowspan colspan><p>134322</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Angola</p>
+</td><td class="highlight_" rowspan colspan><p>79349</p>
+</td><td class="highlight_" rowspan colspan><p>52</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Antigua and Barbuda</p>
+</td><td class="highlight_" rowspan colspan><p>767</p>
+</td><td class="highlight_" rowspan colspan><p>76</p>
+</td></tr></tbody></table><p>For the first five countries there doesn’t seem to be any relation between wealth and life expectancy, but that might be just for those countries.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-9-Joining-and-transforming">
+<h2>Exercise 9 Joining and transforming</h2>
+<div class="section" id="id4">
+<h3>Question</h3>
+<p>Have a go at merging dataframes with an inner join in Exercise 9 in the Exercise notebook 3.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

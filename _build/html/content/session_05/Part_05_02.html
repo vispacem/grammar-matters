@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1 Life expectancy project &#8212;   documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="1-Life-expectancy-project">
+<h1>1 Life expectancy project<a class="headerlink" href="#1-Life-expectancy-project" title="Permalink to this headline">¶</a></h1>
+<p>This week I wish to see (literally, via a chart) if the life expectancy in richer countries tends to be longer.</p>
+<p><img alt="This is a photograph of an adult hand holding the hand of a baby." src="../../_images/ou_futurelearn_learn_to_code_fig_1047.jpg" /></p>
+<p><strong>Figure 1</strong></p>
+<p>Richer countries can afford to spend more on healthcare and on road safety, for example, to reduce mortality. On the other hand, richer countries may have less healthy lifestyles.</p>
+<p>The World Bank provides loans and grants to governments of middle and low-income countries to help reduce poverty. As part of their work, the World Bank has put together hundreds of datasets on a range of issues, such as health, education, economy, energy and the effectiveness of aid in different countries. I will use two of their datasets, which you can see online by following the links below. You do not need to download the datasets.</p>
+<p>One dataset lists the gross domestic product (GDP) for each country, in United States dollars and cents; the other lists the life expectancy, in years, for each country. The latest life expectancy data I can access is for 2013, so that will be the year I take for the GDP. The disadvantage of using the GDP and the life expectancy values for the same year is that they do not account for the time it takes for a country’s wealth to have an effect on lifestyle, healthcare and other factors
+influencing life expectancy.</p>
+<p>While it is useful to have all GDPs in a common currency to compare different countries, it doesn’t make much sense to report the GDP of a whole country to a supposed precision of a US cent. I noted that the value for the USA is a round number, but it is not for other countries. This is likely due in part to the conversion of local currencies to US dollars. It makes more sense to report the GDP values in a larger unit, e.g. millions of dollars. Moreover, for those who don’t live in a country
+using the US dollar as the official currency, it’s probably easier to understand GDP values in their own local currency.</p>
+<p>To sum up, this week’s project will transform currency values and combine GDP and life expectancy data.</p>
+<p>Note that the combination is made simple by the common country names in the two datasets, but in general care has to be taken that the common attribute really means the same thing. For example, if you were combining two datasets on a common unemployment attribute, you must be sure that it was obtained in the same way as there are various ways of measuring unemployment.</p>
+<p>I’m aware that the GDP is a crude way of comparing wealth across nations. For example, it doesn’t take population or the cost of living into account. Some of this week’s exercises will ask you to add the population data. Think of other ways to improve the analysis method, of other conversions that might be needed, and of other ways to investigate life expectancy factors.</p>
+<hr class="docutils" />
+<div class="section" id="Links:">
+<h2>Links:<a class="headerlink" href="#Links:" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP in current US dollars</a></p></li>
+<li><p><a class="reference external" href="http://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy at birth</a></p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="1.1-Creating-the-data">
+<h3>1.1 Creating the data<a class="headerlink" href="#1.1-Creating-the-data" title="Permalink to this headline">¶</a></h3>
+<p>I won’t yet work with the full data. Instead I will create small tables, to better illustrate this week’s concepts and techniques.</p>
+<p>Small tables make it easier to see what is going on and to create specific data combination and transformation scenarios that test the code.</p>
+<p>There are many ways of creating tables in pandas. One of the simplest is to define the rows as a list, with the first element of the list being the first row, the second element being the second row, etc.</p>
+<p>Each row of a table has multiple cells, one for each column. The obvious way is to represent each row as a list too, the first element of the list being the cell in the first column, the second element corresponding to the second column, etc. To sum up, the table is represented as a list of lists.</p>
+<p>Here is a table of the 2013 GDP of some countries, in US dollars:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>table = [
+[&#39;UK&#39;, 2678454886796.7], # 1st row
+[&#39;USA&#39;, 16768100000000.0], # 2nd row
+[&#39;China&#39;, 9240270452047.0], # and so on...
+[&#39;Brazil&#39;, 2245673032353.8],
+[&#39;South Africa&#39;, 366057913367.1]
+]
+</pre></div>
+</div>
+</div>
+<p>To create a dataframe, I use a pandas function appropriately called <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code>. I have to give it two arguments: the names of the columns and the data itself. The column names are given as a list of strings, the first string being the first column name, etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>headings = [&#39;Country&#39;, &#39;GDP (US$)&#39;]
+gdp = DataFrame(columns=headings, data=table)
+gdp
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>GDP (US$)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>UK</p>
+</td><td class="highlight_" rowspan colspan><p>2.678455e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>USA</p>
+</td><td class="highlight_" rowspan colspan><p>1.676810e+13</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>9.240270e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>2.245673e+12</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>3.660579e+11</p>
+</td></tr></tbody></table><p>Note that pandas shows large numbers in scientific notation, where, for example, 3e+12 means 3×10 12 , i.e. a 3 followed by 12 zeros.</p>
+<p>I define a similar table for the life expectancy, based on the 2013 World Bank data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+
+<span></span>headings = [&#39;Country name&#39;, &#39;Life expectancy (years)&#39;]
+
+table = [
+[&#39;China&#39;, 75],
+[&#39;Russia&#39;, 71],
+[&#39;United States&#39;, 79],
+[&#39;India&#39;, 66],
+[&#39;United Kingdom&#39;, 81]
+]
+life = DataFrame(columns=headings, data=table)
+life
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>Life expectancy (years)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>75</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Russia</p>
+</td><td class="highlight_" rowspan colspan><p>71</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>79</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>India</p>
+</td><td class="highlight_" rowspan colspan><p>66</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>81</p>
+</td></tr></tbody></table><p>To illustrate potential issues when combining multiple datasets, I’ve taken a different set of countries, with common countries in a different order. Moreover, to illustrate a non-numeric conversion, I’ve abbreviated country names in one table but not the other.</p>
+</div>
+</div>
+<div class="section" id="Exercise-1-Creating-the-data">
+<h2>Exercise 1 Creating the data<a class="headerlink" href="#Exercise-1-Creating-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Open the exercise notebook 3 and save it in the disk folder or upload it to the CoCalc project you created in Week 1. Then practise creating dataframes in Exercise 1.</p>
+<p>If you’re using Anaconda, remember that to open the notebook you’ll need to navigate to it using Jupyter. Whether you’re using Anaconda or CoCalc, once the notebook is open, run the existing code before you start the exercise. When you’ve completed the exercise, save the notebook. If you need a quick reminder of how to use Jupyter, watch again the video in Week 1 Exercise 1</p>
+<div class="section" id="1.2-Defining-functions">
+<h3>1.2 Defining functions<a class="headerlink" href="#1.2-Defining-functions" title="Permalink to this headline">¶</a></h3>
+<p>To make the GDP values easier to read, I wish to convert US dollars to millions of US dollars.</p>
+<p><img alt="figure images/ou_futurelearn_learn_to_code_fig_1048.jpg" src="../../_images/ou_futurelearn_learn_to_code_fig_1048.jpg" /></p>
+<p><strong>Figure 2</strong></p>
+<p>I have to be precise about what I mean. For example, if the GDP is 4,567,890.1 (using commas to separate the thousands, millions, etc.), what do I want to obtain? Do I want always to round down to the nearest million, making it 4 million, round to the nearest million, making it 5, or round to one decimal place, making it 4.6 million? Since the aim is to simplify the numbers and not introduce a false sense of precision, let’s round to the nearest million.</p>
+<p>I will define my own function to do such a conversion. It’s a generic function that takes any number and rounds it to the nearest million. I will later apply the function to each value in the GDP column. It’s easier to first show the code and then explain it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>def roundToMillions (value):
+result = round(value / 1000000)
+return result
+</pre></div>
+</div>
+</div>
+<p>A function definition always starts with <code class="docutils literal notranslate"><span class="pre">def</span></code> , which is a reserved word in Python.</p>
+<p>After it comes the function’s name and arguments, surrounded by parenthesis, and finally a colon (:). This function just takes one argument. If there’s more than one argument, use commas to separate them.</p>
+<p>Next comes the function’s body, where the calculations are done, using the arguments like any other variables. The body must be indented, conventionally by four spaces.</p>
+<p>For this function, the calculation is simple. I take the value, divide it by one million, and call the built-in Python function <code class="docutils literal notranslate"><span class="pre">round()</span></code> to convert that number to the nearest integer. If the number is exactly mid-way between two integers, <code class="docutils literal notranslate"><span class="pre">round()</span></code> will pick the even integer, i.e. <code class="docutils literal notranslate"><span class="pre">round(2.5)</span></code> is 2 but <code class="docutils literal notranslate"><span class="pre">round(3.5)</span></code> is 4.Finally, I write a <strong>return statement</strong> to pass the result back to the code that called the function. The <code class="docutils literal notranslate"><span class="pre">return</span></code> word is also reserved in Python.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> variable just stores the rounded value temporarily and has no other purpose. It‘s better to write the body as a single line of code:</p>
+<p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">round(value</span> <span class="pre">/</span> <span class="pre">1000000)</span></code></p>
+<p>Finally I need to test the function, by calling it with various argument values and checking whether the returned value is equal to what I expect.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">roundToMillions(4567890.1)</span> <span class="pre">==</span> <span class="pre">5</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>The art of testing is to find as few test cases as possible that cover all bases. And I mean all, especially those you think ‘Naaah, it’ll never happen’. It will, because data can be incorrect. Prepare for the worst and hope for the best.</p>
+<p>So here are some more tests, even for the unlikely cases of the GDP being zero or negative, and you can probably think of others.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">roundToMillions(0)</span> <span class="pre">==</span> <span class="pre">0</span> <span class="pre">#</span> <span class="pre">always</span> <span class="pre">test</span> <span class="pre">with</span> <span class="pre">zero...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">roundToMillions(-1)</span> <span class="pre">==</span> <span class="pre">0</span> <span class="pre">#...and</span> <span class="pre">negative</span> <span class="pre">numbers</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">roundToMillions(1499999)</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">#</span> <span class="pre">test</span> <span class="pre">rounding</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">nearest</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>Now for the next conversion, from US dollars to a local currency, for example British pounds. I searched the internet for ‘average yearly USD to GBP rate’, chose a conversion service and took the value for 2013. Here’s the code and some tests.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>def usdToGbp (usd):
+return usd / 1.564768 # average rate during 2013
+usdToGbp(0) == 0
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">usdToGbp(1.564768)</span> <span class="pre">==</span> <span class="pre">1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">usdToGbp(-1)</span> <span class="pre">&amp;lt;</span> <span class="pre">0</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>Defining functions is such an important part of coding, that you should not skip the next exercise where you will define your own functions.</p>
+</div>
+</div>
+<div class="section" id="Exercise-2-Defining-functions">
+<h2>Exercise 2 Defining functions<a class="headerlink" href="#Exercise-2-Defining-functions" title="Permalink to this headline">¶</a></h2>
+<p>Complete Exercise 2 in the Exercise notebook 3 to practise defining your own functions.</p>
+<div class="section" id="1.3-What-if…?">
+<h3>1.3 What if…?<a class="headerlink" href="#1.3-What-if…?" title="Permalink to this headline">¶</a></h3>
+<p>The third conversion, from abbreviated country names to full names, can’t be written as a simple formula, because each abbreviation is expanded differently.</p>
+<p><img alt="figure images/ou_futurelearn_learn_to_code_fig_1036.jpg" src="../../_images/ou_futurelearn_learn_to_code_fig_10362.jpg" /></p>
+<p><strong>Figure 3</strong></p>
+<p>What I need is the Python code equivalent of:</p>
+<ul class="simple">
+<li><p>if the name is ‘UK’, return ‘United Kingdom’,</p></li>
+<li><p>otherwise if the name is ‘USA’, return ‘United States’,</p></li>
+<li><p>otherwise return the name.</p></li>
+</ul>
+<p>The last part basically says that if the name is none of the known abbreviations, return it unchanged. Translating the English sentence to Python is straightforward.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>def expandCountry (name):
+    if name == &#39;UK&#39;: # if the name is &#39;UK&#39;
+            return &#39;United Kingdom&#39;
+
+elif name == &#39;USA&#39;: # otherwise if the name is &#39;USA&#39;
+
+            return &#39;United States&#39;
+    else: # otherwise
+            return name
+expandCountry(&#39;India&#39;) == &#39;India&#39;
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>Note that ‘otherwise if’ is written <code class="docutils literal notranslate"><span class="pre">'elif'</span></code> in Python, not <code class="docutils literal notranslate"><span class="pre">'else</span> <span class="pre">if'</span></code>. As you might expect, ‘if’, ‘elif’ and ‘else’ are reserved words.</p>
+<p>The computer will evaluate one condition at a time, from top to bottom, and execute only the instructions of the first condition that is true. Note that there is no condition after <code class="docutils literal notranslate"><span class="pre">'else'</span></code> , it is a ‘catch all’ in case all previous conditions fail.</p>
+<p>Note again the colons at the end of lines and that code after the colon must be indented. That is how Python distinguishes which lines of code belong to which condition.</p>
+<p>There are almost always many ways to write the same function. A <strong>conditional statement</strong> does not need to have an <code class="docutils literal notranslate"><span class="pre">'elif'</span></code> or <code class="docutils literal notranslate"><span class="pre">'else'</span></code> part. In that case, if the condition is false, nothing happens. Here is the same function, written differently.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>def expandCountry (name):
+    if name == &#39;UK&#39;:
+            name = &#39;United Kingdom&#39;
+    if name == &#39;USA&#39;:
+            name = &#39;United States&#39;
+    return name
+</pre></div>
+</div>
+</div>
+<p>You will see later this week an example of an ‘if-else’ statement, i.e. without the <code class="docutils literal notranslate"><span class="pre">'elif'</span></code> part.</p>
+</div>
+</div>
+<div class="section" id="Exercise-3-What-if…?">
+<h2>Exercise 3 What if…?<a class="headerlink" href="#Exercise-3-What-if…?" title="Permalink to this headline">¶</a></h2>
+<p>Complete Exercise 3 in the Exercise notebook 3 to practise writing functions with conditional statements.</p>
+<div class="section" id="1.4-Applying-functions">
+<h3>1.4 Applying functions<a class="headerlink" href="#1.4-Applying-functions" title="Permalink to this headline">¶</a></h3>
+<p>Having coded the three data conversion functions, they can be applied to the GDP table.</p>
+<p>I first select the relevant column:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>column = gdp[&#39;Country&#39;]
+column
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>0              UK
+1             USA
+2           China
+3          Brazil
+4    South Africa
+Name: Country, dtype: object
+</pre></div>
+</div>
+</div>
+<p>Next, I use the column method <code class="docutils literal notranslate"><span class="pre">apply()</span></code> , which applies a given function to each cell in the column, returning a new column, in which each cell is the conversion of the corresponding original cell:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">column.apply(expandCountry)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>0    United Kingdom
+1     United States
+2             China
+3            Brazil
+4      South Africa
+Name: Country, dtype: object
+</pre></div>
+</div>
+</div>
+<p>Finally, I add that new column to the dataframe, using a new column heading:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]</span></code> :</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdp[&#39;Country name&#39;] = column.apply(expandCountry)
+gdp
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>GDP (US$)</p>
+</th><th><p>Country name</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>UK</p>
+</td><td class="highlight_" rowspan colspan><p>2.678455e+12</p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>USA</p>
+</td><td class="highlight_" rowspan colspan><p>1.676810e+13</p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>9.240270e+12</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>2.245673e+12</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>3.660579e+11</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td></tr></tbody></table><p>In a similar way, I can convert the US dollars to British pounds, then round to the nearest million, and store the result in a new column. I could apply the conversion and rounding functions in two separate statements, but using <strong>method chaining</strong> , I can apply both functions in a single line of code. This is possible because the column returned by the first call of <code class="docutils literal notranslate"><span class="pre">apply()</span></code> is the context for the second call of <code class="docutils literal notranslate"><span class="pre">apply()</span></code>. Here’s how it’s written:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>column = gdp[&#39;GDP (US$)&#39;]
+
+result = column.apply(usdToGbp).apply(roundToMillions)
+
+gdp[&#39;GDP (£m)&#39;] = result
+gdp
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country</p>
+</th><th><p>GDP (US$)</p>
+</th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>UK</p>
+</td><td class="highlight_" rowspan colspan><p>2.678455e+12</p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>USA</p>
+</td><td class="highlight_" rowspan colspan><p>1.676810e+13</p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>9.240270e+12</p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>2.245673e+12</p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>1435148</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>3.660579e+11</p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>233937</p>
+</td></tr></tbody></table><p>Now it’s just a matter of selecting the two new columns, as the original ones are no longer needed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>headings = [&#39;Country name&#39;, &#39;GDP (£m)&#39;]
+gdp = gdp[headings]
+gdp
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Country name</p>
+</th><th><p>GDP (£m)</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United Kingdom</p>
+</td><td class="highlight_" rowspan colspan><p>1711727</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
+</td><td class="highlight_" rowspan colspan><p>United States</p>
+</td><td class="highlight_" rowspan colspan><p>10716029</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
+</td><td class="highlight_" rowspan colspan><p>China</p>
+</td><td class="highlight_" rowspan colspan><p>5905202</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
+</td><td class="highlight_" rowspan colspan><p>Brazil</p>
+</td><td class="highlight_" rowspan colspan><p>1435148</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
+</td><td class="highlight_" rowspan colspan><p>South Africa</p>
+</td><td class="highlight_" rowspan colspan><p>233937</p>
+</td></tr></tbody></table><p>Note that method chaining only works if the methods chained return the same type of value as their context, in the same way that you can chain multiple arithmetic operators (e.g. 3+4-5) because each one takes two numbers and returns a number that is used by the next operator in the chain. In this course, methods only have two possible contexts, columns and dataframes, so you can either chain column methods that return a single column (that is a <code class="docutils literal notranslate"><span class="pre">Series</span></code> ), like <code class="docutils literal notranslate"><span class="pre">apply()</span></code> , or dataframe
+methods that return dataframes. For example, <code class="docutils literal notranslate"><span class="pre">gdp.head(4).tail(2)</span></code> is a dataframe just with China and Brazil, i.e. the last two of the first four rows of the dataframe shown above. You’ll see further examples of chaining (and an easier way to select multiple rows) later this week.</p>
+<p>This concludes the data transformation part. After applying functions in the next exercise, you’ll learn how to combine two tables.</p>
+</div>
+</div>
+<div class="section" id="Exercise-4-Applying-functions">
+<h2>Exercise 4 Applying functions<a class="headerlink" href="#Exercise-4-Applying-functions" title="Permalink to this headline">¶</a></h2>
+<p>You can practise applying functions in Exercise 4 of your Exercise notebook 3.</p>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html"></a></h1>
+
+
+
+<p class="blurb">Documentation...</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">1 Enter the pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">2 Writing up the analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">4 Summary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/content/session_05/Part_05_02.md"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
