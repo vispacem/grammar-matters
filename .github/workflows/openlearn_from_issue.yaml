@@ -99,7 +99,7 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git checkout -b build
           # And bring down changes from master
-          git pull
+          git merge master
       - name: Build docs HTML
         run: python -m sphinx . ./_build/html/ -b html
 
