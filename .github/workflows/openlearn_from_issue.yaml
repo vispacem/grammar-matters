@@ -30,7 +30,8 @@ jobs:
         issue="${{github.event.issue.body}}"
         echo "Issue: $issue"
         echo ::set-env name=url::"$(cut -d' ' -f2 <<<"$issue")"
-        echo ::set-env name=outdir::"$(cut -d' ' -f3 <<<"$issue")"
+        # echo ::set-env name=outdir::"$(cut -d' ' -f3 <<<"$issue")"
+        echo ::set-env name=outdir::"content"
         echo ::set-env name=issue::$issue
     - name: grab ouxml
       run: |
