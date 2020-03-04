@@ -6,6 +6,10 @@ Template repo for autobuilding OpenLearn sites via nbsphinx using Github Actions
 
 It means you have access to OpenLearn content as simple text files that you can easily edit (i.e. repurpose) and publish via your own website using a free hosting service...
 
+It also means you can play with the content on MyBinder...
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/psychemedia/openlearn-publish-test/master)
+
 ## So how do I start?
 
 This template repository can be used as a basis for creating websites derived from OpenLearn content that is avialble in the OU-XML format (which is most OpenLearn units / courses).
@@ -54,6 +58,16 @@ If the website *isn't* there, you may need to give the Github Pages website buil
 
 If you click on the link and the OpenLearn materials *aren't* there, force a reload of the webpage in your browser to clear any cached versions of the page.
 
+## And What's the Binder thing?
+
+MyBinder is part of a the Jupyter ecosytem. Clicking the button will cause MyBinder to launch a Jupyter notebook server that looks onto an environment created from this repository.
+
+*When you clone the repo, the button will still point to my repo. I havenlt got round to creating a Github Action to fix that yet... Feel free to edit the `README.md` file on your repository to fix it yourself, or copy your repo URL and paste it into the box at [mybinder.org](https://mybinder.org) to launch your repo via the MyBinder homepage.*
+
+When the Binderised environment is built, and the notebook server launched (you shuld be redirected to it automatically), navigate into the `content` directory from the the notebook homepage, and then to one of the markdown files; click on one of the markdown file links. The document will open up in the interactive, read/write Jupyter notebook user interface. Which means you can edit it, execute any code in it, add and execute code of your own.
+
+*Unfortunately*, there's no safe and direct way of saving your content back to the repository. Instead, you'll have to click on the `Download` button in a notebook toolbar and then open your browser onto the appropriate directory in your repo, and drag the file you just downloaded onto that directory listing. You should see an upload view to upload the files. Commit them (with an explanatory note about them) and the build and republish should be kicked into action again.
+
 
 ## Changing the content
 
@@ -68,7 +82,7 @@ There's a lot more things possible, but I need to write some more docs to explai
 
 Short answer: *string'n'glue*.
 
-Longer answer: when you submit this issue, it triggers a Github Action, (a bit like a helpful brownie of folklore fame) that grabs a "source code" version of the OpenLearn unit (an XML document in the OU-XML format). A Python package ([open-ouxml-tools](https://github.com/innovationOUtside/open-ouxml-tools)) is then used to convert this XML to markdown document and places them in the `contents` directory, along with an index generating page (`index.rst`) in the top level of the directory. These files are then automatically *committed* and *pushed* the top level of the repository.
+Longer answer: when you submit this issue, it triggers a Github Action, (a bit like a helpful brownie of folklore fame) that grabs a "source code" version of the OpenLearn unit (an XML document in the OU-XML format). A Python package ([open-ouxml-tools](https://github.com/innovationOUtside/open-ouxml-tools)) is then used to convert this XML to markdown document and places them in the `content` directory, along with an index generating page (`index.rst`) in the top level of the directory. These files are then automatically *committed* and *pushed* the top level of the repository.
 
 The action then uses the Sphinx documentation generation tool to render the markdown pages as HTML. In fact, a lot of magic is done using the `nbsphinx` package with a bit of help from the Jupytext package as part of the conversion. The actual conversion process is `md -> Jupyter notebook (ipynb) -> HTML`. The reason for doing this is that we can edit the markdown in a rich Jupyter notebook style environment to preview various interactive things that we can also render to HTML. It also means that we can execute Python code included in the markdown documents and render the outputs from that code execution (which might include charts, for example, or data tables) in the final HTML. But that needs another set of docs to explain properly...
 
