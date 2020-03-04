@@ -13,17 +13,17 @@ Session 00
 ----------
 
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: Introduction and guidance
     content/session_00/Part_00_01
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: What is a badged course?
     content/session_00/Part_00_02
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: How to get a badge
     content/session_00/Part_00_03
@@ -33,7 +33,7 @@ Session 01
 ----------
 
 
-.. toctree:
+.. toctree::
     :glob:
     :maxdepth: 3
     
@@ -44,7 +44,7 @@ Session 02
 ----------
 
 
-.. toctree:
+.. toctree::
     :glob:
     :maxdepth: 2
     
@@ -55,24 +55,24 @@ Session 03
 ----------
 
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: Introduction
     
     session_03/Part_03_01
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: 1 Weather data
     
     session_03/Part_03_02
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: 2 This week’s quiz
     session_03/Part_03_03
 
-.. toctree:
+.. toctree::
     :maxdepth: 2
     :caption: 3 Summary
     session_03/Part_03_04
