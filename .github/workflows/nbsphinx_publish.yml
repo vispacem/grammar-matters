@@ -26,8 +26,18 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+      # Should probably let the use provide and environment.yaml file
+      # For cache to work we need to work in an env; else pkgs in non-cacheable /usr/share/miniconda
+      - uses: actions/cache@v1
+        with:
+          path: /home/runner/.conda/pkgs
+          key: ${{ runner.os }}-conda-${{ hashFiles('**/environment.y*ml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-
+           
       - name: Install dependencies
         run: |
+          echo $(conda info)
           conda install -y pandoc librsvg tectonic
           python -m pip install sphinx
           python -m pip install nbsphinx
@@ -47,6 +57,8 @@ jobs:
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git config --global user.name "$GITHUB_ACTOR"
           git checkout -b build
+          # And bring down changes from master
+          git merge master
       - name: Build docs HTML
         run: python -m sphinx . ./_build/html/ -b html
 
