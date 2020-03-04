@@ -16,17 +16,17 @@ Session 00
 .. toctree:
     :maxdepth: 2
     :caption: Introduction and guidance
-    session_00/Part_00_01
+    content/session_00/Part_00_01
 
 .. toctree:
     :maxdepth: 2
     :caption: What is a badged course?
-    session_00/Part_00_02
+    content/session_00/Part_00_02
 
 .. toctree:
     :maxdepth: 2
     :caption: How to get a badge
-    session_00/Part_00_03
+    content/session_00/Part_00_03
 
 
 Session 01
@@ -36,17 +36,17 @@ Session 01
 .. toctree:
     :maxdepth: 2
     :caption: Introduction
-    session_01/Part_01_01
+    content/session_01/Part_01_01
 
 .. toctree:
     :maxdepth: 2
     :caption: 1 Install the software
-    session_01/Part_01_02
+    content/session_01/Part_01_02
 
 .. toctree:
     :maxdepth: 2
     :caption: 2 This week’s quiz
-    session_01/Part_01_03
+    content/session_01/Part_01_03
 
 .. toctree:
     :maxdepth: 2
