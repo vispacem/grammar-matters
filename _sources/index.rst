@@ -1,8 +1,8 @@
 
-Visions of protest: Graffiti
-============================
+Climate change: island life in a volatile world
+===============================================
 
-Content generated from the OpenLearn Unit `Visions of protest: Graffiti <https://www.open.edu/openlearn/history-the-arts/visions-protest-graffiti/content-section-0>`_.
+Content generated from the OpenLearn Unit `Climate change: island life in a volatile world <https://www.open.edu/openlearn/society-politics-law/sociology/climate-change-island-life-volatile-world/content-section-0>`_.
 
 
 Contents:
