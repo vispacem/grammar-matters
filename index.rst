@@ -1,7 +1,7 @@
 An introduction to electronics
 ==============================
 
-Content generated from the OpenLearn Unit [An introduction to electronics](https://www.open.edu/openlearn/science-maths-technology/introduction-electronics/content-section-0).
+Content generated from the OpenLearn Unit `An introduction to electronics <https://www.open.edu/openlearn/science-maths-technology/introduction-electronics/content-section-0>`_).
 
 
 Contents:
@@ -35,6 +35,7 @@ Session 01
 
 .. toctree:
     :glob:
+    :maxdepth: 3
     content/session_01/*
 
 
@@ -44,6 +45,7 @@ Session 02
 
 .. toctree:
     :glob:
+    :maxdepth: 2
     content/session_02/*
 
 
