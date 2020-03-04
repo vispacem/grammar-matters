@@ -26,6 +26,14 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+      # Should probably let the use provide and environment.yaml file
+      - uses: actions/cache@v1
+        with:
+          path: /usr/share/miniconda/pkgs
+          key: ${{ runner.os }}-conda-${{ hashFiles('**/environment.y*ml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-
+           
       - name: Install dependencies
         run: |
           echo $(conda info)
