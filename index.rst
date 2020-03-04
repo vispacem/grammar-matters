@@ -36,6 +36,7 @@ Session 01
 .. toctree:
     :glob:
     :maxdepth: 3
+    
     content/session_01/*
 
 
@@ -46,6 +47,7 @@ Session 02
 .. toctree:
     :glob:
     :maxdepth: 2
+    
     content/session_02/*
 
 
@@ -56,11 +58,13 @@ Session 03
 .. toctree:
     :maxdepth: 2
     :caption: Introduction
+    
     session_03/Part_03_01
 
 .. toctree:
     :maxdepth: 2
     :caption: 1 Weather data
+    
     session_03/Part_03_02
 
 .. toctree:
