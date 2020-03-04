@@ -1,0 +1,7 @@
+name: nbsphinx-setup
+channels:
+  - conda-forge
+dependencies:
+  - pandoc
+  - librsvg
+  - tectonic
