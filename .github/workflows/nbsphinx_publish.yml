@@ -28,6 +28,7 @@ jobs:
             ${{ runner.os }}-pip-
       - name: Install dependencies
         run: |
+          echo $(conda info)
           conda install -y pandoc librsvg tectonic
           python -m pip install sphinx
           python -m pip install nbsphinx
