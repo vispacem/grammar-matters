@@ -28,7 +28,7 @@ For example, something like:
 
 Copy the URL.
 
-In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](/issues/new) may do it?)
+In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](../../issues/new) may do it?)
 
 In the title box, enter:
 
@@ -40,7 +40,7 @@ Click the green *Submit new issue* button and go and grab a cup of tea (the firs
 
 __If I have set things up properly, only issues created by you or a collaborator on the repo should trigger any data grabbing and website building activity. If you submit another issue, it will essentially reset the repo, so any changes you have made to content will be lost.__
 
-When you come back, refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](`tree/master/content`) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
+When you come back, refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](`content`) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
 
 These files should also have been rendered elsewhere in the repository as HTML web pages (you donlt need to know where...). You should be able to see the website rendered from them on a URL with the pattern:
 
@@ -54,7 +54,7 @@ and the associated website is at:
 
 `https://psychemedia.github.io/openlearn-publish-test/`
 
-If the website *isn't* there, you may need to give the Github Pages website builder a prod. Go to your repository settings page from the *Settings* tab on the repo toolbar (or [click here](/tree/master/content)) and scroll down until you see the __Github Pages__ heading. Their *should* be a green highlighted link to your pages there. If there *isn't*, in the *Source* dropdown list select `master branch` and then select `gh-pages branch`. This should kick things back into action. After a minute or two, refresh the page and a green backgounded link to you website should be there.
+If the website *isn't* there, you may need to give the Github Pages website builder a prod. Go to your repository settings page from the *Settings* tab on the repo toolbar (or [click here](../../settings)) and scroll down until you see the __Github Pages__ heading. Their *should* be a green highlighted link to your pages there. If there *isn't*, in the *Source* dropdown list select `master branch` and then select `gh-pages branch`. This should kick things back into action. After a minute or two, refresh the page and a green backgounded link to you website should be there.
 
 If you click on the link and the OpenLearn materials *aren't* there, force a reload of the webpage in your browser to clear any cached versions of the page.
 
