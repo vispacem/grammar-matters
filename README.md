@@ -28,7 +28,7 @@ For example, something like:
 
 Copy the URL.
 
-In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](./issues/new) may do it?)
+In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](../../issues/new) may do it?)
 
 In the title box, enter:
 
