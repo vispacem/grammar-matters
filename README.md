@@ -40,7 +40,7 @@ Click the green *Submit new issue* button and go and grab a cup of tea (the firs
 
 __If I have set things up properly, only issues created by you or a collaborator on the repo should trigger any data grabbing and website building activity. If you submit another issue, it will essentially reset the repo, so any changes you have made to content will be lost.__
 
-When you come back, refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](`./tree/master/content`) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
+When you come back, refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](`tree/master/content`) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
 
 These files should also have been rendered elsewhere in the repository as HTML web pages (you donlt need to know where...). You should be able to see the website rendered from them on a URL with the pattern:
 
