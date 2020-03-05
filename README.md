@@ -20,7 +20,7 @@ When you are logged in to Github, generate a copy of this template repository by
 
 Find yourself a nice [OpenLearn course unit](https://www.open.edu/openlearn/free-courses/full-catalogue). When you've found one you'd like to, erm, appropriate, you need to grab its web address / URL.
 
-In parrticular, you're looking for a URL that __ends__ in something like ``/content-section-0` or `/content-section-0?active-tab=description-tab` (the section number doesnlt matter...).
+In parrticular, you're looking for a URL that __ends__ in something like ``/content-section-0` or `/content-section-0?active-tab=description-tab` (the section number doesn't matter...).
 
 For example, something like:
 
@@ -28,7 +28,7 @@ For example, something like:
 
 Copy the URL.
 
-In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](../../issues/new) may do it?)
+In your repository, go to the `Issues` tab](./issues) and create a new issue by clicking on the green *New issue* button. (Alternativley, [this link](/issues/new) may do it?)
 
 In the title box, enter:
 
@@ -54,7 +54,7 @@ and the associated website is at:
 
 `https://psychemedia.github.io/openlearn-publish-test/`
 
-If the website *isn't* there, you may need to give the Github Pages website builder a prod. Go to your repository settings page from the *Settings* tab on the repo toolbar (or [click here](./tree/master/content)) and scroll down until you see the __Github Pages__ heading. Their *should* be a green highlighted link to your pages there. If there *isn't*, in the *Source* dropdown list select `master branch` and then select `gh-pages branch`. This should kick things back into action. After a minute or two, refresh the page and a green backgounded link to you website should be there.
+If the website *isn't* there, you may need to give the Github Pages website builder a prod. Go to your repository settings page from the *Settings* tab on the repo toolbar (or [click here](/tree/master/content)) and scroll down until you see the __Github Pages__ heading. Their *should* be a green highlighted link to your pages there. If there *isn't*, in the *Source* dropdown list select `master branch` and then select `gh-pages branch`. This should kick things back into action. After a minute or two, refresh the page and a green backgounded link to you website should be there.
 
 If you click on the link and the OpenLearn materials *aren't* there, force a reload of the webpage in your browser to clear any cached versions of the page.
 
