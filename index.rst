@@ -1,8 +1,8 @@
 
-Climate change: island life in a volatile world
-===============================================
+Introducing philosophy
+======================
 
-Content generated from the OpenLearn Unit `Climate change: island life in a volatile world <https://www.open.edu/openlearn/society-politics-law/sociology/climate-change-island-life-volatile-world/content-section-0>`_.
+Content generated from the OpenLearn Unit `Introducing philosophy <https://www.open.edu/openlearn/history-the-arts/philosophy/introducing-philosophy/content-section-0>`_.
 
 
 Contents:
