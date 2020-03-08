@@ -97,9 +97,14 @@ jobs:
           sudo chown -R $(whoami):$(whoami) .
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git config --global user.name "$GITHUB_ACTOR"
-          git checkout -B build
-          # And bring down changes from master
+          git checkout -b build
+          
+      - name: Bring down changes from master and commit
+        run: |
           git merge master
+          git add --all --force
+          git commit -a --allow-empty-message -m 'Add newly downloaded files to build branch'
+          
       - name: Build docs HTML
         run: python -m sphinx . ./_build/html/ -b html
 
@@ -138,7 +143,7 @@ jobs:
       - name: Commits for build branch
         run: |       
           git add --all --force _build
-          git commit -a --allow-empty-message -m 'Push build branch'
+          git commit -a -m 'Push newly built build branch'
  
       - name: Push changes to build branch
         uses: ad-m/github-push-action@master
