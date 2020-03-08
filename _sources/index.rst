@@ -1,8 +1,8 @@
 
-Understanding operations management
-===================================
+Aquatic mammals
+===============
 
-Content generated from the OpenLearn Unit `Understanding operations management <https://www.open.edu/openlearn/money-business/leadership-management/understanding-operations-management/content-section-0>`_.
+Content generated from the OpenLearn Unit `Aquatic mammals <https://www.open.edu/openlearn/nature-environment/aquatic-mammals/content-section-0>`_.
 
 
 Contents:
