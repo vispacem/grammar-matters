@@ -10,6 +10,7 @@ jobs:
     if: (github.event.commits[0].message == 'Initial commit') && (github.run_number == 1)
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: |
           touch .init_build_branch
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
