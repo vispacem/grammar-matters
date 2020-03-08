@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2 Correlation &#8212;   documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3 This week’s quiz" href="Part_06_03.html" />
+    <link rel="prev" title="1 Joining left, right and centre" href="Part_06_01.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="2-Correlation">
+<h1>2 Correlation<a class="headerlink" href="#2-Correlation" title="Permalink to this headline">¶</a></h1>
+<p>To see if life expectancy grows when the GDP increases I will use a statistical measure known as the <strong>Spearman rank correlation coefficient</strong>.</p>
+<p><img alt="An image of many thread spools with threads drawn together below and twisted into one" src="../../_images/ou_futurelearn_learn_to_code_fig_1055.jpg" /></p>
+<p><strong>Figure 3</strong></p>
+<p>It’s a number between -1 and 1 that describes how well two indicators correlate, in the following sense.</p>
+<ul class="simple">
+<li><p>A value of 1 means that if I rank (sort) the data from smallest to largest value in one indicator, it will also be in ascending order according to the other indicator. In other words, if one indicator grows, so does the other.</p></li>
+<li><p>A value of -1 means a perfect inverse rank relation: if I sort the data from smallest to largest according to one indicator, I will see it is sorted from largest to smallest in the other indicator. When one indicator goes up, the other goes down.</p></li>
+<li><p>A value of 0 means there is no rank relation between the two indicators.</p></li>
+</ul>
+<p>A positive value smaller than 1 (or a negative value larger than -1) means there is some direct (or inverse) correlation, but it is not systematic across the whole dataset.</p>
+<p>The <strong>p-value</strong> indicates how significant the result is, in a particular technical sense. To say a correlation is statistically significant doesn’t necessarily mean it is important or strong in the real world, but only that there is reasonable statistical evidence that there is some kind of relationship. Typically, the obtained correlation coefficient is considered statistically significant if the p-value is below 0.05.</p>
+<p>The pandas module doesn’t calculate complex statistics. There are other modules in the Anaconda distribution for that. In particular, <code class="docutils literal notranslate"><span class="pre">scipy</span></code> (Scientific Python) has a stats module that provides the <code class="docutils literal notranslate"><span class="pre">spearmanr()</span></code> function. The function takes as arguments the two columns of data to correlate. Contrary to the functions you’ve seen so far, it returns two values instead of one: the correlation and the p-value. To store both values, simply use a pair of variables, written in parenthesis.</p>
+<p>To show the results in a nicer way, I will use the Python <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, which displays its arguments in a single line.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>from scipy.stats import spearmanr
+gdpColumn = gdpVsLife[GDP]
+lifeColumn = gdpVsLife[LIFE]
+(correlation, pValue) = spearmanr(gdpColumn, lifeColumn)
+print(&#39;The correlation is&#39;, correlation)
+if pValue &lt; 0.05:
+        print(&#39;It is statistically significant.&#39;)
+else:
+        print(&#39;It is not statistically significant.&#39;)
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>The correlation is 0.493179132478.
+It is statistically significant.
+</pre></div>
+</div>
+</div>
+<p>Although there is a statistically significant direct correlation (life expectancy grows as GDP grows), it isn’t strong.</p>
+<p>A perfect (direct or inverse) correlation doesn’t mean there is any cause-effect between the two indicators. A perfect direct correlation between life expectancy and GDP would only state that the higher the GDP, the higher the life expectancy. It would not state that the higher expectancy is due to the GDP. Correlation is not causation.</p>
+<div class="section" id="Exercise-10-Correlation">
+<h2>Exercise 10 Correlation<a class="headerlink" href="#Exercise-10-Correlation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>Calculate the correlation between GDP and population in Exercise 10 in the Exercise notebook 3.</p>
+<p>Remember to run the existing code in the notebook before you start the exercise. When you’ve completed the exercise, save the notebook.</p>
+<div class="section" id="2.1-Scatterplots">
+<h4>2.1 Scatterplots<a class="headerlink" href="#2.1-Scatterplots" title="Permalink to this headline">¶</a></h4>
+<p>Statistics can be misleading. A coefficient of zero only states there is no ranking relation between the indicators, but there might be some other relationship.</p>
+<p>In the next example, the correlation between x and y is zero, but they are clearly related (y is the square of x).</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>table = [ [-2,4], [-1,1], [0,0], [1,1], [2,4] ]
+data = DataFrame(columns=[&#39;x&#39;, &#39;y&#39;], data=table)
+
+(correlation, pValue) = spearmanr(data[&#39;x&#39;], data[&#39;y&#39;])
+
+print(&#39;The correlation is&#39;, correlation)
+data
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">correlation</span> <span class="pre">is</span> <span class="pre">0.0</span></code></p>
+<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>x</p>
+</th><th><p>y</p>
+</th></tr><tr><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>-2</p>
+</td><td class="highlight_" rowspan colspan><p>4</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>-1</p>
+</td><td class="highlight_" rowspan colspan><p>1</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>0</p>
+</td><td class="highlight_" rowspan colspan><p>0</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>3</p>
+</td><td class="highlight_" rowspan colspan><p>1</p>
+</td><td class="highlight_" rowspan colspan><p>1</p>
+</td></tr><tr><td class="highlight_" rowspan colspan><p>4</p>
+</td><td class="highlight_" rowspan colspan><p>2</p>
+</td><td class="highlight_" rowspan colspan><p>4</p>
+</td></tr></tbody></table><p>It’s therefore best to complement the quantitative analysis with a more qualitative view provided by a chart. In the case of correlations, <strong>scatterplots</strong> will do very nicely. Each country is a dot plotted at the x and y coordinates corresponding to the GDP and life expectancy values.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>%matplotlib inline
+
+gdpVsLife.plot(x=GDP, y=LIFE, kind=&#39;scatter&#39;, grid=True)
+
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&amp;lt;matplotlib.axes._subplots.AxesSubplot</span> <span class="pre">at</span> <span class="pre">0x10e2e6eb8&amp;gt;</span></code></p>
+<p><img alt="figure images/ou_futurelearn_learn_to_code_fig_1018.jpg" src="../../_images/ou_futurelearn_learn_to_code_fig_1018.jpg" /></p>
+<p><strong>Figure 4</strong></p>
+<p>This graph is not very useful. The GDP difference between the poorest and richest countries is so vast that the whole chart is squashed to fit all GDP values on the x-axis. It is best to use a <strong>logarithmic scale</strong> , where the axis values don’t increase by a constant interval (10, 20, 30, for example), but by a multiplicative factor (10, 100, 1000, 10000, etc.). The parameter <code class="docutils literal notranslate"><span class="pre">logx</span></code> has to be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to get a logarithmic scale on the x-axis. Moreover, let’s make the chart a bit wider,
+by using the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> parameter you saw last week.</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+
+<span></span>gdpVsLife.plot(x=GDP, y=LIFE, kind=&#39;scatter&#39;, grid=True,
+              logx=True, figsize = (10, 4))
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&amp;gt;matplotlib.axes._subplots.AxesSubplot</span> <span class="pre">at</span> <span class="pre">0x10e400588&amp;gt;</span></code></p>
+<p><img alt="figure images/ou_futurelearn_learn_to_code_fig_1019.jpg" src="../../_images/ou_futurelearn_learn_to_code_fig_1019.jpg" /></p>
+<p><strong>Figure 5</strong></p>
+<p>The major tick marks in the x-axis go from 10 2 (that’s a one followed by two zeros, hence 100) to 10 8 (that’s a one followed by eight zeros, hence 100,000,000) million pounds, with the minor ticks marking the numbers in between. For example, the eight minor ticks between 10 2 and 10 3 represent the values 200 (2 × 10 2 ), 300 (3 × 10 2 ), and so on until 900 (9 × 10 2 ). As a further example, the country with the lowest life expectancy is on the second minor tick to the right of 10 3 , which
+means its GDP is about 3 × 10 3 (three thousand) million pounds.</p>
+<p>Countries with a GDP around 10 thousand (10 4 ) millions of pounds have a wide range of life expectancies, from under 50 to over 80, but the range tends to shrink both for poorer and for richer countries. Countries with the lowest life expectancy are neither the poorest nor the richest, but those with highest expectancy are among the richer countries.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-11-Scatterplots">
+<h2>Exercise 11 Scatterplots<a class="headerlink" href="#Exercise-11-Scatterplots" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Question<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Practise using Scatterplots in Exercise11 in the Exercise notebook 3.</p>
+<div class="section" id="2.2-My-project">
+<h4>2.2 My project<a class="headerlink" href="#2.2-My-project" title="Permalink to this headline">¶</a></h4>
+<p>I’ve written up my analysis of this week’s project in the notebook you can open this in your downloaded files.</p>
+<p><img alt="An image of an older man holding a surf board on a beach" src="../../_images/ou_futurelearn_learn_to_code_fig_1056.jpg" /></p>
+<p><strong>Figure 6</strong></p>
+<p>The structure is very simple: besides the introduction and the conclusions, there is one section for each step of the analysis – downloading, cleaning, transforming, and merging the data, then calculating and visualising the correlation.</p>
+<p>Open Project 4: Life expectancy</p>
+<p>If you have time, extend my project to answer different questions or create your own project in the activity below.</p>
+</div>
+</div>
+</div>
+<div class="section" id="Activity-1">
+<h2>Activity 1<a class="headerlink" href="#Activity-1" title="Permalink to this headline">¶</a></h2>
+<!--Heading:
+            Extend the project--><div class="section" id="id2">
+<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Make a copy of the Project 3: GDP and Life expectancy and change it to answer one or more of the following questions:</p>
+<ul class="simple">
+<li><p>To what extent do the ten countries with the highest GDP coincide with the ten countries with the longest life expectancy?</p></li>
+<li><p>Which are the two countries in the right half of the plot (higher GDP) with life expectancy below 60 years? What factors could explain their lower life expectancy compared to countries with similar GDP? Hint: use the filtering techniques you learned in Week 2 to find the two countries.</p></li>
+<li><p>Redo the analysis using the countries’ GDP per capita (i.e. per inhabitant) instead of their total GDP. If you’ve done the workbook exercises, you already have a column with the population data. Hint: write an expression involving the GDP and population columns, as you learned in Calculating over columns in Week 1. Think about the units in which you display GDP per capita.</p></li>
+<li><p>Redo the analysis using the indicator suggested at the end of the project notebook.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Question<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>If you have more time, create a completely new project and choose another two of the hundreds of World Bank indicators and see if there is any correlation between them. If there is a choice of similar indicators, choose one that leads to meaningful comparisons between countries.</p>
+<p>Look at the results you obtained and take a few moments to assess how they differ from mine.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="Part_06_01.html" title="Previous document">1 Joining left, right and centre</a>
+        </li>
+        <li>
+          <a href="Part_06_03.html" title="Next document">3 This week’s quiz</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html"></a></h1>
+
+
+
+<p class="blurb">Documentation...</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_01.html">Introduction and guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_02.html">What is a badged course?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_03.html">How to get a badge</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">1 Enter the pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">2 Writing up the analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">4 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_02.html">1 Weather data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_04.html">3 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_01.html">1 Loading the weather data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_02.html">2 Every picture tells a story</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_05.html">4.1 Week 4 glossary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_02.html">1 Life expectancy project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_04.html">3 Summary</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Part_06_01.html">1 Joining left, right and centre</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2 Correlation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-10-Correlation">Exercise 10 Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-11-Scatterplots">Exercise 11 Scatterplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Activity-1">Activity 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Part_06_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_06_04.html">4 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_02.html">1 I spy with my little eye</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_03.html">2 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_04.html">3 Summary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_01.html">1 The split-apply-combine pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_02.html">2 Pivot tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_03.html">3 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_05.html">Tell us what you think</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Part_06_01.html" title="previous chapter">1 Joining left, right and centre</a></li>
+      <li>Next: <a href="Part_06_03.html" title="next chapter">3 This week’s quiz</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/content/session_06/Part_06_02.md"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
