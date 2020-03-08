@@ -1,8 +1,8 @@
 
-Learn to code for data analysis
-===============================
+How to learn a language
+=======================
 
-Content generated from the OpenLearn Unit `Learn to code for data analysis <https://www.open.edu/openlearn/science-maths-technology/learn-code-data-analysis/content-section-0>`_.
+Content generated from the OpenLearn Unit `How to learn a language <https://www.open.edu/openlearn/languages/how-learn-language/content-section-0>`_.
 
 
 Contents:
