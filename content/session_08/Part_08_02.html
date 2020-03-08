@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2 Pivot tables &#8212;   documentation</title>
+    <title>1 Getting support from others &#8212;   documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -13,12 +13,10 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/language_data.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3 This week’s quiz" href="Part_08_03.html" />
-    <link rel="prev" title="1 The split-apply-combine pattern" href="Part_08_01.html" />
+    <link rel="next" title="2 Creating your community" href="Part_08_03.html" />
+    <link rel="prev" title="Introduction" href="Part_08_01.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -35,599 +33,30 @@
 
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    min-width: 5.5ex;
-    padding-top: 0.3rem;
-    padding-right: 0.3rem;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    background: #f5f5f5;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 0.3rem;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="section" id="2-Pivot-tables">
-<h1>2 Pivot tables<a class="headerlink" href="#2-Pivot-tables" title="Permalink to this headline">¶</a></h1>
-<p>One of the most useful, if poorly understood, features offered by many spreadsheet applications is the ‘pivot table’.</p>
-<p>Pivot tables provide a way of creating summary reports over particular parts of a dataset, reshaping the data into grouped rows, itemised columns, and summary values within each group and item.</p>
-<p>The screenshot of the interactive pivot table shown below, based on a widget originally created by Nicolas Krutchen at Datacritic, contains a small fragment of the Comtrade data describing milk imports to the UK.</p>
-<p>The pivot table is organised as follows:</p>
-<p><img alt="Screen shot of the interactive pivot table." src="../../_images/ou_futurelearn_learn_to_code_fig_1022.jpg" /></p>
-<p><strong>Figure 7</strong></p>
-<p>You can see how the ‘Trade Flow’ and ‘Reporter’ columns are used to group the data, with each row representing a separate group. In addition, the values in the ‘Year’ column are broken out to create separate columns (although in this example there is only data for one year, and hence one ‘Year’ column, 2014). The function that is applied to the grouped data is a <code class="docutils literal notranslate"><span class="pre">sum</span></code> operation, and it is applied to the selected ‘Trade Value
-(US<span class="math notranslate nohighlight">\()’ column in the original dataset. A marginal total value is calculated by summing across all the columns. The ‘Commodity’ and ‘Trade Value (US\)</span>)’ columns, while part of the original dataset, are not directly used to define the pivot table’s structure; that is, they are not used to set the row or column index header labels in the displayed pivot table.</p>
-<p>In terms of the split-apply-combine pattern, the pivot table operates as follows:</p>
-<ul class="simple">
-<li><p>the column names from the original dataframe that are listed in the rows panel on the left hand side of the interactive pivot table split the data into a set of groups, with each row specifying a group</p></li>
-<li><p>the pivot table’s columns are set according to the unique values associated with the specified columns from the orignal dataframe; these break the data down into yet smaller groups that are associated with each cell.</p></li>
-</ul>
-<p>The selected operator is then applied to each cell level group, the results combined and an appropriately structured output table is displayed.</p>
-<p>To create a pivot table report for a dataset, typically three actions will be needed:</p>
-<ul class="simple">
-<li><p>identify what elements will appear as the row index values – that is, how the rows will be grouped. Typically, groups will be created based on the unique values within a single column or a combination of values, one from each of multiple grouping columns.</p></li>
-<li><p>identify what elements will appear as column headings. Again, the column heading may just be the unique values of a single variable, or combined values across multiple grouping columns.</p></li>
-<li><p>identify what numbers will be reported on. This step may often break down into two smaller steps: to count the number of rows associated with a particular combination of row and column index values, select the count operationto perform an operation on the value of cells in another column, select that column and then identify what operation to apply to it. For example, find the sum or mean values of a numerical quantity associated with rows keyed by the row and column index values, or count
-the number of unique values of a particular variable in rows identified by those key values.</p></li>
-</ul>
-<p>In addition, one or more ‘filters’ can be added to the selection of row and column index values, either limiting which unique values in each key column to report on, or, by default, selecting them all.</p>
-<p>It is often easier to understand how a pivot table is organised by using it interactively. You’ll get a chance to do this in the next exercise.</p>
-<div class="section" id="Exercise-5-Interactive-pivot-table">
-<h2>Exercise 5 Interactive pivot table<a class="headerlink" href="#Exercise-5-Interactive-pivot-table" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Question">
-<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
-<p>If you haven’t already, open the comtrade_pivot.html and save it into the same folder as the Exercise notebook 4. Then either re-run all the notebook cells, or just run the cell that contains the interactive pivot table.</p>
-<p>Configuring a pivot table requires paying careful attention to the selection of row (grouping) values, columns (reported values) and summary (aggregating) function.</p>
-<p>How easy did you find it to use the interactive pivot table? Could you work out how to select the row and column labels in order to ask particular questions of the data? What sorts of questions did you try to ask?</p>
-<div class="section" id="2.1-Pivot-tables-in-pandas">
-<h4>2.1 Pivot tables in pandas<a class="headerlink" href="#2.1-Pivot-tables-in-pandas" title="Permalink to this headline">¶</a></h4>
-<p>The interactive pivot table provides a convenient way of exploring a relatively small dataset directly within a web browser. (A python package is also available that allows interactive pivot tables to be created directly from a pandas dataframe.)</p>
-<p><img alt="An image of several giant pandas lounging against some logs eating bamboo" src="../../_images/ou_futurelearn_learn_to_code_fig_1064.jpg" /></p>
-<p><strong>Figure 8</strong></p>
-<p>You can also achieve a similar effect using code, one-line-at-a-time. In this step, you will learn how to ask – and answer – questions of a similar form to the ones you raised using the interactive pivot table, but this time using programming code.</p>
-<p>There are several reasons why you might want to automate pivot table operations you might previously have done by hand. These include:</p>
-<ul class="simple">
-<li><p>having a record of all the steps used to perform a particular task, or analysis, which can be useful if you need to check or provide evidence about what you have done (transparency)</p></li>
-<li><p>being able to repeat the task automatically; this is particularly useful if you need to perform the same task repeatedly – for example, generating a new summary report each time a dataset is updated with new weekly or daily figures</p></li>
-<li><p>being able to apply one analysis to another dataset. For example, you might want to produce the same sort of pivot table reports to similarly organised datasets but differently populated datasets (for example, Comtrade datasets that refer to different groups of countries and/or different commodity types).</p></li>
-</ul>
-<p>In order to use the interactive pivot table, you had to identify:</p>
-<ul class="simple">
-<li><p>what column(s) in the dataset to use to define the row groupings in the pivot table</p></li>
-<li><p>what column(s) in the dataset to use to define the column groupings in the pivot table</p></li>
-<li><p>what column in the dataset to use as the basis for the pivot table summary function</p></li>
-<li><p>what summary function to use.</p></li>
-</ul>
-<p>The process is similar when it comes to using pivot tables in pandas. Indeed, you might find it useful to use the interactive pivot table to help you identify just what needs to go where in order to generate a particular report using the pandas pivot table.</p>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="Working-with-pandas-pivot-tables">
-<h2>Working with pandas pivot tables<a class="headerlink" href="#Working-with-pandas-pivot-tables" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start by creating a sample dataset that includes several different columns that can be grouped around. The code below defines the dataframe column by column, instead of row by row as you have learned before.</p>
-<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-
-
-<span></span>df = DataFrame({&quot;Commodity&quot;:[&quot;A&quot;,&quot;A&quot;,&quot;A&quot;,&quot;A&quot;,&quot;B&quot;,&quot;B&quot;,&quot;B&quot;,&quot;C&quot;,&quot;C&quot;],
-
-&quot;Amount&quot;:[10,15,5,20,10,10,5,20,30],
-&quot;Partner&quot;:[&quot;P&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;Q&quot;,&quot;P&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;P&quot;,&quot;Q&quot;],
-&quot;Flow&quot;:[&quot;X&quot;,&quot;Y&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;X&quot;,&quot;X&quot;,&quot;Y&quot;]})
-df
-</pre></div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
-<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Commodity</p>
-</th><th><p>Partner</p>
-</th><th><p>Flow</p>
-</th><th><p>Amount</p>
-</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>0</strong></p>
-</td><td class="highlight_" rowspan colspan><p>A</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>1</strong></p>
-</td><td class="highlight_" rowspan colspan><p>A</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>15</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>2</strong></p>
-</td><td class="highlight_" rowspan colspan><p>A</p>
-</td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>3</strong></p>
-</td><td class="highlight_" rowspan colspan><p>A</p>
-</td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>4</strong></p>
-</td><td class="highlight_" rowspan colspan><p>B</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>5</strong></p>
-</td><td class="highlight_" rowspan colspan><p>B</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>6</strong></p>
-</td><td class="highlight_" rowspan colspan><p>B</p>
-</td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>7</strong></p>
-</td><td class="highlight_" rowspan colspan><p>C</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>8</strong></p>
-</td><td class="highlight_" rowspan colspan><p>C</p>
-</td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td></tr></tbody></table><p>Suppose, for example, that you have data for a particular reporter country, and that you want to find the total value of trade that country has for each commodity and each partner country. A pivot table can be used to split the data by ‘commodity’, and within that ‘partner’, and then apply some sort of aggregation function to each (‘commodity’, ‘partner’) group.</p>
-<p>In the interactive pivot table, this would have meant ordering the ‘Commodity’ and ‘Partner’ labels in the rows area, setting the aggregation function to <code class="docutils literal notranslate"><span class="pre">sum</span></code> and applying it to the ‘Amount’ (that is, the ‘Trade Value’), and leaving the columns area free of any selections.</p>
-<p>In turn, the pandas <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> function uses:</p>
-<ul class="simple">
-<li><p>the <code class="docutils literal notranslate"><span class="pre">index</span></code> parameter set as a list containing the ‘Commodity’ and ‘Reporter’ data elements, to define the row categories</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">values</span></code> parameter set to ‘Amount’</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code> (aggregating function) set to <code class="docutils literal notranslate"><span class="pre">sum</span></code> .</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-
-<span></span>pivot_table(df,
-index=[&#39;Commodity&#39;,&#39;Partner&#39;],
-values=&#39;Amount&#39;,
-aggfunc=sum)
-</pre></div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
-<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Flow</p>
-</th><th><p>X</p>
-</th><th><p>Y</p>
-</th></tr><tr><th><p>Commodity</p>
-</th><th><p>Partner</p>
-</th><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td></tr><tr><td class="highlight_" rowspan colspan><p><strong>A</strong></p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>15</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>B</strong></p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>C</strong></p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td></tr></tbody></table><p>To further subdivide the data, an additional ‘Flow’ grouping element could be added in. (In this case, the resulting pivot table just corresponds to the original dataset.)</p>
-<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-
-<span></span>pivot_table(df,
-               index=[&#39;Commodity&#39;,&#39;Partner&#39;,&#39;Flow&#39;],
-               values=&#39;Amount&#39;,
-               aggfunc=sum)
-</pre></div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Out[]:</span></code></p>
-<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th><p>Commodity</p>
-</th><th><p>Partner</p>
-</th><th><p>Flow</p>
-</th><th></th></tr><tr><td class="highlight_" rowspan colspan><p>A</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>15</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p>B</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p>C</p>
-</td><td class="highlight_" rowspan colspan><p>P</p>
-</td><td class="highlight_" rowspan colspan><p>X</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>Q</p>
-</td><td class="highlight_" rowspan colspan><p>Y</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td></tr></tbody></table><p>Alternatively, you might decide that you want to pull out the ‘Flow’ items into separate columns for each of the original (‘commodity’, ‘partner’) groupings. To do this, add in a columns parameter:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-
-<span></span>pivot_table(df,
-        index=[&#39;Commodity&#39;,&#39;Partner&#39;],
-        columns=[&#39;Flow&#39;],
-        values=&#39;Amount&#39;,
-        aggfunc=sum)
-</pre></div>
-</div>
-</div>
-<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Flow</p>
-</th><th><p>X</p>
-</th><th><p>Y</p>
-</th></tr><tr><th><p>Commodity</p>
-</th><th><p>Partner</p>
-</th><th></th><th></th></tr><tr><td class="highlight_" rowspan colspan><p><strong>A</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>15</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>B</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>C</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td></tr></tbody></table><p>In this case, some missing values arise for cases where there was no original row item. For example, there were no rows in the original dataset for Commodity/Partner/Flow values of B/Q/Y, C/P/Y or C/Q/X.</p>
-<p>The pandas produced pivot table can be further extended to report ‘marginal’ items, that is, row and column based total amounts, by setting <code class="docutils literal notranslate"><span class="pre">margins=True.</span></code></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-
-<span></span>pivot_table(df,
-        index=[&#39;Commodity&#39;,&#39;Partner&#39;],
-        columns=[&#39;Flow&#39;],
-        values=&#39;Amount&#39;,
-        aggfunc=sum,
-        margins=True)
-</pre></div>
-</div>
-</div>
-<table xmlns:str="http://exslt.org/strings"><caption></caption><tbody><tr><th></th><th><p>Flow</p>
-</th><th><p>X</p>
-</th><th><p>Y</p>
-</th><th><p>All</p>
-</th></tr><tr><td class="highlight_" rowspan colspan><p><strong>Commodity</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>Partner</strong></p>
-</td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan></td></tr><tr><td class="highlight_" rowspan colspan><p><strong>A</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>15</p>
-</td><td class="highlight_" rowspan colspan><p>25</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td><td class="highlight_" rowspan colspan><p>25</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>B</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>10</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td><td class="highlight_" rowspan colspan><p>5</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>C</strong></p>
-</td><td class="highlight_" rowspan colspan><p><strong>P</strong></p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td><td class="highlight_" rowspan colspan><p>20</p>
-</td></tr><tr><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p><strong>Q</strong></p>
-</td><td class="highlight_" rowspan colspan><p>NaN</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td><td class="highlight_" rowspan colspan><p>30</p>
-</td></tr><tr><td class="highlight_" rowspan colspan><p><strong>All</strong></p>
-</td><td class="highlight_" rowspan colspan></td><td class="highlight_" rowspan colspan><p>50</p>
-</td><td class="highlight_" rowspan colspan><p>75</p>
-</td><td class="highlight_" rowspan colspan><p>125</p>
-</td></tr></tbody></table><p>In terms of the ‘split-apply-combine’ pattern, the pandas pivot table operates in much the same way as the interactive pivot table:</p>
-<ul class="simple">
-<li><p>the list of original data columns assigned to the index parameter splits the data into a set of groups</p></li>
-<li><p>the groups are further split into smaller cell level groupings by optionally setting the columns parameter.</p></li>
-</ul>
-<p>The selected operator is then applied to each group and the results combined in an appropriately structured output display table.</p>
-</div>
-<div class="section" id="Exercise-6-pivot-tables-with-pandas">
-<h2>Exercise 6 pivot tables with pandas<a class="headerlink" href="#Exercise-6-pivot-tables-with-pandas" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Question<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Use the Exercise notebook 4 to explore the creation of pivot tables using pandas in Exercise 6.</p>
-<p>Did you manage to ask any new questions of your data using the pandas pivot table function? You could try using them in combination with other pandas functions, such as <code class="docutils literal notranslate"><span class="pre">filter()</span></code> , to limit the rows you generated the pivot table against. What did the pivot tables tell you about the levels of trade around the trade item and reporter country you selected?</p>
-<p>One reason that pivot tables are often thought of as difficult to use is that there is a lot of data manipulation going on inside them. The data is grouped across rows, split across columns and may be aggregated in various ways. It can sometimes be hard to work out how to structure the output report you want, even before worrying about the programming code syntax. Given that, consider what you think the benefits of using code are as opposed to interactive pivot tables. Think about how you could
-use them to complement each other.</p>
-<hr class="docutils" />
-<div class="section" id="2.2-Looking-at-the-milk-and-cream-trade">
-<h4>2.2 Looking at the milk and cream trade<a class="headerlink" href="#2.2-Looking-at-the-milk-and-cream-trade" title="Permalink to this headline">¶</a></h4>
-<p>This week’s project looks at the milk and cream trade between the UK and other countries in the first five months of 2015.</p>
-<p><img alt="A close-up image of the splash of milk being poured" src="../../_images/ou_futurelearn_learn_to_code_fig_1065.jpg" /></p>
-<p><strong>Figure 9</strong></p>
-<p>The written up analysis is in the project notebook. You will also need to open the file comtrade_milk_uk_jan_jul_15.csv and save it to your Anaconda folder or CoCalc project.</p>
-<p>The structure is very simple: besides the introduction and the conclusions, there is one section for each research question.</p>
-<p>Extend or create your own project next.</p>
-</div>
-<div class="section" id="2.3-Your-project">
-<h4>2.3 Your project<a class="headerlink" href="#2.3-Your-project" title="Permalink to this headline">¶</a></h4>
-<p>If you have time, extend my project to answer different questions or create your own project.</p>
-<p><img alt="An image of a young man writing in a notebook at a desk in front of a brick wall. There is a second notebook, a cup and saucer and a vase of flowers on the desk." src="../../_images/ou_futurelearn_learn_to_code_fig_1066.jpg" /></p>
-<p><strong>Figure 10</strong></p>
-</div>
-</div>
-</div>
-<div class="section" id="Activity-1-Extend-the-project">
-<h2>Activity 1 Extend the project<a class="headerlink" href="#Activity-1-Extend-the-project" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<hr class="docutils" />
-<p>Make a copy of the project notebook and change it to answer one or all of the following questions:</p>
-<ul class="simple">
-<li><p>Which are the regular exporters, i.e. which countries sell every month both unprocessed and processed milk and cream to the UK?</p></li>
-<li><p>Where could the export market be further developed, i.e. which countries import the least? Do the figures look realistic?</p></li>
-<li><p>What is total amount of exports to and imports from the bi-lateral trade countries? Hint: pivot tables can have ‘marginal’ values.</p></li>
-<li><p>Repeat the whole analysis for January–May 2014 and compare the results.</p></li>
-</ul>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="Activity-2-Create-a-project-(optional)">
-<h2>Activity 2 Create a project (optional)<a class="headerlink" href="#Activity-2-Create-a-project-(optional)" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>Question<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<hr class="docutils" />
-<p>If you have more time, create a completely new project. You could choose completely different commodities, a different reporter (e.g. your country), a different period (e.g. two or more full years), and only a few select partners (e.g. just the ‘World’ partner for a global analysis).</p>
-<hr class="docutils" />
-</div>
-</div>
+  <div class="section" id="1-Getting-support-from-others">
+<h1>1 Getting support from others<a class="headerlink" href="#1-Getting-support-from-others" title="Permalink to this headline">¶</a></h1>
+<p>In the following two videos, you’ll hear about my experiences of learning Brazilian Portuguese in the UK and learning Japanese in Japan.</p>
+<p>Which of the two do you think was more conducive to learning the language, and why?</p>
+<table xmlns:str="http://exslt.org/strings" border="1"><tr><td><p><strong>OLLY RICHARDS:</strong> <em>You’re about to hear two brief language-learning stories from my personal experience. Firstly, there is learning Brazilian Portuguese in the UK. And secondly, there is learning Japanese in Japan. Now on the face of it, which do you think was the easiest language-learning experience and why?</em>; <em>Firstly, learning Brazilian Portuguese. In the early 2000s, I began to learn Brazilian Portuguese. And over the course of six to 12 months, I worked hard, studied hard, and became
+fairly fluent in the language, even though I was living in London in the UK. Now looking back on that time, I had what I now understand to be the ideal language-learning environment.</em>; <em>You see, I was studying music at university, and I’d developed an interest in South American music. Part of my education involved going out to watch live Brazilian music. And I was lucky enough to make some good Brazilian friends as a result of that activity.</em>; <em>Now as I began to learn Portuguese, I was
+surrounded by the language. I had many friends who were willing to talk and to help me practise. And as time passed, this community became an unbeatable source of motivation, even during times when I fell out of a study habit. I continued to have opportunities to practise Portuguese and the real desire to do so with my new friends. In fact, it was much more than that. I was now expected to speak Portuguese.</em>; <em>So despite not living in a Portuguese-speaking country– I was living in the UK– I had
+the ideal environment to learn Portuguese. And that was what enabled me to learn to speak the language so quickly. Unfortunately, it hasn’t always been that way since.</em>;</p>
+</td></tr></table><!--ENDTRANSCRIPT--><p><img alt="figure images/boc_lll_1_video_week_8_section_1_1_richards_still.jpg" src="../../_images/boc_lll_1_video_week_8_section_1_1_richards_still.jpg" /></p>
+<table xmlns:str="http://exslt.org/strings" border="1"><tr><td><p><strong>OLLY RICHARDS:</strong> <em>Next I’ll talk about my experience learning Japanese. Some years after learning Brazilian Portuguese in London– it was about seven or eight years afterwards– I went to work in Japan. Now, at that point, I was confident about my prospects of learning Japanese. I had a good track record with languages. Beyond Portuguese, I’d already learned three other languages. And not only that, but I would also be living in Japan. So how could I possibly fail?</em>; <em>Well, as it turned out,
+learning Japanese was far harder and more frustrating than I possibly could have imagined. The difficulty was not in the language itself– although Japanese is certainly a tough language– the challenge, for me, was in the community around me, or lack of. Despite living in Japan and despite my experience with languages, learning foreign languages, I had huge problems with motivation. And I struggled with feelings of isolation, linguistically speaking. I found it hard to meet people who would speak
+to me in Japanese. I didn’t know anyone who was interested in independent language learning. I had no real source of motivation or support to keep me on track with my learning.</em>; <em>Now, as a result of this, I struggled to get dedicated speaking practise in Japanese. I had no one to help guide me through language challenges from a fellow learner’s perspective, recommend me books and resources and things like that. I would easily fall victim to motivational highs and lows, resulting in erratic
+progress in my learning.</em>; <em>Fortunately, I did eventually succeed with Japanese, but it was only through a series of chance encounters and friendships, and only after three long years of frustration, emotional highs and lows, and almost giving up a number of times.</em>;</p>
+</td></tr></table><!--ENDTRANSCRIPT--><p><img alt="figure images/boc_lll_1_video_week_8_section_1_2_richards_still.jpg" src="../../_images/boc_lll_1_video_week_8_section_1_2_richards_still.jpg" /> You’ve just heard about two distinct experiences:</p>
+<ol class="arabic simple">
+<li><p>Learning Brazilian Portuguese in the UK</p></li>
+<li><p>Learning Japanese in Japan</p></li>
+</ol>
+<p>One was fairly smooth, efficient, and a lot of fun. The other was turbulent, drawn out, and at times tortuous!</p>
+<p>Chances are when I asked you to think which experience was easier, you will have suspected that learning Japanese <em>in Japan</em>, would have proven to be a big advantage for me.</p>
+<p>In reality, it was quite different.</p>
+<p>While it might be a mistake to read too much into these two particular experiences, it is nevertheless true that <strong>your environment</strong> has the power to make the difference between success and failure.</p>
+<p>It doesn’t matter how good your teacher is, what country you live in, or how motivated you (think you) are.</p>
+<p>Learning a language takes time. There are bumps along the road, and the more support you have from outside, the more likely you are to succeed.</p>
 </div>
 
 
@@ -638,10 +67,10 @@ use them to complement each other.</p>
     <ul>
         <li>
           &larr;
-          <a href="Part_08_01.html" title="Previous document">1 The split-apply-combine pattern</a>
+          <a href="Part_08_01.html" title="Previous document">Introduction</a>
         </li>
         <li>
-          <a href="Part_08_03.html" title="Next document">3 This week’s quiz</a>
+          <a href="Part_08_03.html" title="Next document">2 Creating your community</a>
           &rarr;
         </li>
     </ul>
@@ -666,73 +95,110 @@ use them to complement each other.</p>
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_01.html">Introduction and guidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_02.html">What is a badged course?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_03.html">How to get a badge</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Why learn a new language?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 A marathon, not a sprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 What does success look like for you?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_05.html">4 Your ‘future language self’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_06.html">5 Reality check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_07.html">6 What are the barriers?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_08.html">7 Overcoming obstacles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_09.html">8 Mapping your journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_10.html">9 Your goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_11.html">10 How long will it take?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_12.html">11 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_13.html">12 Summary of Week 1</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">1 Enter the pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">2 Writing up the analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">1 Challenges you may face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">2 ‘My goal is to speak fluently!’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">3 Four areas to master</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_05.html">4 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_06.html">5 Summary of Week 2</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_02.html">1 Weather data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_02.html">1 Where do I start?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_03.html">2 Resources for language learning: classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_04.html">3 Are language-learning resources free?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_05.html">4 Choosing and evaluating language-learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_06.html">5 Evaluation activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_07.html">6 Too many resources?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_08.html">7 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_03/Part_03_09.html">8 Summary of Week 3</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_01.html">1 Loading the weather data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_02.html">2 Every picture tells a story</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_04.html">4 Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_05.html">4.1 Week 4 glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_02.html">1 Speaking is not a discreet skill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_03.html">2 So, what is involved in speaking?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_04.html">3 How to practise on your own</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_05.html">4 Find a language exchange partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_06.html">5 Learning speaking directly or indirectly?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_07.html">6 Take control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_08.html">7 Ideas for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_09.html">8 Top tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_10.html">9 What happens if it doesn’t work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_11.html">10 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_12.html">11 Summary of Week 4</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_02.html">1 Life expectancy project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_02.html">1 In what situations are listening skills required?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_03.html">2 What’s involved in successful listening?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_04.html">3 Setting expectations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_05.html">4 Listening: the big picture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_06.html">5 What kind of material should you use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_07.html">6 Listening study skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_08.html">7 Live listening skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_09.html">8 Resources: listening materials, and where to find them</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_10.html">9 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_11.html">10 Summary of Week 5</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_01.html">1 Joining left, right and centre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_02.html">2 Correlation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_02.html">1 How many words are there?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_03.html">2 How many words do you need?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_04.html">3 What does it mean to know a word?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_05.html">4 Your memory – or how to cope with so many words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_06.html">5 Common strategies that don’t work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_07.html">6 Effortful encoding strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_08.html">7 Retrieval strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_09.html">8 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_10.html">9 Summary of Week 6</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_02.html">1 I spy with my little eye</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_02.html">1 Thinking about reading and writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_03.html">2 Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_04.html">3 Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_05.html">4 ‘I know what I want to communicate but I can’t write that in the language I’m learning!’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_06.html">5 How to check your writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_07.html">6 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_08.html">7 Summary of Week 7</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Part_08_01.html">1 The split-apply-combine pattern</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2 Pivot tables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Exercise-5-Interactive-pivot-table">Exercise 5 Interactive pivot table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Working-with-pandas-pivot-tables">Working with pandas pivot tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Exercise-6-pivot-tables-with-pandas">Exercise 6 pivot tables with pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Activity-1-Extend-the-project">Activity 1 Extend the project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Activity-2-Create-a-project-(optional)">Activity 2 Create a project (optional)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Part_08_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Part_08_04.html">4 Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Part_08_05.html">Tell us what you think</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_01.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1 Getting support from others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_03.html">2 Creating your community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_04.html">3 Creating a virtual immersion through your smartphone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_05.html">4 Establishing an effective language learning routine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_06.html">5 Staying motivated over the long-term</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_07.html">6 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_08.html">7 Summary of Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_09.html">8 End-of-course summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_10.html">Further resources on OpenLearn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_08_11.html">Where next?</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="Part_08_01.html" title="previous chapter">1 The split-apply-combine pattern</a></li>
-      <li>Next: <a href="Part_08_03.html" title="next chapter">3 This week’s quiz</a></li>
+      <li>Previous: <a href="Part_08_01.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="Part_08_03.html" title="next chapter">2 Creating your community</a></li>
   </ul></li>
 </ul>
 </div>

@@ -13,12 +13,10 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/language_data.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1 Weather data" href="Part_03_02.html" />
-    <link rel="prev" title="4 Summary" href="../session_02/Part_02_04.html" />
+    <link rel="next" title="1 Where do I start?" href="Part_03_02.html" />
+    <link rel="prev" title="5 Summary of Week 2" href="../session_02/Part_02_06.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -37,14 +35,16 @@
             
   <div class="section" id="Introduction">
 <h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to Week 3.</p>
-<p><em>Please note: in the following video, where reference is made to a study ‘week’, this corresponds to Weeks 3 and 4 of this course.</em></p>
-<table xmlns:str="http://exslt.org/strings" border="1"><tr><td><p><strong>RUTH ALEXANDER:</strong> <em>So far you’ve looked at one data set at a time. Data analysis becomes more interesting when multiple data sets are put together. Data sets can be combined in various ways and for different reasons. The simplest option is to combine the same kind of data. One possible reason is to aggregate information. For example, data on the incidence of a disease is collected by regional health services, aggregated by governments at national level, and further aggregated by international
-agencies like the World Health Organisation. Another reason is to slice data in a different way. For example weather data sets for different years can be combined to see if a particular month is getting hotter or wetter over the decades.</em>; <em>Using multiple data sets makes it more likely for the data to not be in the format you need. For example, if one data set provides temperatures in Fahrenheit and the other in Celsius you’ll need to convert one unit to the other to combine both data sets. This
-is where the power of programming really begins to show. As you’ll see this week Python allows you to code your own data transformations. Combining different types of data is even more interesting. For example to really appreciate the effect of changes in the minimum wage amount over time it can be combined with the cost of living or the number of people on the minimum wage over the same period.</em>; <em>Combing different types of data requires that they share at least one uniquely identifying
-characteristic. For example, the minimum wage and the cost of living must all be about the same country or the same period of time. So that’s what we’ll be covering this week. How to transform data so that it can then be combined on some common characteristic. I hope you enjoy it.</em>;</p>
-</td></tr></table><!--ENDTRANSCRIPT--><p><img alt="figure images/ou_futurelearn_learn_to_code_vid_1003.jpg" src="../../_images/ou_futurelearn_learn_to_code_vid_1003.jpg" /> In Week 1 and 2 you worked on a dataset that combined two different World Health Organization datasets: population and the number of deaths due to tuberculosis.</p>
-<p>They could be combined because they share a common attribute: the countries. This week you will learn the techniques behind the creation of such a combined dataset.</p>
+<p>This week of the course is written by Fernando Rosell-Aguilar.</p>
+<p><img alt="This is a photograph of Fernando Rosell-Aguilar." src="../../_images/language_boc_week3_f01.tif1.jpg" /></p>
+<p><strong>Figure 1</strong> Fernando Rosell-Aguilar, author of Week 3.</p>
+<p>So far, you have looked at motivation, setting realistic goals, and hopefully also gained a better understanding of what it means to learn a language. This week I will show you ways to find useful resources to support your language learning and present a framework to evaluate the resources you find according to your own individual learning needs.</p>
+<p>By the end of this week, you should be able to:</p>
+<ul class="simple">
+<li><p>find resources for learning languages</p></li>
+<li><p>understand the different sorts of resources you can use</p></li>
+<li><p>choose and evaluate resources for language learning.</p></li>
+</ul>
 </div>
 
 
@@ -55,10 +55,10 @@ characteristic. For example, the minimum wage and the cost of living must all be
     <ul>
         <li>
           &larr;
-          <a href="../session_02/Part_02_04.html" title="Previous document">4 Summary</a>
+          <a href="../session_02/Part_02_06.html" title="Previous document">5 Summary of Week 2</a>
         </li>
         <li>
-          <a href="Part_03_02.html" title="Next document">1 Weather data</a>
+          <a href="Part_03_02.html" title="Next document">1 Where do I start?</a>
           &rarr;
         </li>
     </ul>
@@ -83,66 +83,110 @@ characteristic. For example, the minimum wage and the cost of living must all be
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_01.html">Introduction and guidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_02.html">What is a badged course?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_00/Part_00_03.html">How to get a badge</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Install the software</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_02.html">1 Why learn a new language?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_03.html">2 A marathon, not a sprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_04.html">3 What does success look like for you?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_05.html">4 Your ‘future language self’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_06.html">5 Reality check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_07.html">6 What are the barriers?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_08.html">7 Overcoming obstacles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_09.html">8 Mapping your journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_10.html">9 Your goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_11.html">10 How long will it take?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_12.html">11 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_01/Part_01_13.html">12 Summary of Week 1</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">1 Enter the pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">2 Writing up the analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_02.html">1 Challenges you may face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_03.html">2 ‘My goal is to speak fluently!’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_04.html">3 Four areas to master</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_05.html">4 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_02/Part_02_06.html">5 Summary of Week 2</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Part_03_02.html">1 Weather data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Part_03_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Part_03_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_02.html">1 Where do I start?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_03.html">2 Resources for language learning: classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_04.html">3 Are language-learning resources free?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_05.html">4 Choosing and evaluating language-learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_06.html">5 Evaluation activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_07.html">6 Too many resources?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_08.html">7 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part_03_09.html">8 Summary of Week 3</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_01.html">1 Loading the weather data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_02.html">2 Every picture tells a story</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_04.html">4 Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_05.html">4.1 Week 4 glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_02.html">1 Speaking is not a discreet skill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_03.html">2 So, what is involved in speaking?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_04.html">3 How to practise on your own</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_05.html">4 Find a language exchange partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_06.html">5 Learning speaking directly or indirectly?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_07.html">6 Take control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_08.html">7 Ideas for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_09.html">8 Top tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_10.html">9 What happens if it doesn’t work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_11.html">10 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_04/Part_04_12.html">11 Summary of Week 4</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_02.html">1 Life expectancy project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_02.html">1 In what situations are listening skills required?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_03.html">2 What’s involved in successful listening?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_04.html">3 Setting expectations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_05.html">4 Listening: the big picture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_06.html">5 What kind of material should you use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_07.html">6 Listening study skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_08.html">7 Live listening skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_09.html">8 Resources: listening materials, and where to find them</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_10.html">9 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_05/Part_05_11.html">10 Summary of Week 5</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_01.html">1 Joining left, right and centre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_02.html">2 Correlation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_04.html">4 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_02.html">1 How many words are there?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_03.html">2 How many words do you need?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_04.html">3 What does it mean to know a word?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_05.html">4 Your memory – or how to cope with so many words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_06.html">5 Common strategies that don’t work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_07.html">6 Effortful encoding strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_08.html">7 Retrieval strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_09.html">8 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_06/Part_06_10.html">9 Summary of Week 6</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_01.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_02.html">1 I spy with my little eye</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_03.html">2 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_04.html">3 Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_02.html">1 Thinking about reading and writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_03.html">2 Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_04.html">3 Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_05.html">4 ‘I know what I want to communicate but I can’t write that in the language I’m learning!’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_06.html">5 How to check your writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_07.html">6 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_07/Part_07_08.html">7 Summary of Week 7</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_01.html">1 The split-apply-combine pattern</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_02.html">2 Pivot tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_03.html">3 This week’s quiz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_04.html">4 Summary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_05.html">Tell us what you think</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_01.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_02.html">1 Getting support from others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_03.html">2 Creating your community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_04.html">3 Creating a virtual immersion through your smartphone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_05.html">4 Establishing an effective language learning routine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_06.html">5 Staying motivated over the long-term</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_07.html">6 This week’s quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_08.html">7 Summary of Week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_09.html">8 End-of-course summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_10.html">Further resources on OpenLearn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session_08/Part_08_11.html">Where next?</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../session_02/Part_02_04.html" title="previous chapter">4 Summary</a></li>
-      <li>Next: <a href="Part_03_02.html" title="next chapter">1 Weather data</a></li>
+      <li>Previous: <a href="../session_02/Part_02_06.html" title="previous chapter">5 Summary of Week 2</a></li>
+      <li>Next: <a href="Part_03_02.html" title="next chapter">1 Where do I start?</a></li>
   </ul></li>
 </ul>
 </div>
