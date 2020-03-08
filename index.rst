@@ -1,8 +1,8 @@
 
-Introducing philosophy
-======================
+Describing motion along a line
+==============================
 
-Content generated from the OpenLearn Unit `Introducing philosophy <https://www.open.edu/openlearn/history-the-arts/philosophy/introducing-philosophy/content-section-0>`_.
+Content generated from the OpenLearn Unit `Describing motion along a line <https://www.open.edu/openlearn/science-maths-technology/describing-motion-along-line/content-section-0>`_.
 
 
 Contents:
