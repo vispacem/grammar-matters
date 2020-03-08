@@ -1,8 +1,8 @@
 
-Introducing mammals
-===================
+Understanding operations management
+===================================
 
-Content generated from the OpenLearn Unit `Introducing mammals <https://www.open.edu/openlearn/nature-environment/introducing-mammals/content-section-0>`_.
+Content generated from the OpenLearn Unit `Understanding operations management <https://www.open.edu/openlearn/money-business/leadership-management/understanding-operations-management/content-section-0>`_.
 
 
 Contents:
