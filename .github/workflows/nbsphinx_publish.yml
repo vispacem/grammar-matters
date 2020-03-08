@@ -14,6 +14,7 @@ jobs:
           touch .init_build_branch
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git config --global user.name "$GITHUB_ACTOR"
+          git checkout build
           git add .init_build_branch
           git commit -m 'Create build branch'
 
