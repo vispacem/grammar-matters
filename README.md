@@ -12,15 +12,18 @@ It also means you can play with the content on MyBinder...
 
 ## So how do I start?
 
-This template repository can be used as a basis for creating websites derived from OpenLearn content that is avialble in the OU-XML format (which is most OpenLearn units / courses).
+This template repository can be used as a basis for creating websites derived from OpenLearn content that is available in the OU-XML format (which is most OpenLearn units / courses).
 
 To create your own OpenLearn content site, you need to get a Github account. You can [sign up here](https://github.com/join?source=header-home). Github is owned by Microsoft, so you will be giving your personal data to them...
 
 When you are logged in to Github, generate a copy of this template repository by clicking the green *Use this template* button or [clicking here](https://github.com/psychemedia/openlearn-publish-test/generate).
 
-Find yourself a nice [OpenLearn course unit](https://www.open.edu/openlearn/free-courses/full-catalogue). When you've found one you'd like to, erm, appropriate, you need to grab its web address / URL.
+In *your* copy of the repo, view the [`SET_UP.md`](./SET_UP.md) page to review a recent-ish list of OpenLearn units; click on the `Grab Unit into this repo` associated with a course to automatically open an issue that can be used to import the course material into your repository.
 
-In parrticular, you're looking for a URL that __ends__ in something like ``/content-section-0` or `/content-section-0?active-tab=description-tab` (the section number doesn't matter...).
+
+### Reviewing Units on the OpenLearn Site
+
+If you would rather inspect a unit before importing it into your repository, browse for units using the [OpenLearn course unit](https://www.open.edu/openlearn/free-courses/full-catalogue). When you've found one you'd like to "appropriate", you need to grab its web address / URL: you're looking for a URL that __ends__ in something like `/content-section-0` or `/content-section-0?active-tab=description-tab` (the section number doesn't matter...).
 
 For example, something like:
 
@@ -38,11 +41,15 @@ In the main body of the comment, on the first line, paste the URL you copied.
 
 Click the green *Submit new issue* button and go and grab a cup of tea (the first build make take five to ten minutes).
 
+## What Happens When You Submit a `Fetch https://www.open.edu/openlearn` Issue?
+
+When you submit the issue, a little helper elf will go and grab the unit,  convert it to a text format, and commit it to your repository in the `content` folder.
+
 __If I have set things up properly, only issues created by you or a collaborator on the repo should trigger any data grabbing and website building activity. If you submit another issue, it will essentially reset the repo, so any changes you have made to content will be lost.__
 
-When you come back, refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](./content) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
+The import and conversion proceess may take a few minutes, so be patient. You can keep track of activity from your repository's [`Actions`](../../Actions) tab. When the `Fetch https://www.open.edu/openlearn` headed action has completed,  refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](./content) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
 
-These files should also have been rendered elsewhere in the repository as HTML web pages (you donlt need to know where...). You should be able to see the website rendered from them on a URL with the pattern:
+These files should also have been rendered elsewhere in the repository as HTML web pages (you don't need to know where, but if you're interested, they're in the `gh-pages` branch of the repository... If you donlt know what that means, *it doesnlt mattter*.). You should be able to see the website rendered from them on a URL with the pattern:
 
 `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO`
 
