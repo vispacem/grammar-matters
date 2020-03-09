@@ -1,0 +1,4 @@
+jupyter serverextension enable --py nbzip --sys-prefix
+jupyter nbextension install --py nbzip
+jupyter nbextension enable --py nbzip
+

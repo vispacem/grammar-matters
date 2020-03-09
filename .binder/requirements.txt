@@ -1,1 +1,9 @@
-.
+nbsphinx
+jupytext
+ipywidgets
+sphinx-autobuild
+sphinxcontrib-bibtex
+sphinxcontrib-svg2pdfconverter
+nbgitpuller
+nbzip
+git+https://github.com/innovationOUtside/open-ouxml-tools.git
