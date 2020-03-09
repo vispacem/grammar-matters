@@ -1,0 +1,39 @@
+name: "Setup repo"
+on:
+  push:
+    branches:
+      - master
+jobs:
+
+  setup-readme:
+    if: (github.event.commits[0].message == 'Initial commit') && (github.run_number == 1)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: python -m pip install --upgrade git+https://github.com/innovationOUtside/open-ouxml-tools.git
+      - name: Update README with OpenLearn unit listing
+        run: |
+          # Inspired by https://github.com/fastai/fastpages/blob/master/.github/workflows/setup.yaml
+          import re, os
+          from ouxml import moodlescraper as mscpr
+          from pathlib import Path
+          readme_template_path = Path('.github/UNIT_TEMPLATE.md')
+          readme_path = Path('README.md')
+          readme = readme_template_path.read_text().replace('{openlearn_units_html}', mscpr.get_units_table_html())
+          readme_path.write_text(readme)
+
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --global user.name "$GITHUB_ACTOR"
+          git add README.md
+
+      - name: Push changes to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          
