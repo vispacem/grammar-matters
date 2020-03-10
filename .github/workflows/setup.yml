@@ -1,0 +1,42 @@
+name: Repo Setup
+# Based on: https://github.com/fastai/fastpages/blob/master/.github/workflows/setup.yaml
+on: push
+
+jobs:
+  setup:
+    if: (github.event.commits[0].message == 'Initial commit') && (github.run_number == 1)
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Copy Repository Contents
+      uses: actions/checkout@v2
+        
+    - name: modify files
+      run: |
+        import re, os
+        from pathlib import Path
+        nwo = os.getenv('GITHUB_REPOSITORY')
+        username, reponame = nwo.split('/')
+        readme_template_path = Path('.github/README_TEMPLATE.md')
+        readme_path = Path('README.md')
+        
+        # replace content of README with instantiated template
+        readme = readme_template_path.read_text().format(username=username, reponame=reponame)
+        readme_path.write_text(readme)
+        
+    - name: check-in files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m"Initial commit" -a || true
+  
+    - name: Push changes to master
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
