@@ -6,9 +6,21 @@ Template repo for autobuilding OpenLearn sites via nbsphinx using Github Actions
 
 It means you have access to OpenLearn content as simple text files that you can easily edit (i.e. repurpose) and publish via your own website using a free hosting service...
 
-It also means you can play with the content on MyBinder...
+With the magic of Jupytext, it also means you can play with the content via a Jupyter notebook on MyBinder or your own local notebook server.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://gke.mybinder.org/v2/gh/psychemedia/openlearn-publish-test/master)
+
+
+## Contents
+
+- [So how do I start?](#so-how-do-i-start)
+- [Reviewing Units on the OpenLearn Site](reviewing-units-on-the-openlearn-site)
+- [What Happens When You Submit a "Fetch" Issue?](#what-happens-when-you-submit-a-fetch-issue)
+- [Editing the Content on MyBinder](#editing-the-content-on-mybnder)
+- [Editing the content on Github](#editing-the-content-on-github)
+- [Editing the content on your own computer](#editing-the-content-on-your-own-computer)
+- [So how does it work?](#so-how-does-it-work)
+
 
 ## So how do I start?
 
@@ -21,6 +33,7 @@ When you are logged in to Github, generate a copy of this template repository by
 When you clone the repo, it will also update it's own README to ensure that the links it contains work for your repository. This may take a moment or two, so grab a cup of tea, then refresh the repo homepage. (You can chek progress via the [`Actions`](../../actions) tab of your repo; if an action is running, it's not finished yet!)
 
 In *your* copy of the repo, view the [`SET_UP.md`](./SET_UP.md) page to review a recent-ish list of OpenLearn units; click on the `Grab Unit into this repo` associated with a course to automatically open an issue that can be used to import the course material into your repository.
+
 
 ### Reviewing Units on the OpenLearn Site
 
@@ -42,7 +55,8 @@ In the main body of the comment, on the first line, paste the URL you copied.
 
 Click the green *Submit new issue* button and go and grab a cup of tea (the first build make take five to ten minutes).
 
-## What Happens When You Submit a `Fetch https://www.open.edu/openlearn` Issue?
+
+## What Happens When You Submit a "Fetch" Issue?
 
 When you submit the issue, a little helper elf will go and grab the unit,  convert it to a text format, and commit it to your repository in the `content` folder.
 
@@ -66,7 +80,8 @@ If the website *isn't* there, you may need to give the Github Pages website buil
 
 If you click on the link and the OpenLearn materials *aren't* there, force a reload of the webpage in your browser to clear any cached versions of the page.
 
-## And What's the Binder thing?
+
+## Editing the Content on MyBinder
 
 MyBinder is part of a the Jupyter ecosytem. Clicking the button will cause MyBinder to launch a Jupyter notebook server that looks onto an environment created from this repository.
 
@@ -77,13 +92,37 @@ When the Binderised environment is built, and the notebook server launched (you 
 *Unfortunately*, there's no safe and direct way of saving your content back to the repository. Instead, you'll have to click on the `Download` button in a notebook toolbar and then open your browser onto the appropriate directory in your repo, and drag the file you just downloaded onto that directory listing. You should see an upload view to upload the files. Commit them (with an explanatory note about them) and the build and republish should be kicked into action again.
 
 
-## Changing the content
+## Editing the content on Github
 
 From the Github repository homepage, you can navigate to any or the source markdown webpages and click on the pencil icon (`Edit this file`) button at the bottom of the page. When you are happy with your changes, click the green *Commit changes* button at the bottom of the page. You may also want to edit a *commit message* to describe the change(s) your made.
 
 When you commit the change, a new HTML version of the page will be generated and published to your Github Pages website.
 
 There's a lot more things possible, but I need to write some more docs to explain exactly what...
+
+
+## Editing the content on MyBinder / Binderhub
+
+If you launch your repo into MyBinder, you can edit the content via a Jupyter notebook user interface: navigate to the `content/` folder and then click on a file to open it, and edit it, via a Jupyter notebook UI.
+
+If you go back the notebook file listing page, you can right-click on a file and download it. On your Github repo page, go to the `content` directory and then to the same directory name that your edited file was in; drag your downloaded file onto the Github page and an an *upload* view should appear.
+
+Wait for the file to upload (the blue background upload status bar turns white when the upload is complete) and then commit it by pressing the big green *Commit* button. Once it is committed, your Github pages site should rebuild to reflect the change.
+
+Alternatively, if you have changed several files in the MyBinder environment, go to the notebook page that lists the contents of the `content/` folder and click the *Download as zip* button in the top right hand corner of the page.
+
+This will download a file called `content.zip` to your desktop. Drag the downloaded `content.zip` file onto your Github repo homepage to upload it. Wait for the file to upload (the blue background upload status bar turns white when the upload is complete) and then commit it by pressing the big green *Commit* button. Once it is committed, *__the contents of the original `content` directory will be deleted__* and the contents of the `content.zip` file unzipped into a newly created `content` directory. The Github pages site should rebuild to reflect the change.
+
+
+## Changing the content on your own computer
+
+There are several ways you can work with the content locally.
+
+Firstly, you can download a zip file containing the contents of your repo, make changs to the files, and then upload them as per the MyBinder route.
+
+Secondly, if you are a git user, you can clone the repository to a local git repository on your computer, make changes to the  files, commit them and push them back to the `master` branch on the Github repository; the commit to master will force any pages that need rebuilding to be rebuilt.
+
+Thirdly, you can run a notebook container derived from your repo locally, allowing you to edit files within a notebook environment (as per the MyBinder route), but on your own computer, then downloading and uploading the files as per the MyBinder route, or via your own git environment. The easiest way of running the container (which is the same as the one that runs on MyBinder), is by using [ContainDS](https://containds.com/). [Download and install Docker Desktop](https://www.docker.com/products/docker-desktop) and then [download and install ContainDS](https://containds.com/download/). Launch *ContainDS*, click on the *Binder* tab, paste in the URL of your repository on Github, and click *Launch*. A Docker image will be built for you from the repo using `repo2docker`. Once the image has been built, which may take some time on the first run, you will be presented with a container configuration page. Give your container meaningful name (no spaces...) and for the *workspace path* select the directory you want the repo files to be stored in. Click *Create* and the container will be launched. Click on the *Web* icon in the toolbar to open the container's notebook server homepage in your browser. You can then edit the files as you would in MyBinder. Start and stop the container as required from the *ContainDS* application. Your files will always be available in the directory you specified, whether or not the container is running.
 
 
 ## So how does it work?
