@@ -1,0 +1,102 @@
+name: Unzip
+on:
+  push:
+    paths:
+    - '**.zip'
+
+jobs:
+  unzip-files:
+    if: startsWith(github.event.commits[0].message, 'Unzip')
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Copy Repository Contents
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - name: handle zip
+      run: |
+        git config --global user.email "${GH_EMAIL}"
+        git config --global user.name "${GH_USERNAME}"
+        for f in $(git diff HEAD^..HEAD --no-commit-id --name-only | grep -E '.zip$')
+          do
+              echo "Uploaded $f"
+              # Should really check that this is content.zip
+              rm -rf content/*
+              unzip -o $f -d content
+              git rm $f
+              git add content/
+              git commit -m"unzip $f"
+          done
+        git push
+      env: 
+        GH_EMAIL: ${{ github.event.commits[0].author.email }}
+        GH_USERNAME: ${{ github.event.commits[0].author.username }}
+        
+    - name: Setup conda
+      uses: s-weigand/setup-conda@v1
+      with:
+        activate-conda: false
+        conda-channels: conda-forge
+
+    - name: Install publish dependencies
+      run: |
+        conda install -y pandoc librsvg tectonic
+        python -m pip install sphinx
+        python -m pip install nbsphinx
+        python -m pip install jupytext
+        (test -f requirements.txt && python -m pip install -r requirements.txt) || echo "No other requirements." 
+    #- name: Show installed dependencies
+    #  if: always()
+    #  run: |
+    #    python --version
+    #    python -c "import nbsphinx; print('nbsphinx.__version__==', nbsphinx.__version__)"
+    #    pandoc -v
+    #    pip freeze
+
+    - name: Build docs HTML
+      run: python -m sphinx . ./_build/html/ -b html
+
+    - name: Deploy HTML site to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
+
+    - name: Build docs LaTeX
+      run: python -m sphinx . ./_build/latex/ -b latex
+    - name: Build docs ePub
+      continue-on-error: true
+      run: python -m sphinx . ./_build/epub/ -b epub
+    - name: Cache Tectonic (latex / PDF) Packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/Tectonic
+        key: ${{ runner.os }}-tectonic-packages
+    - name: Build PDF from LaTeX
+      continue-on-error: true
+      run: tectonic ./_build/latex/nbsphinx.tex
+
+    - name: Create _artifacts folder
+      run: |
+        mkdir - p _artifacts
+        ( test -f ./_build/latex/nbsphinx.pdf && cp ./_build/latex/nbsphinx.pdf _artifacts) || echo "No PDF found."
+        ( test -f ./_build/epub/sphinx.epub && cp ./_build/epub/sphinx.epub _artifacts) || echo "No EPUB found."
+    - name: Upload _artifacts folder
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: docs
+        path: ./_artifacts
+
+    - name: Commits for build branch
+      run: |       
+        git add --all --force _build
+        git commit -a -m 'Push newly built build branch'
+    - name: Push changes to build branch
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: build
+        force: true
