@@ -16,7 +16,7 @@ With the magic of Jupytext, it also means you can play with the content via a Ju
 - [So how do I start?](#so-how-do-i-start)
 - [Reviewing Units on the OpenLearn Site](reviewing-units-on-the-openlearn-site)
 - [What Happens When You Submit a "Fetch" Issue?](#what-happens-when-you-submit-a-fetch-issue)
-- [So What Exactly Is "MyBinder"?]
+- [So What Exactly Is "MyBinder"?](#so-what-exactly-is-mybinder)
 - [Editing the Content on MyBinder](#editing-the-content-on-mybnder)
 - [Editing the content on Github](#editing-the-content-on-github)
 - [Editing the content on your own computer](#editing-the-content-on-your-own-computer)
