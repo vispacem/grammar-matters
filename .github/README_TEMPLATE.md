@@ -8,7 +8,7 @@ It means you have access to OpenLearn content as simple text files that you can 
 
 It also means you can play with the content on MyBinder...
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/{username}/{reponame}/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/{username}/{reponame}/master?filepath=content)
 
 
 ## Contents
@@ -73,7 +73,7 @@ MyBinder is part of a the Jupyter ecosytem. Clicking the button will cause MyBin
 
 *When you clone the repo, the button will still point to my repo. I havenlt got round to creating a Github Action to fix that yet... Feel free to edit the `README.md` file on your repository to fix it yourself, or copy your repo URL and paste it into the box at [mybinder.org](https://mybinder.org) to launch your repo via the MyBinder homepage.*
 
-When the Binderised environment is built, and the notebook server launched (you shuld be redirected to it automatically), navigate into the `content` directory from the the notebook homepage, and then to one of the markdown files; click on one of the markdown file links. The document will open up in the interactive, read/write Jupyter notebook user interface. Which means you can edit it, execute any code in it, add and execute code of your own.
+When the Binderised environment is built, the notebook server launched into the `content` directory (you shuld be redirected to it automatically). Click through to one of section folders and then click on one of the markdown file links. The document will open up in the interactive, read/write Jupyter notebook user interface. Which means you can edit it, execute any code in it, add and execute code of your own.
 
 *Unfortunately*, there's no safe and direct way of saving your content back to the repository. Instead, you'll have to click on the `Download` button in a notebook toolbar and then open your browser onto the appropriate directory in your repo, and drag the file you just downloaded onto that directory listing. You should see an upload view to upload the files. Commit them (with an explanatory note about them) and the build and republish should be kicked into action again.
 
