@@ -16,6 +16,7 @@ With the magic of Jupytext, it also means you can play with the content via a Ju
 - [So how do I start?](#so-how-do-i-start)
 - [Reviewing Units on the OpenLearn Site](reviewing-units-on-the-openlearn-site)
 - [What Happens When You Submit a "Fetch" Issue?](#what-happens-when-you-submit-a-fetch-issue)
+- [So What Exactly Is "MyBinder"?]
 - [Editing the Content on MyBinder](#editing-the-content-on-mybnder)
 - [Editing the content on Github](#editing-the-content-on-github)
 - [Editing the content on your own computer](#editing-the-content-on-your-own-computer)
@@ -81,7 +82,7 @@ If the website *isn't* there, you may need to give the Github Pages website buil
 If you click on the link and the OpenLearn materials *aren't* there, force a reload of the webpage in your browser to clear any cached versions of the page.
 
 
-## Editing the Content on MyBinder
+## So What Exactly Is "MyBinder"?
 
 MyBinder is part of a the Jupyter ecosytem. Clicking the button will cause MyBinder to launch a Jupyter notebook server that looks onto an environment created from this repository.
 
@@ -114,7 +115,7 @@ Alternatively, if you have changed several files in the MyBinder environment, go
 This will download a file called `content.zip` to your desktop. Drag the downloaded `content.zip` file onto your Github repo homepage to upload it. Wait for the file to upload (the blue background upload status bar turns white when the upload is complete) and then commit it by pressing the big green *Commit* button. Once it is committed, *__the contents of the original `content` directory will be deleted__* and the contents of the `content.zip` file unzipped into a newly created `content` directory. The Github pages site should rebuild to reflect the change.
 
 
-## Changing the content on your own computer
+## Editing the content on your own computer
 
 There are several ways you can work with the content locally.
 
