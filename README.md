@@ -8,7 +8,7 @@ It means you have access to OpenLearn content as simple text files that you can 
 
 It also means you can play with the content on MyBinder...
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/psychemedia/openlearn-publish-test/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://gke.mybinder.org/v2/gh/psychemedia/openlearn-publish-test/master)
 
 ## So how do I start?
 
