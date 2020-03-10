@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v2
         
     - name: modify files
+      shell: python
       run: |
         import re, os
         from pathlib import Path
