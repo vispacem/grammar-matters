@@ -27,7 +27,7 @@ jobs:
               unzip -o $f -d content
               git rm $f
               git add content/
-              git commit -m"unzip $f"
+              git commit -m"unzip $f" || true
           done
         git push
       env: 
@@ -93,7 +93,7 @@ jobs:
     - name: Commits for build branch
       run: |       
         git add --all --force _build
-        git commit -a -m 'Push newly built build branch'
+        git commit -a -m 'Push newly built build branch' || true
     - name: Push changes to build branch
       uses: ad-m/github-push-action@master
       with:
