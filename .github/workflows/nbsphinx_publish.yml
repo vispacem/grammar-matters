@@ -27,7 +27,7 @@ jobs:
           force: true
           
   nbsphinx-publish:
-    if: (github.event.commits[0].message != 'Initial commit') && (!(startsWith(github.event.commits[0].message, 'Update workflow'))) && (github.run_number != 1) && (github.event.commits[0].message != 'Update README.md')
+    if: (github.event.commits[0].message != 'Initial commit') && (!(contains(github.event.commits[0].message, '--nobuild'))) && (!(startsWith(github.event.commits[0].message, 'Update workflow'))) && (github.run_number != 1) && (github.event.commits[0].message != 'Update README.md')
     runs-on: ubuntu-latest
 
     steps:
