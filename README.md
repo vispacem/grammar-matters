@@ -18,8 +18,9 @@ To create your own OpenLearn content site, you need to get a Github account. You
 
 When you are logged in to Github, generate a copy of this template repository by clicking the green *Use this template* button or [clicking here](https://github.com/psychemedia/openlearn-publish-test/generate).
 
-In *your* copy of the repo, view the [`SET_UP.md`](./SET_UP.md) page to review a recent-ish list of OpenLearn units; click on the `Grab Unit into this repo` associated with a course to automatically open an issue that can be used to import the course material into your repository.
+When you clone the repo, it will also update it's own README to ensure that the links it contains work for your repository. This may take a moment or two, so grab a cup of tea, then refresh the repo homepage. (You can chek progress via the [`Actions`](../../actions) tab of your repo; if an action is running, it's not finished yet!)
 
+In *your* copy of the repo, view the [`SET_UP.md`](./SET_UP.md) page to review a recent-ish list of OpenLearn units; click on the `Grab Unit into this repo` associated with a course to automatically open an issue that can be used to import the course material into your repository.
 
 ### Reviewing Units on the OpenLearn Site
 
@@ -49,7 +50,7 @@ __If I have set things up properly, only issues created by you or a collaborator
 
 The import and conversion proceess may take a few minutes, so be patient. You can keep track of activity from your repository's [`Actions`](../../Actions) tab. When the `Fetch https://www.open.edu/openlearn` headed action has completed,  refresh your repository homepage. Click on the `content` directory link in your repository file list (or [click here](./content) and you should see some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.
 
-These files should also have been rendered elsewhere in the repository as HTML web pages (you don't need to know where, but if you're interested, they're in the `gh-pages` branch of the repository... If you donlt know what that means, *it doesnlt mattter*.). You should be able to see the website rendered from them on a URL with the pattern:
+These files should also have been rendered elsewhere in the repository as HTML web pages (you don't need to know where, but if you're interested, they're in the `gh-pages` branch of the repository... If you don't know what that means, *it doesn't matter*.). You should be able to see the website rendered from them on a URL with the pattern:
 
 `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO`
 
