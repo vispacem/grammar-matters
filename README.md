@@ -10,6 +10,7 @@ With the magic of Jupytext, it also means you can play with the content via a Ju
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://gke.mybinder.org/v2/gh/psychemedia/openlearn-publish-test/master)
 
+See also: [*Appropriating OpenLearn Content and Republishing Edited Versions Of It Via a “Simple” Automated Text Blogging Workflow*](https://blog.ouseful.info/2020/03/11/appropriating-openlearn-content-and-republishing-edited-versions-of-it-via-a-simple-automated-text-blogging-workflow/).
 
 ## Contents
 
