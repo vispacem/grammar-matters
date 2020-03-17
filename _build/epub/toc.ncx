@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>No title provided.</text>
+  </docTitle>
+  <navMap>    
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>Grammar matters</text>
+      </navLabel>
+      <content src="index.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>1 Why does grammar matter?</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_01.xhtml" />  
+      <navPoint id="navPoint3" playOrder="2">
+        <navLabel>
+          <text>1 Why does grammar matter?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>Activity 1: Why is grammar awareness important?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml#Activity-1:-Why-is-grammar-awareness-important?" />  
+        <navPoint id="navPoint5" playOrder="3">
+          <navLabel>
+            <text>Activity 1: Why is grammar awareness important?</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Activity-1:-Why-is-grammar-awareness-important?" />  
+        </navPoint>
+        <navPoint id="navPoint6" playOrder="4">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Question" />  
+        </navPoint>
+        <navPoint id="navPoint7" playOrder="5">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Discussion" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint8" playOrder="6">
+        <navLabel>
+          <text>Activity 2: A matter of life and death?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml#Activity-2:-A-matter-of-life-and-death?" />  
+        <navPoint id="navPoint9" playOrder="6">
+          <navLabel>
+            <text>Activity 2: A matter of life and death?</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Activity-2:-A-matter-of-life-and-death?" />  
+        </navPoint>
+        <navPoint id="navPoint10" playOrder="7">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id1" />  
+        </navPoint>
+        <navPoint id="navPoint11" playOrder="8">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id2" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint12" playOrder="9">
+        <navLabel>
+          <text>Activity 3: Grammar in the court room</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml#Activity-3:-Grammar-in-the-court-room" />  
+        <navPoint id="navPoint13" playOrder="9">
+          <navLabel>
+            <text>Activity 3: Grammar in the court room</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Activity-3:-Grammar-in-the-court-room" />  
+        </navPoint>
+        <navPoint id="navPoint14" playOrder="10">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id5" />  
+        </navPoint>
+        <navPoint id="navPoint15" playOrder="11">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id6" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint16" playOrder="12">
+        <navLabel>
+          <text>Activity 4: Grammar: form or function?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml#Activity-4:-Grammar:-form-or-function?" />  
+        <navPoint id="navPoint17" playOrder="12">
+          <navLabel>
+            <text>Activity 4: Grammar: form or function?</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Activity-4:-Grammar:-form-or-function?" />  
+        </navPoint>
+        <navPoint id="navPoint18" playOrder="13">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id7" />  
+        </navPoint>
+        <navPoint id="navPoint19" playOrder="14">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id8" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint20" playOrder="15">
+        <navLabel>
+          <text>Activity 5: The value of a functional perspective on grammar</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_01.xhtml#Activity-5:-The-value-of-a-functional-perspective-on-grammar" />  
+        <navPoint id="navPoint21" playOrder="15">
+          <navLabel>
+            <text>Activity 5: The value of a functional perspective on grammar</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#Activity-5:-The-value-of-a-functional-perspective-on-grammar" />  
+        </navPoint>
+        <navPoint id="navPoint22" playOrder="16">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id9" />  
+        </navPoint>
+        <navPoint id="navPoint23" playOrder="17">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_01.xhtml#id10" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint24" playOrder="18">
+      <navLabel>
+        <text>2 What do we mean by ‘meaning’?</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_02.xhtml" />  
+      <navPoint id="navPoint25" playOrder="18">
+        <navLabel>
+          <text>2 What do we mean by ‘meaning’?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_02.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint26" playOrder="19">
+        <navLabel>
+          <text>Box 1 The three metafunctions</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_02.xhtml#Box-1-The-three-metafunctions" />  
+      </navPoint>
+      <navPoint id="navPoint27" playOrder="20">
+        <navLabel>
+          <text>Activity 6: Three types of meaning</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_02.xhtml#Activity-6:-Three-types-of-meaning" />  
+        <navPoint id="navPoint28" playOrder="20">
+          <navLabel>
+            <text>Activity 6: Three types of meaning</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_02.xhtml#Activity-6:-Three-types-of-meaning" />  
+        </navPoint>
+        <navPoint id="navPoint29" playOrder="21">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_02.xhtml#Question" />  
+        </navPoint>
+        <navPoint id="navPoint30" playOrder="22">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_02.xhtml#Discussion" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint31" playOrder="23">
+      <navLabel>
+        <text>3 Ideational meaning – talking about what’s going on</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_03.xhtml" />  
+      <navPoint id="navPoint32" playOrder="23">
+        <navLabel>
+          <text>3 Ideational meaning – talking about what’s going on</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_03.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint33" playOrder="24">
+        <navLabel>
+          <text>3.1 Representing events</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_03.xhtml#3.1-Representing-events" />  
+        <navPoint id="navPoint34" playOrder="24">
+          <navLabel>
+            <text>3.1 Representing events</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_03.xhtml#3.1-Representing-events" />  
+        </navPoint>
+        <navPoint id="navPoint35" playOrder="25">
+          <navLabel>
+            <text>Activity 7: ‘The Killing Time’</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_03.xhtml#Activity-7:-‘The-Killing-Time’" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint36" playOrder="26">
+      <navLabel>
+        <text>4 Interpersonal meaning – interacting with and relating to others</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_04.xhtml" />  
+      <navPoint id="navPoint37" playOrder="26">
+        <navLabel>
+          <text>4 Interpersonal meaning – interacting with and relating to others</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_04.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint38" playOrder="27">
+        <navLabel>
+          <text>Activity 8: Communicating relationships in writing</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_04.xhtml#Activity-8:-Communicating-relationships-in-writing" />  
+        <navPoint id="navPoint39" playOrder="27">
+          <navLabel>
+            <text>Activity 8: Communicating relationships in writing</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_04.xhtml#Activity-8:-Communicating-relationships-in-writing" />  
+        </navPoint>
+        <navPoint id="navPoint40" playOrder="28">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_04.xhtml#Question" />  
+        </navPoint>
+        <navPoint id="navPoint41" playOrder="29">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_04.xhtml#Discussion" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint42" playOrder="30">
+      <navLabel>
+        <text>5 Textual meaning – organising messages to make sense in context</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_05.xhtml" />  
+      <navPoint id="navPoint43" playOrder="30">
+        <navLabel>
+          <text>5 Textual meaning – organising messages to make sense in context</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_05.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint44" playOrder="31">
+        <navLabel>
+          <text>5.1 It’s all in the packaging</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_05.xhtml#5.1-It’s-all-in-the-packaging" />  
+        <navPoint id="navPoint45" playOrder="31">
+          <navLabel>
+            <text>5.1 It’s all in the packaging</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_05.xhtml#5.1-It’s-all-in-the-packaging" />  
+        </navPoint>
+        <navPoint id="navPoint46" playOrder="32">
+          <navLabel>
+            <text>Activity 9: Comparing texts at different places on the mode continuum</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_05.xhtml#Activity-9:-Comparing-texts-at-different-places-on-the-mode-continuum" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint47" playOrder="33">
+      <navLabel>
+        <text>6 Summary of the types of meaning</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_06.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint48" playOrder="34">
+      <navLabel>
+        <text>7 Grammar in the real world</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_07.xhtml" />  
+      <navPoint id="navPoint49" playOrder="34">
+        <navLabel>
+          <text>7 Grammar in the real world</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_07.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint50" playOrder="35">
+        <navLabel>
+          <text>Activity 10: Raining cats and dogs</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_07.xhtml#Activity-10:-Raining-cats-and-dogs" />  
+        <navPoint id="navPoint51" playOrder="35">
+          <navLabel>
+            <text>Activity 10: Raining cats and dogs</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#Activity-10:-Raining-cats-and-dogs" />  
+        </navPoint>
+        <navPoint id="navPoint52" playOrder="36">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#Question" />  
+        </navPoint>
+        <navPoint id="navPoint53" playOrder="37">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#Discussion" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint54" playOrder="38">
+        <navLabel>
+          <text>Activity 11: SFL in action: examples from the secondary school classroom</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_07.xhtml#Activity-11:-SFL-in-action:-examples-from-the-secondary-school-classroom" />  
+        <navPoint id="navPoint55" playOrder="38">
+          <navLabel>
+            <text>Activity 11: SFL in action: examples from the secondary school classroom</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#Activity-11:-SFL-in-action:-examples-from-the-secondary-school-classroom" />  
+        </navPoint>
+        <navPoint id="navPoint56" playOrder="39">
+          <navLabel>
+            <text>Question</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#id1" />  
+        </navPoint>
+        <navPoint id="navPoint57" playOrder="40">
+          <navLabel>
+            <text>Discussion</text>
+          </navLabel>
+          <content src="content/session_00/Part_00_07.xhtml#id2" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint58" playOrder="41">
+      <navLabel>
+        <text>Conclusion</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_08.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint59" playOrder="42">
+      <navLabel>
+        <text>Keep on learning</text>
+      </navLabel>
+      <content src="content/session_00/Part_00_09.xhtml" />  
+      <navPoint id="navPoint60" playOrder="42">
+        <navLabel>
+          <text>Keep on learning</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_09.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint61" playOrder="43">
+        <navLabel>
+          <text>Study another free course</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_09.xhtml#Study-another-free-course" />  
+      </navPoint>
+      <navPoint id="navPoint62" playOrder="44">
+        <navLabel>
+          <text>Take your studies further</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_09.xhtml#Take-your-studies-further" />  
+      </navPoint>
+      <navPoint id="navPoint63" playOrder="45">
+        <navLabel>
+          <text>What’s new from OpenLearn?</text>
+        </navLabel>
+        <content src="content/session_00/Part_00_09.xhtml#What’s-new-from-OpenLearn?" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint64" playOrder="46">
+      <navLabel>
+        <text>Glossary</text>
+      </navLabel>
+      <content src="content/session_01/Part_01_glossary.xhtml" />  
+    </navPoint>
+  </navMap>
+</ncx>

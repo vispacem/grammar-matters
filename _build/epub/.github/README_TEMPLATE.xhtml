@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>oer-md-publish - {username}/{reponame}</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="oer-md-publish---{username}/{reponame}">
+<h1>oer-md-publish - {username}/{reponame}</h1>
+<p>Repo for autobuilding OpenLearn sites via nbsphinx using Github Actions and publishing them via Github Pages.</p>
+<p><em>Which means what exactly?</em></p>
+<p>It means you have access to OpenLearn content as simple text files that you can easily edit (i.e. repurpose) and publish via your own website using a free hosting service…</p>
+<p>It also means you can play with the content on MyBinder…</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/%7Busername%7D/%7Breponame%7D/master?filepath=content"><img alt="Binder" src="../_images/badge_logo.svg" /></a><span class="link-target"> [https://mybinder.org/v2/gh/%7Busername%7D/%7Breponame%7D/master?filepath=content]</span></p>
+<div class="section" id="Contents">
+<h2>Contents</h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#so-how-do-i-start">So how do I start?</a></p></li>
+<li><p><a class="reference external" href="reviewing-units-on-the-openlearn-site">Reviewing Units on the OpenLearn Site</a></p></li>
+<li><p><a class="reference external" href="#what-happens-when-you-submit-a-fetch-issue">What Happens When You Submit a “Fetch” Issue?</a></p></li>
+<li><p><a class="reference external" href="#so-what-exactly-is-mybinder">So What Exactly Is “MyBinder”?</a></p></li>
+<li><p><a class="reference external" href="#editing-the-content-on-mybnder">Editing the Content on MyBinder</a></p></li>
+<li><p><a class="reference external" href="#editing-the-content-on-github">Editing the content on Github</a></p></li>
+<li><p><a class="reference external" href="#editing-the-content-on-your-own-computer">Editing the content on your own computer</a></p></li>
+<li><p><a class="reference external" href="#so-how-does-it-work">So how does it work?</a></p></li>
+</ul>
+</div>
+<div class="section" id="So-how-do-I-start?">
+<h2>So how do I start?</h2>
+<p>This template repository can be used as a basis for creating websites derived from OpenLearn content that is available in the OU-XML format (which is most OpenLearn units / courses).</p>
+<p>View the <code class="docutils literal notranslate"><span class="pre">`SET_UP.md</span></code> &lt;./SET_UP.md&gt;`__ page to review a recent-ish list of OpenLearn units; click on the <code class="docutils literal notranslate"><span class="pre">Grab</span> <span class="pre">Unit</span> <span class="pre">into</span> <span class="pre">this</span> <span class="pre">repo</span></code> associated with a course to automatically open an issue that can be used to import the course material into your repository.</p>
+<div class="section" id="Reviewing-Units-on-the-OpenLearn-Site">
+<h3>Reviewing Units on the OpenLearn Site</h3>
+<p>If you would rather inspect a unit before importing it into your repository, browse for units using the <a class="reference external" href="https://www.open.edu/openlearn/free-courses/full-catalogue">OpenLearn course unit</a><span class="link-target"> [https://www.open.edu/openlearn/free-courses/full-catalogue]</span>. When you’ve found one you’d like to “appropriate”, you need to grab its web address / URL: you’re looking for a URL that <strong>ends</strong> in something like <code class="docutils literal notranslate"><span class="pre">/content-section-0</span></code> or <code class="docutils literal notranslate"><span class="pre">/content-section-0?active-tab=description-tab</span></code> (the section number doesn’t matter…).</p>
+<p>For example, something like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://www.open.edu/openlearn/science-maths-technology/learn-code-data-analysis/content-section-overview-0?active-tab=description-tab</span> <span class="pre">learn_to_code</span></code></p>
+<p>Copy the URL.</p>
+<p>In your repository, go to the <code class="docutils literal notranslate"><span class="pre">`Issues</span></code> tab &lt;<a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/issues">https://github.com/%7Busername%7D/%7Breponame%7D/issues</a>&gt;`__ and create a new issue by clicking on the green <em>New issue</em> button. (Alternatively, <a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/issues/new">this link</a><span class="link-target"> [https://github.com/%7Busername%7D/%7Breponame%7D/issues/new]</span> should do it.)</p>
+<p>In the title box, enter:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Fetch</span> <span class="pre">https://www.open.edu/openlearn</span></code></p>
+<p>In the main body of the comment, on the first line, paste the URL you copied.</p>
+<p>Click the green <em>Submit new issue</em> button and go and grab a cup of tea (the first build make take five to ten minutes).</p>
+</div>
+</div>
+<div class="section" id="What-Happens-When-You-Submit-a-“Fetch”-Issue?">
+<h2>What Happens When You Submit a “Fetch” Issue?</h2>
+<p>When you submit the issue, a little helper elf will go and grab the unit, convert it to a text format, and commit it to your repository in the <code class="docutils literal notranslate"><span class="pre">content</span></code> folder.</p>
+<p><strong>If I have set things up properly, only issues created by you or a collaborator on the repo should trigger any data grabbing and website building activity. If you submit another issue, it will essentially reset the repo, so any changes you have made to content will be lost.</strong></p>
+<p>The import and conversion proceess may take a few minutes, so be patient. You can keep track of activity from your repository’s <code class="docutils literal notranslate"><span class="pre">`Actions</span></code> &lt;<a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/actions">https://github.com/%7Busername%7D/%7Breponame%7D/actions</a>&gt;`__ tab. When the <code class="docutils literal notranslate"><span class="pre">Fetch</span> <span class="pre">https://www.open.edu/openlearn</span></code> headed action has completed, refresh your repository homepage. Click on the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory link in your repository file list (or <a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/tree/master/content">click here</a><span class="link-target"> [https://github.com/%7Busername%7D/%7Breponame%7D/tree/master/content]</span> and you should see
+some file directories that contain simple markdown text files that have been generated from the source file for the OpenLearn content.</p>
+<p>These files should also have been rendered elsewhere in the repository as HTML web pages (you don’t need to know where, but if you’re interested, they’re in the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch of the repository… If you don’t know what that means, <em>it doesn’t matter</em>.). You should be able to see the website rendered from them here:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`https://{username}.github.io/{reponame}</span></code> &lt;<a class="reference external" href="https://%7Busername%7D.github.io/%7Breponame%7D">https://%7Busername%7D.github.io/%7Breponame%7D</a>&gt;`__</p>
+<p>If the website <em>isn’t</em> there, you may need to give the Github Pages website builder a prod. Go to your repository settings page from the <em>Settings</em> tab on the repo toolbar (or <a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/settings">click here</a><span class="link-target"> [https://github.com/%7Busername%7D/%7Breponame%7D/settings]</span>) and scroll down until you see the <strong>Github Pages</strong> heading. Their <em>should</em> be a green highlighted link to your pages there. If there <em>isn’t</em>, in the <em>Source</em> dropdown list select <code class="docutils literal notranslate"><span class="pre">master</span> <span class="pre">branch</span></code> and then select <code class="docutils literal notranslate"><span class="pre">gh-pages</span> <span class="pre">branch</span></code>. This should
+kick things back into action. After a minute or two, refresh the page and a green backgounded link to you website should be there.</p>
+<p>If you click on the link and the OpenLearn materials <em>aren’t</em> there, force a reload of the webpage in your browser to clear any cached versions of the page.</p>
+</div>
+<div class="section" id="So-What’s-MyBinder-Anyway?">
+<h2>So What’s MyBinder Anyway?</h2>
+<p>MyBinder is part of a the Jupyter ecosytem. Clicking the button will cause MyBinder to launch a Jupyter notebook server that looks onto an environment created from this repository.</p>
+<p><em>When you clone the repo, the button will still point to my repo. I havenlt got round to creating a Github Action to fix that yet… Feel free to edit the ``README.md`` file on your repository to fix it yourself, or copy your repo URL and paste it into the box at</em><a class="reference external" href="https://mybinder.org">mybinder.org</a><span class="link-target"> [https://mybinder.org]</span><em>to launch your repo via the MyBinder homepage.</em></p>
+<p>When the Binderised environment is built, the notebook server launched into the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory (you shuld be redirected to it automatically). Click through to one of section folders and then click on one of the markdown file links. The document will open up in the interactive, read/write Jupyter notebook user interface. Which means you can edit it, execute any code in it, add and execute code of your own.</p>
+<p><em>Unfortunately</em>, there’s no safe and direct way of saving your content back to the repository. Instead, you’ll have to click on the <code class="docutils literal notranslate"><span class="pre">Download</span></code> button in a notebook toolbar and then open your browser onto the appropriate directory in your repo, and drag the file you just downloaded onto that directory listing. You should see an upload view to upload the files. Commit them (with an explanatory note about them) and the build and republish should be kicked into action again.</p>
+</div>
+<div class="section" id="Editing-the-content-on-Github">
+<h2>Editing the content on Github</h2>
+<p>From the Github repository homepage, you can navigate to any or the source markdown webpages and click on the pencil icon (<code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">this</span> <span class="pre">file</span></code>) button at the bottom of the page. When you are happy with your changes, click the green <em>Commit changes</em> button at the bottom of the page. You may also want to edit a <em>commit message</em> to describe the change(s) your made.</p>
+<p>When you commit the change, a new HTML version of the page will be generated and published to your Github Pages website.</p>
+<p>There’s a lot more things possible, but I need to write some more docs to explain exactly what…</p>
+</div>
+<div class="section" id="Editing-the-content-on-MyBinder-/-Binderhub">
+<h2>Editing the content on MyBinder / Binderhub</h2>
+<p>If you launch your repo into MyBinder, you can edit the content via a Jupyter notebook user interface: navigate to the <code class="docutils literal notranslate"><span class="pre">content/</span></code> folder and then click on a file to open it, and edit it, via a Jupyter notebook UI.</p>
+<p>If you go back the notebook file listing page, you can right-click on a file and download it. On your Github repo page, go to the <code class="docutils literal notranslate"><span class="pre">`content</span></code> directory &lt;<a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D/tree/master/content">https://github.com/%7Busername%7D/%7Breponame%7D/tree/master/content</a>&gt;`__ and then to the same directory name that your edited file was in; drag your downloaded file onto the Github page and an an <em>upload</em> view should appear.</p>
+<p>Wait for the file to upload (the blue background upload status bar turns white when the upload is complete) and then commit it by pressing the big green <em>Commit</em> button. Once it is committed, your Github pages site should rebuild to reflect the change.</p>
+<p>Alternatively, if you have changed several files in the MyBinder environment, go to the notebook page that lists the contents of the <code class="docutils literal notranslate"><span class="pre">content/</span></code> folder and click the <em>Download as zip</em> button in the top right hand corner of the page.</p>
+<p>This will download a file called <code class="docutils literal notranslate"><span class="pre">content.zip</span></code> to your desktop. Drag the downloaded <code class="docutils literal notranslate"><span class="pre">content.zip</span></code> file onto your <a class="reference external" href="https://github.com/%7Busername%7D/%7Breponame%7D">Github repo homepage</a><span class="link-target"> [https://github.com/%7Busername%7D/%7Breponame%7D]</span> to upload it. Wait for the file to upload (the blue background upload status bar turns white when the upload is complete) and then commit it by pressing the big green <em>Commit</em> button. Once it is committed, <strong>the contents of the original ``content`` directory will be deleted</strong> and the contents of the
+<code class="docutils literal notranslate"><span class="pre">content.zip</span></code> file unzipped into a newly created <code class="docutils literal notranslate"><span class="pre">content</span></code> directory. The Github pages site should rebuild to reflect the change.</p>
+</div>
+<div class="section" id="Editing-the-content-on-your-own-computer">
+<h2>Editing the content on your own computer</h2>
+<p>There are several ways you can work with the content locally.</p>
+<p>Firstly, you can download a zip file containing the contents of your repo, make changs to the files, and then upload them as per the MyBinder route.</p>
+<p>Secondly, if you are a git user, you can clone the repository to a local git repository on your computer, make changes to the files, commit them and push them back to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch on the Github repository; the commit to master will force any pages that need rebuilding to be rebuilt.</p>
+<p>Thirdly, you can run a notebook container derived from your repo locally, allowing you to edit files within a notebook environment (as per the MyBinder route), but on your own computer, then downloading and uploading the files as per the MyBinder route, or via your own git environment. The easiest way of running the container (which is the same as the one that runs on MyBinder), is by using <a class="reference external" href="https://containds.com/">ContainDS</a><span class="link-target"> [https://containds.com/]</span>. <a class="reference external" href="https://www.docker.com/products/docker-desktop">Download and install Docker
+Desktop</a><span class="link-target"> [https://www.docker.com/products/docker-desktop]</span> and then <a class="reference external" href="https://containds.com/download/">download and install ContainDS</a><span class="link-target"> [https://containds.com/download/]</span>. Launch <em>ContainDS</em>, click on the <em>Binder</em> tab, paste in the URL of your repository on Github, and click <em>Launch</em>. A Docker image will be built for you from the repo using <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>. Once the image has been built, which may take some time on the first run, you will be presented with a container configuration page. Give your container meaningful name (no
+spaces…) and for the <em>workspace path</em> select the directory you want the repo files to be stored in. Click <em>Create</em> and the container will be launched. Click on the <em>Web</em> icon in the toolbar to open the container’s notebook server homepage in your browser. You can then edit the files as you would in MyBinder. Start and stop the container as required from the <em>ContainDS</em> application. Your files will always be available in the directory you specified, whether or not the container is running.</p>
+</div>
+<div class="section" id="So-how-does-it-work?">
+<h2>So how does it work?</h2>
+<p>Short answer: <em>string’n’glue</em>.</p>
+<p>Longer answer: when you submit this issue, it triggers a Github Action, (a bit like a helpful brownie of folklore fame) that grabs a “source code” version of the OpenLearn unit (an XML document in the OU-XML format). A Python package (<a class="reference external" href="https://github.com/innovationOUtside/open-ouxml-tools">open-ouxml-tools</a><span class="link-target"> [https://github.com/innovationOUtside/open-ouxml-tools]</span>) is then used to convert this XML to markdown document and places them in the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory, along with an index generating page (<code class="docutils literal notranslate"><span class="pre">index.rst</span></code>) in the top level of the directory.
+These files are then automatically <em>committed</em> and <em>pushed</em> the top level of the repository.</p>
+<p>The action then uses the Sphinx documentation generation tool to render the markdown pages as HTML. In fact, a lot of magic is done using the <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> package with a bit of help from the Jupytext package as part of the conversion. The actual conversion process is <code class="docutils literal notranslate"><span class="pre">md</span> <span class="pre">-&gt;</span> <span class="pre">Jupyter</span> <span class="pre">notebook</span> <span class="pre">(ipynb)</span> <span class="pre">-&gt;</span> <span class="pre">HTML</span></code>. The reason for doing this is that we can edit the markdown in a rich Jupyter notebook style environment to preview various interactive things that we can also render to HTML. It also means
+that we can execute Python code included in the markdown documents and render the outputs from that code execution (which might include charts, for example, or data tables) in the final HTML. But that needs another set of docs to explain properly…</p>
+<p>Once the HTML has been generated, some more Github Action magic copies the HTML pages to where they need to be so that they’re viewable as the final, published Github Pages website.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

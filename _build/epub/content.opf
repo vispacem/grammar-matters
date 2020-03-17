@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en"
+ unique-identifier="unknown"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:title>No title provided.</dc:title>
+    <dc:description>unknown</dc:description>
+    <dc:creator>No author provided.</dc:creator>
+    <dc:contributor>unknown</dc:contributor>
+    <dc:publisher>No publisher provided.</dc:publisher>
+    <dc:rights>No copyright notice provided</dc:rights>
+    <dc:identifier id="unknown">unknown</dc:identifier>
+    <dc:date>2020-03-17T22:16:43Z</dc:date>
+    <meta property="dcterms:modified">2020-03-17T22:16:43Z</meta>
+    <meta property="ibooks:version">0.0.1</meta>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <meta property="ibooks:binding">true</meta>
+    <meta property="ibooks:scroll-axis">vertical</meta>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="epub-0" href="SET_UP.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-1" href="genindex.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-2" href="index.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-3" href=".doctrees/images/564aeb29a2e0a759592d48f87044710bf7928b8a/badge_logo.svg" media-type="image/svg+xml" />
+    <item id="epub-4" href=".github/README_TEMPLATE.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-5" href="_images/badge_logo.svg" media-type="image/svg+xml" />
+    <item id="epub-6" href="_images/e304_1_fig006cropped.jpg" media-type="image/jpeg" />
+    <item id="epub-7" href="_images/e304_1_fig014-512px.jpg" media-type="image/jpeg" />
+    <item id="epub-8" href="_images/e304_2015j_vid014-still.jpg" media-type="image/jpeg" />
+    <item id="epub-9" href="_images/e304_bk1_ch1_fig003.jpg" media-type="image/jpeg" />
+    <item id="epub-10" href="_images/e304_bk1_ch4_fig007.jpg" media-type="image/jpeg" />
+    <item id="epub-11" href="_images/e304_bk3_ch1_fig012_new.tif.jpg" media-type="image/jpeg" />
+    <item id="epub-12" href="_images/e304_bk3_ch1_fig013.tif.jpg" media-type="image/jpeg" />
+    <item id="epub-13" href="_images/e304_bl1_app_a_fig003.jpg" media-type="image/jpeg" />
+    <item id="epub-14" href="_images/e304_blk1_app_a_fig002.jpg" media-type="image/jpeg" />
+    <item id="epub-15" href="_images/e304_ol_fig01.jpg" media-type="image/jpeg" />
+    <item id="epub-16" href="_images/e304_ol_fig010.jpg" media-type="image/jpeg" />
+    <item id="epub-17" href="_images/e304_ol_figure4_courtroom.jpg" media-type="image/jpeg" />
+    <item id="epub-18" href="_images/e304_ol_s5_fig009.jpg" media-type="image/jpeg" />
+    <item id="epub-19" href="_images/ol_skeleton_keeponlearning_image.jpg" media-type="image/jpeg" />
+    <item id="epub-20" href="_static/basic.css" media-type="text/css" />
+    <item id="epub-21" href="_static/epub.css" media-type="text/css" />
+    <item id="epub-22" href="_static/file.png" media-type="image/png" />
+    <item id="epub-23" href="_static/minus.png" media-type="image/png" />
+    <item id="epub-24" href="_static/plus.png" media-type="image/png" />
+    <item id="epub-25" href="_static/pygments.css" media-type="text/css" />
+    <item id="epub-26" href="content/session_00/Part_00_01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-27" href="content/session_00/Part_00_02.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-28" href="content/session_00/Part_00_03.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-29" href="content/session_00/Part_00_04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-30" href="content/session_00/Part_00_05.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-31" href="content/session_00/Part_00_06.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-32" href="content/session_00/Part_00_07.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-33" href="content/session_00/Part_00_08.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-34" href="content/session_00/Part_00_09.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-35" href="content/session_01/Part_01_glossary.xhtml" media-type="application/xhtml+xml" />
+  </manifest>
+  <spine toc="ncx" page-progression-direction="ltr">
+    <itemref idref="epub-2" />
+    <itemref idref="epub-26" />
+    <itemref idref="epub-27" />
+    <itemref idref="epub-28" />
+    <itemref idref="epub-29" />
+    <itemref idref="epub-30" />
+    <itemref idref="epub-31" />
+    <itemref idref="epub-32" />
+    <itemref idref="epub-33" />
+    <itemref idref="epub-34" />
+    <itemref idref="epub-35" />
+    <itemref idref="epub-1" />
+    <itemref idref="epub-0" linear="no" />
+    <itemref idref="epub-4" linear="no" />
+  </spine>
+  <guide>
+    <reference type="toc" title="Table of Contents" href="index.xhtml" />
+  </guide>
+</package>
